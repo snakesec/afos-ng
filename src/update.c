@@ -148,33 +148,32 @@ int compare_versions(char *pkg_name, char *local_pkg_version) {
                                 printf("%s[%s %sERROR%s %s]%s Invalid semver string LOCAL: %s REPO: %s\n", WHT, NRM, YEL, NRM, WHT, NRM, local_pkg_version, version);
                                 printf(" %s %s\n", local_pkg_version, version);
                             }
-                            return 1;
-                        }
+                        } else {
+                            int resolution = semver_compare(compare_version, current_version);
 
-                        int resolution = semver_compare(compare_version, current_version);
-
-                        if (resolution == 0) {
-                            // equal
-                        }
-                        else if (resolution == -1) {
-                            // REPO version is lower... that should not be possible...
-                            if(DEBUG) {
-                                printf("%s[%s %sERROR%s %s]%s REPO Version is lower than LOCAL version\n", WHT, NRM, YEL, NRM, WHT, NRM);
+                            if (resolution == 0) {
+                                // equal
                             }
-                        }
-                        else {
-                            // We have update
-                            printf("%s[%s UPDATE AVAILABLE %s]%s : %s%s%s%s from %s%s%s%s to %s%s%s%s\n", WHT, NRM, WHT, NRM, BLD, GRN, name, NRM, BLD, RED, local_pkg_version, NRM, BLD, BLU, version, NRM);
-                            
-                            if(update_all != 0 && pkg_install_count <= 1999) {
-                                strncpy(pkg_install_names[pkg_install_count], name, 499);
-                                strncpy(pkg_install_versions[pkg_install_count], version, 499); 
-                                strncpy(pkg_install_repo_url[pkg_install_count], repo_url, 499); 
-                            } else if(update_all != 0 && pkg_install_count >= 2000) {
-                                printf("\n%s[%s %sFATAL%s %s]%s We have more packages than allowed to update at the same time...\n", WHT, NRM, RED, NRM, WHT, NRM);
-                                exit(1);
+                            else if (resolution == -1) {
+                                // REPO version is lower... that should not be possible...
+                                if(DEBUG) {
+                                    printf("%s[%s %sERROR%s %s]%s REPO Version is lower than LOCAL version\n", WHT, NRM, YEL, NRM, WHT, NRM);
+                                }
                             }
-                            pkg_install_count++;
+                            else {
+                                // We have update
+                                printf("%s[%s UPDATE AVAILABLE %s]%s : %s%s%s%s from %s%s%s%s to %s%s%s%s\n", WHT, NRM, WHT, NRM, BLD, GRN, name, NRM, BLD, RED, local_pkg_version, NRM, BLD, BLU, version, NRM);
+                                
+                                if(update_all != 0 && pkg_install_count <= 1999) {
+                                    strncpy(pkg_install_names[pkg_install_count], name, 499);
+                                    strncpy(pkg_install_versions[pkg_install_count], version, 499); 
+                                    strncpy(pkg_install_repo_url[pkg_install_count], repo_url, 499); 
+                                } else if(update_all != 0 && pkg_install_count >= 2000) {
+                                    printf("\n%s[%s %sFATAL%s %s]%s We have more packages than allowed to update at the same time...\n", WHT, NRM, RED, NRM, WHT, NRM);
+                                    exit(1);
+                                }
+                                pkg_install_count++;
+                            }
                         }
 
                         semver_free(&current_version);

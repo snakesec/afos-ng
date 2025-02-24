@@ -1,0 +1,6 @@
+src/afos
+src/afos-parser-yaml.c
+src/insert
+src/output.yaml
+src/parser
+src/parser2

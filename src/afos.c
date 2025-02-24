@@ -344,8 +344,8 @@ int main(int argc, char *argv[]) {
             case 'i':
                 get_pkgs();
                 printf("%s\n",lower(optarg));
-                //install(optarg, 0);
-                //printf("\n");
+                install(optarg);
+                printf("\n");
                 exit(0);
                 break;
             case 'r':

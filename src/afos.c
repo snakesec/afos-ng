@@ -304,7 +304,7 @@ int main(int argc, char *argv[]) {
 
     if(geteuid() != 0) {
         printf("\n%s[%s %s%sFATAL ERROR%s %s]%s : No root no fun!\n\n", WHT, NRM, BLD, RED, NRM, WHT, NRM);
-        exit(13);
+        exit(77);
     }
 
     int opt;

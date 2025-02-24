@@ -1,10 +1,10 @@
 - name: nmap
-  version: 7.95
+  version: 7.95.0
   description: Advanced Network Mapper
   categories:
   - Information Gathering
   - Scanning
-  repo_url: gitlab.com/snake-security/nmap
+  repo_url: github.com/snakesec/nmap
   original_repo_url: nmap.org/download.html
 - name: metasploit-framework
   version: 6.4.11

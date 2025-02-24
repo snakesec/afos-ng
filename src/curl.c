@@ -38,7 +38,7 @@ int get_afos_packages(char *urltofetch, char *file_to_save) {
     strncpy(urt_to_parse, urltofetch, 499);
 
     CURL *curl_handle;
-    FILE *pagefile;
+    FILE *save_file_path;
 
     strtok(urt_to_parse, "\n");
 

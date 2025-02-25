@@ -281,7 +281,9 @@ int install(char *query_name) {
 
                     if(strcmp(query_name, name) == 0) {
                         
-                        printf("FOUND Name: %s, Version: %s, Desc: %s Categories: %s REPO_URL %s\n", name, version, desc, pkg_install_categories, repo_url);
+                        if(DEBUG) {
+                            printf("%s[%s %sFOUND%s %s]%s %s %s(%sv%s%s)%s [ %s ] [ %s ] at %s\n", WHT, NRM, CYN, NRM, WHT, NRM, name, WHT, NRM, version, WHT, NRM, desc, pkg_install_categories, repo_url);
+                        }
 
                         memset(name, 0, sizeof(name));
                         memset(version, 0, sizeof(version));

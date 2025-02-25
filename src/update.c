@@ -281,6 +281,7 @@ int update(int all) {
             
             for(int i = 0; i < pkg_install_count; i++) {
                 printf("Updating: %s Version: %s from: %s\n", pkg_install_names[i], pkg_install_versions[i], pkg_install_repo_url[i]);
+                install(pkg_install_names[i], 1);
             }
 
         } else {

@@ -113,7 +113,12 @@ int git_download(char *name, char *url) {
     return 0;
 }
 
-int install_pkg(char *pkg_name, char *pkg_version, char *pkg_desc, char *pkg_categories, char *pkg_url) {
+int install_pkg(char *pkg_name, char *pkg_version, char *pkg_desc, char *pkg_categories, char *pkg_url, int update_all) {
+
+    if(strlen(pkg_name) < 2 && strlen(pkg_version) < 2 && strlen(pkg_desc) < 2 && strlen(pkg_categories) < 2 && strlen(pkg_url) < 2) {
+        printf("%s[%s %sFATAL%s %s]%s Parameters size error %s %s %s %s %s\n", WHT, NRM, RED, NRM, WHT, NRM, pkg_name, pkg_version, pkg_desc, pkg_categories, pkg_url);
+        exit(1);
+    }
 
     char answer[6];
     int git_download_result;
@@ -121,32 +126,49 @@ int install_pkg(char *pkg_name, char *pkg_version, char *pkg_desc, char *pkg_cat
     printf("Do you wanna install: %s? [ Y/n ]: ", pkg_name);
     scanf("%5[^\n]", answer);
 
-    if((strncmp(lower(answer), "y", 5) == 0 || strncmp(lower(answer), "yes", 5) == 0)) {
+    if(update_all == 0) {
+        if((strncmp(lower(answer), "y", 5) == 0 || strncmp(lower(answer), "yes", 5) == 0)) {
 
+            git_download_result = git_download(pkg_name, pkg_url);
+
+            if(git_download_result == 0) {
+                char sqlstate[5000];
+
+                printf("\nUpdating AFOS DATABASE\n\n");
+
+                snprintf(sqlstate, 4999, "INSERT OR REPLACE INTO PACKAGES (NAME,VERSION,DESC,TYPE) VALUES ('%s', '%s', '%s', '%s' );", pkg_name, pkg_version, pkg_desc, pkg_categories);
+                insert_in_db(sqlstate);
+
+            } else {
+                printf("The installation failed, contact the maintainer <weidsom at snakesecurity.org>\n");
+            }
+
+        } else {
+            printf("\n");
+            exit(1);
+        }
+    } else {
         git_download_result = git_download(pkg_name, pkg_url);
 
         if(git_download_result == 0) {
             char sqlstate[5000];
 
             printf("\nUpdating AFOS DATABASE\n\n");
-            
+
             snprintf(sqlstate, 4999, "INSERT OR REPLACE INTO PACKAGES (NAME,VERSION,DESC,TYPE) VALUES ('%s', '%s', '%s', '%s' );", pkg_name, pkg_version, pkg_desc, pkg_categories);
-            
             insert_in_db(sqlstate);
-            
+
         } else {
             printf("The installation failed, contact the maintainer <weidsom at snakesecurity.org>\n");
         }
-
-    } else {
-        printf("\n");
-        exit(1);
     }
 
     return 0;
 }
 
-int install(char *query_name) {
+int install(char *query_name, int update_all) {
+
+    int pkg_found = 0;
 
     FILE *fh = fopen("/opt/AFOS/afos_pkgs.yaml", "r");
     if (!fh) {
@@ -280,10 +302,14 @@ int install(char *query_name) {
                     in_mapping = 0;
 
                     if(strcmp(query_name, name) == 0) {
+
+                        pkg_found = 1;
                         
                         if(DEBUG) {
                             printf("%s[%s %sFOUND%s %s]%s %s %s(%sv%s%s)%s [ %s ] [ %s ] at %s\n", WHT, NRM, CYN, NRM, WHT, NRM, name, WHT, NRM, version, WHT, NRM, desc, pkg_install_categories, repo_url);
                         }
+
+                        install_pkg(name, version, desc, pkg_install_categories, repo_url, update_all);
 
                         memset(name, 0, sizeof(name));
                         memset(version, 0, sizeof(version));
@@ -310,6 +336,10 @@ int install(char *query_name) {
     fclose(fh);
     if (key) free(key);
 
+    if(!pkg_found) {
+        printf("\n%s[%s %sFATAL%s %s]%s Package: %s(%s %s %s)%s NOT FOUND!\n\n", WHT, NRM, RED, NRM, WHT, NRM, WHT, NRM, query_name, WHT, NRM);
+        exit(1);
+    }
 
     return 0;
 }

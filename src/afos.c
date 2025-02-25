@@ -343,7 +343,7 @@ int main(int argc, char *argv[]) {
                 break;
             case 'i':
                 get_pkgs();
-                install(lower(optarg));
+                install(lower(optarg), 0);
                 printf("\n");
                 exit(0);
                 break;

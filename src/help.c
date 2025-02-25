@@ -28,7 +28,6 @@ int help() {
     printf("        --update-all, -a: [ Update all packages ]\n");
     printf("        --list, -l: [ List installed packages by AFOS ]\n");
     printf("        --repo, -r: [ List packages on AFOS REPO ]\n");
-    printf("        --notinstalled, -n: [ List all NOT installed packages ]\n");
     printf("        --debug, -d: [ Debug errors ]\n");
     printf("        --help, -h [ Show this help ]\n\n");
 

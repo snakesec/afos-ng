@@ -325,7 +325,6 @@ int main(int argc, char *argv[]) {
         {"update-all", no_argument, NULL, 'a'},
         {"list", no_argument, NULL, 'l'},
         {"repo", no_argument, NULL, 'r'},
-        {"notinstalled", no_argument, NULL, 'n'},
         {"debug", no_argument, NULL, 'd'},
         {"help", no_argument, NULL, 'h'},
         {NULL, 0, NULL, 0}
@@ -354,22 +353,15 @@ int main(int argc, char *argv[]) {
                 printf("\n");
                 exit(0);
                 break;
-            case 'n':
-                //get_pkgs();
-                //printf("Checking Not Installed Packages:\n\n");
-                //readdb2();
-                //printf("\n");
-                exit(0);
-                break;
             case 'u':
-                //get_pkgs();
+                get_pkgs();
                 printf("Checking for updates...\n\n");
                 update(0);
                 printf("\n");
                 exit(0);
                 break;
             case 'a':
-                //get_pkgs();
+                get_pkgs();
                 printf("Updating all packages...\n\n");
                 update(1);
                 printf("\n");

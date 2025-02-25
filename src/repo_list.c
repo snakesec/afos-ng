@@ -25,6 +25,7 @@
 #include "afos.h"
 
 int repolist() {
+
     FILE *fh = fopen("/opt/AFOS/afos_pkgs.yaml", "r");
     if (!fh) {
         if(DEBUG) {

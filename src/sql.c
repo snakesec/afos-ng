@@ -76,7 +76,7 @@ int readdb() {
    
    if( rc ) {
       fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(db));
-      return(0);
+      exit(1);
    } else {
        if(DEBUG) {
            fprintf(stderr, "Opened database successfully\n");

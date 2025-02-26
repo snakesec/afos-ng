@@ -97,6 +97,7 @@ int repolist() {
                         } else {
                             if(strcmp(key, "name") == 0) {
                                 printf("[ %s%s%s ] ", WHT, (const char *)event.data.scalar.value, NRM);
+                                strncpy(name, (const char *)event.data.scalar.value, 499);
                             } else if(strcmp(key, "version") == 0) {
                                 printf("[ %s%s%s ] ", RED, (const char *)event.data.scalar.value, NRM);
                             } else if(strcmp(key, "description") == 0) {
@@ -121,6 +122,11 @@ int repolist() {
                         free(categories[i]);
                     }
                     printf(" ]");
+
+                    if(is_installed_or_not(name)) {
+                        printf(" %s(%s %s==%s %sNOT INSTALLED%s %s==%s %s)%s", WHT, NRM, RED, NRM, PUR, NRM, RED, NRM, WHT, NRM);
+                    }
+
                     in_categories = 0;
                     free(key);
                     key = NULL;

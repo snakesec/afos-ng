@@ -42,3 +42,4 @@ int get_afos_packages(char *urltofetch, char *pagefilename);
 int get_pkgs();
 int repolist();
 int install(char *query_name, int update_all);
+int is_installed_or_not(char *query_name);

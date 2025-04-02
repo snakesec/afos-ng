@@ -1079,12 +1079,12 @@
   repo_url: gitlab.com/snake-security/inviteflood
   original_repo_url: hackingvoip.com/sec_tools.html
 - name: ipcalc
-  version: 1.0.4-1
+  version: 1.0.4-2
   description: IPv4/IPv6 Calculator
   categories:
   - Network Hacking
   - System
-  repo_url: gitlab.com/snake-security/ipcalc
+  repo_url: github.com/snakesec/ipcalc
   original_repo_url: gitlab.com/ipcalc/ipcalc
 - name: ipdecap
   version: 0.7.2

@@ -308,11 +308,11 @@
   repo_url: gitlab.com/snake-security/spiderfoot
   original_repo_url: github.com/smicallef/spiderfoot
 - name: sqlcipher
-  version: 3.45.3-1
+  version: 3.49.1
   description: SQLite with 256 bit AES encryption
   categories:
   - System
-  repo_url: gitlab.com/snake-security/sqlcipher
+  repo_url: github.com/snakesec/sqlcipher
   original_repo_url: github.com/sqlcipher/sqlcipher
 - name: patator
   version: 0.1.1

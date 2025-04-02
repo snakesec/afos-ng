@@ -195,11 +195,11 @@
   repo_url: gitlab.com/snake-security/frida
   original_repo_url: github.com/frida/frida
 - name: pcsc
-  version: 2.2.0
+  version: 2.3.3
   description: Middleware to access a smart card using SCard API (PC/SC)
   categories:
   - System
-  repo_url: gitlab.com/snake-security/pcsc
+  repo_url: github.com/snakesec/pcsc
   original_repo_url: salsa.debian.org/rousseau/PCSC
 - name: nobex
   version: 1.0.0-1

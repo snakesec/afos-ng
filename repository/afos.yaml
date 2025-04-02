@@ -2044,13 +2044,13 @@
   repo_url: gitlab.com/snake-security/graphw00f
   original_repo_url: github.com/dolevf/graphw00f
 - name: pycrate
-  version: 0.7.7
+  version: 0.7.8
   description: Telecom file formats and Protocols encoders/decoders library
   categories:
   - System
   - Phreaking
   - Network Hacking
-  repo_url: gitlab.com/snake-security/pycrate
+  repo_url: github.com/snakesec/pycrate
   original_repo_url: github.com/pycrate-org/pycrate/
 - name: qcsuper
   version: 2.0.1

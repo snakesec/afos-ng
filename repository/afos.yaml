@@ -603,11 +603,11 @@
   repo_url: gitlab.com/snake-security/cfr
   original_repo_url: github.com/leibnitz27/cfr
 - name: chafa
-  version: 1.13.0-1
+  version: 1.15.0
   description: Terminal graphics for the 21st century
   categories:
   - System
-  repo_url: gitlab.com/snake-security/chafa
+  repo_url: github.com/snakesec/chafa
   original_repo_url: github.com/hpjansson/chafa
 - name: chameleon
   version: 1.0.0-2

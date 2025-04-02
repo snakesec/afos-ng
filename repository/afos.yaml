@@ -1815,11 +1815,11 @@
   repo_url: gitlab.com/snake-security/changeme
   original_repo_url: github.com/ztgrace/changeme
 - name: rust-lang
-  version: 1.80.1
+  version: 1.85.1
   description: Rust Programming Language
   categories:
   - System
-  repo_url: gitlab.com/snake-security/rust-lang
+  repo_url: github.com/snakesec/rust-lang
   original_repo_url: www.rust-lang.org/
 - name: dumpsterdiver
   version: 0.0.1-2

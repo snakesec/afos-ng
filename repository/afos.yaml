@@ -938,11 +938,11 @@
   repo_url: gitlab.com/snake-security/flasm
   original_repo_url: nowrap.de/flasm.html
 - name: geckodriver
-  version: 0.35.0
+  version: 0.36.0
   description: WebDriver for Firefox
   categories:
   - System
-  repo_url: gitlab.com/snake-security/geckodriver
+  repo_url: github.com/snakesec/geckodriver
   original_repo_url: github.com/mozilla/geckodriver
 - name: scada-tools
   version: 1.0.1

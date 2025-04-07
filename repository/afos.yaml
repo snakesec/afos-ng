@@ -2013,12 +2013,12 @@
   repo_url: gitlab.com/snake-security/katana
   original_repo_url: github.com/projectdiscovery/katana
 - name: andrax-base-files
-  version: 0.0.3
+  version: 0.0.4
   description: ANDRAX-NG base files
   categories:
   - System
-  repo_url: gitlab.com/snake-security/andrax-base-files
-  original_repo_url: gitlab.com/snake-security/andrax-base-files
+  repo_url: github.com/snakesec/andrax-base-files
+  original_repo_url: github.com/snakesec/andrax-base-files
 - name: netexec
   version: 1.1.0-1
   description: The Network Execution Tool

@@ -360,6 +360,8 @@ int main(int argc, char *argv[]) {
                 printf("Checking for updates...\n\n");
                 update(0);
                 printf("\n");
+                system("chown -R andrax:andrax /opt/ANDRAX");
+                system("chmod -R 755 /opt/ANDRAX");
                 exit(0);
                 break;
             case 'a':
@@ -367,6 +369,8 @@ int main(int argc, char *argv[]) {
                 printf("Updating all packages...\n\n");
                 update(1);
                 printf("\n");
+                system("chown -R andrax:andrax /opt/ANDRAX");
+                system("chmod -R 755 /opt/ANDRAX");
                 exit(0);
                 break;
             case 'l':

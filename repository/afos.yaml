@@ -2013,7 +2013,7 @@
   repo_url: gitlab.com/snake-security/katana
   original_repo_url: github.com/projectdiscovery/katana
 - name: andrax-base-files
-  version: 0.0.4
+  version: 0.0.5
   description: ANDRAX-NG base files
   categories:
   - System

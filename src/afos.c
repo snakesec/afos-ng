@@ -344,6 +344,8 @@ int main(int argc, char *argv[]) {
                 get_pkgs();
                 install(lower(optarg), 0);
                 printf("\n");
+                system("chown -R andrax:andrax /opt/ANDRAX");
+                system("chmod -R 755 /opt/ANDRAX");
                 exit(0);
                 break;
             case 'r':

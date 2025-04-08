@@ -14,10 +14,9 @@
 #define DELIMITER    "."
 #define PR_DELIMITER "-"
 #define MT_DELIMITER "+"
-#define ANDRAX_DELIMITER "="
 #define NUMBERS      "0123456789"
 #define ALPHA        "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-#define DELIMITERS   DELIMITER PR_DELIMITER MT_DELIMITER ANDRAX_DELIMITER
+#define DELIMITERS   DELIMITER PR_DELIMITER MT_DELIMITER
 #define VALID_CHARS  NUMBERS ALPHA DELIMITERS
 
 static const size_t MAX_SIZE     = sizeof(char) * 255;
@@ -120,12 +119,11 @@ int semver_parse (const char *str, semver_t *ver) {
 
   ver->metadata = parse_slice(buf, MT_DELIMITER[0]);
   ver->prerelease = parse_slice(buf, PR_DELIMITER[0]);
-  ver->rolling = parse_slice(buf, ANDRAX_DELIMITER[0]);
 
   res = semver_parse_version(buf, ver);
   free(buf);
 #if DEBUG > 0
-  printf("[debug] semver.c %s = %d.%d.%d, %s %s %s\n", str, ver->major, ver->minor, ver->patch, ver->prerelease, ver->metadata, ver->rolling);
+  printf("[debug] semver.c %s = %d.%d.%d, %s %s\n", str, ver->major, ver->minor, ver->patch, ver->prerelease, ver->metadata);
 #endif
   return res;
 }
@@ -158,6 +156,12 @@ int semver_parse_version (const char *str, semver_t *ver) {
       slice = NULL;
     else
       slice = next + 1;
+  }
+
+  if (slice != NULL && *slice == PR_DELIMITER[0]) { 
+    slice++;
+    int rolling_patch = atoi(slice); 
+    ver->patch += rolling_patch; 
   }
 
   return 0;

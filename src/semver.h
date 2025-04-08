@@ -24,6 +24,7 @@ typedef struct semver_version_s {
   int patch;
   char * metadata;
   char * prerelease;
+  char * rolling;
 } semver_t;
 
 int semver_satisfies (semver_t x, semver_t y, const char *op);

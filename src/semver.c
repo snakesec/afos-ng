@@ -120,11 +120,12 @@ int semver_parse (const char *str, semver_t *ver) {
 
   ver->metadata = parse_slice(buf, MT_DELIMITER[0]);
   ver->prerelease = parse_slice(buf, PR_DELIMITER[0]);
+  ver->rolling = parse_slice(buf, ANDRAX_DELIMITER[0]);
 
   res = semver_parse_version(buf, ver);
   free(buf);
 #if DEBUG > 0
-  printf("[debug] semver.c %s = %d.%d.%d, %s %s\n", str, ver->major, ver->minor, ver->patch, ver->prerelease, ver->metadata);
+  printf("[debug] semver.c %s = %d.%d.%d, %s %s %s\n", str, ver->major, ver->minor, ver->patch, ver->prerelease, ver->metadata, ver->rolling);
 #endif
   return res;
 }

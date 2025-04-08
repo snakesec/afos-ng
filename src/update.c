@@ -144,8 +144,8 @@ int compare_versions(char *pkg_name, char *local_pkg_version) {
 
                     if(strcmp(pkg_name, name) == 0) {
 
-                        char* repo_tmp_rolling = strchr(version, '-');
-                        char* local_tmp_rolling = strchr(local_pkg_version, '-');
+                        char* repo_tmp_rolling = strchr(version, '=');
+                        char* local_tmp_rolling = strchr(local_pkg_version, '=');
 
                         if (semver_parse(local_pkg_version, &current_version) || semver_parse(version, &compare_version)) {
                             if(DEBUG) {
@@ -181,7 +181,7 @@ int compare_versions(char *pkg_name, char *local_pkg_version) {
                             else if(repo_tmp_rolling == NULL || local_tmp_rolling == NULL) {
                                 int repo_version_rolling = atoi(version + 1);
                                 int local_version_rolling = atoi(local_pkg_version + 1);
-                                
+
                                 if(repo_version_rolling > local_version_rolling) {
                                     printf("%s[%s ROLLING UPDATE AVAILABLE %s]%s : %s%s%s%s from %s%s%s%s to %s%s%s%s\n", WHT, NRM, WHT, NRM, BLD, GRN, name, NRM, BLD, RED, local_pkg_version, NRM, BLD, BLU, version, NRM);
                                     

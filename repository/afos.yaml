@@ -1852,7 +1852,7 @@
   repo_url: gitlab.com/snake-security/evilgrade
   original_repo_url: github.com/infobyte/evilgrade
 - name: merlin
-  version: 2.1.3+1
+  version: 2.1.3-1
   description: Post-exploitation C2
   categories:
   - Exploitation

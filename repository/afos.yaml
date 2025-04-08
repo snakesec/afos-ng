@@ -230,11 +230,11 @@
   repo_url: gitlab.com/snake-security/mirage
   original_repo_url: github.com/RCayre/mirage
 - name: golang
-  version: 1.23.0
+  version: 1.24.2
   description: Go Programming Language
   categories:
   - Programming
-  repo_url: gitlab.com/snake-security/golang
+  repo_url: github.com/snakesec/golang
   original_repo_url: go.dev/dl/
 - name: forbidden
   version: 11.2.0

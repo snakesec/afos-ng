@@ -867,11 +867,11 @@
   repo_url: gitlab.com/snake-security/powershell
   original_repo_url: github.com/PowerShell/PowerShell
 - name: nim
-  version: 2.0.8
+  version: 2.2.2
   description: Nim programming language
   categories:
   - Programming
-  repo_url: gitlab.com/snake-security/nim
+  repo_url: github.com/snakesec/nim
   original_repo_url: nim-lang.org/install_unix.html
 - name: xar
   version: 1.6.1-1

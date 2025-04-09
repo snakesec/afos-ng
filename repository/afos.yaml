@@ -73,11 +73,11 @@
   repo_url: gitlab.com/snake-security/mitmproxy
   original_repo_url: github.com/mitmproxy/mitmproxy
 - name: wfuzz
-  version: 3.1.0-2
+  version: 3.1.0-3
   description: Web application fuzzer
   categories:
   - Web Site Hacking
-  repo_url: gitlab.com/snake-security/wfuzz
+  repo_url: github.com/snakesec/wfuzz
   original_repo_url: salsa.debian.org/pkg-security-team/wfuzz
 - name: phpsploit
   version: 3.2.0-3

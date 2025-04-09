@@ -1769,12 +1769,12 @@
   repo_url: github.com/snakesec/impacket
   original_repo_url: github.com/fortra/impacket
 - name: subfinder
-  version: 2.6.6
+  version: 2.7.0
   description: Passive subdomain discovery
   categories:
   - Bug Bounty
   - Web Site Hacking
-  repo_url: gitlab.com/snake-security/subfinder
+  repo_url: github.com/snakesec/subfinder
   original_repo_url: github.com/projectdiscovery/subfinder
 - name: sherlock
   version: 0.15.0

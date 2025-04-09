@@ -58,12 +58,12 @@
   repo_url: gitlab.com/snake-security/jaeles
   original_repo_url: github.com/jaeles-project/jaeles
 - name: nuclei
-  version: 3.2.8
+  version: 3.4.2
   description: Advanced vulnerability scanner based on templates
   categories:
   - Web Site Hacking
   - Scanning
-  repo_url: gitlab.com/snake-security/nuclei
+  repo_url: github.com/snakesec/nuclei
   original_repo_url: github.com/projectdiscovery/nuclei
 - name: mitmproxy
   version: 11.0.0-1

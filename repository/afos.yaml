@@ -7,11 +7,11 @@
   repo_url: github.com/snakesec/nmap
   original_repo_url: nmap.org/download.html
 - name: metasploit-framework
-  version: 6.4.11
+  version: 6.4.57
   description: Advanced Exploitation Framework
   categories:
   - Exploitation
-  repo_url: gitlab.com/snake-security/metasploit-framework
+  repo_url: github.com/snakesec/metasploit
   original_repo_url: github.com/rapid7/metasploit-framework
 - name: amass
   version: 4.2.0

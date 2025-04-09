@@ -1774,7 +1774,7 @@
   categories:
   - Network Hacking
   - Exploitation
-  repo_url: gitlab.com/snake-security/impacket
+  repo_url: github.com/snakesec/impacket
   original_repo_url: github.com/fortra/impacket
 - name: subfinder
   version: 2.6.6

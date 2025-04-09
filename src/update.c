@@ -24,7 +24,6 @@
 #include <yaml.h>
 #include <sqlite3.h>
 #include <string.h>
-#include "semver.h"
 
 int update_all = 0;
 
@@ -34,9 +33,6 @@ char pkg_install_repo_url[2000][500];
 int pkg_install_count = 0;
 
 int compare_versions(char *pkg_name, char *local_pkg_version) {
-
-    semver_t current_version = {};
-    semver_t compare_version = {};
 
     FILE *fh = fopen("/opt/AFOS/afos_pkgs.yaml", "r");
     if (!fh) {
@@ -141,20 +137,23 @@ int compare_versions(char *pkg_name, char *local_pkg_version) {
             case YAML_MAPPING_END_EVENT:
                 if (in_mapping) {
                     in_mapping = 0;
-                    //printf("Name: %s, Version: %s, Desc: %s\n", name, version, desc);
 
                     if(strcmp(pkg_name, name) == 0) {
 
-                        if (semver_parse(local_pkg_version, &current_version) || semver_parse(version, &compare_version)) {
+                        int resolution = afos_compare_versions(version, local_pkg_version);
+
+                        if (resolution == -2) {
                             if(DEBUG) {
-                                printf("%s[%s %sERROR%s %s]%s Invalid semver string LOCAL: %s REPO: %s\n", WHT, NRM, YEL, NRM, WHT, NRM, local_pkg_version, version);
-                                printf(" %s %s\n", local_pkg_version, version);
+                                printf("%s[%s %sERROR%s %s]%s Invalid version string LOCAL: %s REPO: %s\n", WHT, NRM, YEL, NRM, WHT, NRM, local_pkg_version, version);
+                                //printf(" %s %s\n", local_pkg_version, version);
                             }
                         } else {
-                            int resolution = semver_compare(compare_version, current_version);
 
                             if (resolution == 0) {
                                 // equal
+                                if(DEBUG) {
+                                    printf("%s[%s %sINFO%s %s]%s %s is already the newest version\n", WHT, NRM, CYN, NRM, WHT, NRM, name);
+                                }
                             }
                             else if (resolution == -1) {
                                 // REPO version is lower... that should not be possible...
@@ -178,9 +177,6 @@ int compare_versions(char *pkg_name, char *local_pkg_version) {
                             }
 
                         }
-
-                        semver_free(&current_version);
-                        semver_free(&compare_version);
 
                         memset(name, 0, sizeof(name));
                         memset(version, 0, sizeof(version));

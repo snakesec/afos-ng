@@ -1,4 +1,3 @@
-
 ###############################################################################
 #                                                                             #
 # Copyright 2025 Weidsom Nascimento - SNAKE Security                          #
@@ -21,7 +20,7 @@
 .PHONY: afos-ng
 
 afos-ng:
-	clang -g -fsanitize=address -o afos afos.c semver.c lower.c sql.c help.c update.c curl.c get_pkgs.c repo_list.c install.c not_installed.c -I. -lcurl -lsqlite3 -lyaml
+	clang -g -fsanitize=address -o afos afos.c version_check.c lower.c sql.c help.c update.c curl.c get_pkgs.c repo_list.c install.c not_installed.c -I. -lcurl -lsqlite3 -lyaml
 	clang -o insert insert.c -lsqlite3
 
 clean:

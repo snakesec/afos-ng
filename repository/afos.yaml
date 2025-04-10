@@ -895,11 +895,11 @@
   repo_url: gitlab.com/snake-security/enumiax
   original_repo_url: sourceforge.net/projects/enumiax/
 - name: evilginx2
-  version: 3.3.0
+  version: 3.3.0-1
   description: MITM Attack Framework for Credential Harvesting
   categories:
   - Phishing
-  repo_url: gitlab.com/snake-security/evilginx2
+  repo_url: github.com/snakesec/evilginx2
   original_repo_url: github.com/kgretzky/evilginx2
 - name: evil_ssdp
   version: 1.0.0-2

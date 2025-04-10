@@ -2099,7 +2099,7 @@
   categories:
   - Bug Bounty
   - Network Hacking
-  repo_url: gitlab.com/snake-security/network-fingerprint
+  repo_url: github.com/snakesec/network-fingerprint
   original_repo_url: github.com/projectdiscovery/network-fingerprint
 - name: go-routersocks
   version: 1.3.0

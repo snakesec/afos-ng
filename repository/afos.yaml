@@ -2142,7 +2142,7 @@
   description: Active Directory ACL Visualizer and Explorer
   categories:
   - Exploitation
-  repo_url: gitlab.com/snake-security/adalanche
+  repo_url: github.com/snakesec/adalanche
   original_repo_url: github.com/lkarlslund/Adalanche
 - name: pe-bear
   version: 0.6.7-3
@@ -2167,13 +2167,13 @@
   repo_url: gitlab.com/snake-security/orpheus
   original_repo_url: github.com/trustedsec/orpheus
 - name: cdncheck
-  version: 1.1.0
+  version: 1.1.13
   description: Detect various technologies for a given address
   categories:
   - Bug Bounty
   - Web Site Hacking
   - Information Gathering
-  repo_url: gitlab.com/snake-security/cdncheck
+  repo_url: github.com/snakesec/cdncheck
   original_repo_url: github.com/projectdiscovery/cdncheck
 - name: sh4d0wup
   version: 0.9.3

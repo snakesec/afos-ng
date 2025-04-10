@@ -66,11 +66,12 @@
   repo_url: github.com/snakesec/nuclei
   original_repo_url: github.com/projectdiscovery/nuclei
 - name: mitmproxy
-  version: 11.0.0-1
-  description: Burp Suite Killer
+  version: 12.0.0
+  description: Interactive HTTPS proxy
   categories:
   - Web Site Hacking
-  repo_url: gitlab.com/snake-security/mitmproxy
+  - Bug Bounty
+  repo_url: github.com/snakesec/mitmproxy
   original_repo_url: github.com/mitmproxy/mitmproxy
 - name: wfuzz
   version: 3.1.0-3

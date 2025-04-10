@@ -44,11 +44,12 @@
   repo_url: github.com/snakesec/wafw00f
   original_repo_url: github.com/EnableSecurity/wafw00f
 - name: httpx
-  version: 1.6.0
+  version: 1.6.10
   description: Fast and multi-purpose HTTP toolkit
   categories:
   - Web Site Hacking
-  repo_url: gitlab.com/snake-security/httpx
+  - Bug Bounty
+  repo_url: github.com/snakesec/httpx
   original_repo_url: github.com/projectdiscovery/httpx
 - name: jaeles
   version: 0.17.1

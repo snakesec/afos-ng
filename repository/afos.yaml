@@ -1646,11 +1646,11 @@
   repo_url: gitlab.com/snake-security/tpx-brute
   original_repo_url: github.com/quentinhardy/TPX-Brute
 - name: tshocker
-  version: 0.0.1
+  version: 0.0.1-1
   description: Meterpreter like TSO Reverse shell
   categories:
   - Mainframe
-  repo_url: gitlab.com/snake-security/tshocker
+  repo_url: github.com/snakesec/TShOcker
   original_repo_url: github.com/mainframed/TShOcker
 - name: udpfloodvlan
   version: 2.0.0

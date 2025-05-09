@@ -295,6 +295,7 @@ static char afos_banner[3171] = {
 };
 
 int DEBUG;
+int TESTING;
 
 int main(int argc, char *argv[]) {
 
@@ -327,6 +328,7 @@ int main(int argc, char *argv[]) {
         {"repo", no_argument, NULL, 'r'},
         {"debug", no_argument, NULL, 'd'},
         {"help", no_argument, NULL, 'h'},
+        {"testing", no_argument, NULL, 't'},
         {NULL, 0, NULL, 0}
     };
 
@@ -335,10 +337,14 @@ int main(int argc, char *argv[]) {
         exit(1);
     }
 
-    while((opt = getopt_long(argc, argv, "i:ualrdhn", long_options, NULL)) != -1)  {
+    while((opt = getopt_long(argc, argv, "i:ualrdht", long_options, NULL)) != -1)  {
         switch(opt) {
             case 'd':
                 DEBUG = 1;
+                break;
+            case 't':
+                TESTING = 1;
+                printf("%s[%s %sWARNING%s %s]%s Running int TESTING mode!\n\n", WHT, NRM, YEL, NRM, WHT, NRM);
                 break;
             case 'i':
                 get_pkgs();

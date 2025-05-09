@@ -29,6 +29,8 @@ int get_pkgs() {
 
     char default_repo[500] = "https://raw.githubusercontent.com/snakesec/afos-ng/refs/heads/main/repository/afos.yaml";
 
+    char default_repo_testing[500] = "https://raw.githubusercontent.com/snakesec/afos-ng/refs/heads/testing/repository/afos.yaml";
+
     afossourcelist = fopen("/opt/AFOS/afos.list", "r");
 
     if(afossourcelist == NULL) {

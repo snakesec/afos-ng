@@ -300,7 +300,7 @@ int TESTING;
 int main(int argc, char *argv[]) {
 
     printf("\n%s%s%s%s\n\n", BLD, GRN, afos_banner, NRM);
-    printf("%s%s ANDRAX-NG Next Generation Package Manager %s%sv1.0.0%s\n", BLD, GRN, BLD, RED, NRM);
+    printf("%s%s ANDRAX-NG Next Generation Package Manager %s%sv1.0.1%s\n", BLD, GRN, BLD, RED, NRM);
     printf(" %sCopyright%s %s2025%s By %sSNAKE Security%s %s-%s %sWeidsom Nascimento%s\n\n", YEL, NRM, CYN, NRM, WHT, NRM, RED, NRM, WHT, NRM);
 
     if(geteuid() != 0) {

@@ -37,7 +37,11 @@ int get_pkgs() {
         if(DEBUG) {
             printf("%s[%s %sERROR%s %s]%s Switching to default repo because no valid URL was provided\n", WHT, NRM, YEL, NRM, WHT, NRM);
         }
-        get_afos_packages(default_repo, "/opt/AFOS/afos_pkgs.yaml");
+        if(TESTING) {
+            get_afos_packages(default_repo_testing, "/opt/AFOS/afos_pkgs.yaml");
+        } else {
+            get_afos_packages(default_repo, "/opt/AFOS/afos_pkgs.yaml");
+        }
     } else {
         int linen = 0;
 

@@ -72,7 +72,11 @@ int git_download(char *name, char *url) {
     printf("\nStarting at [ %s ]\n\n", url);
 
     snprintf(protocolurl, 1999, "https://%s", url);
-    snprintf(cmd_git, 4999,"git clone %s %s", protocolurl, name); 
+    if(TESTING) {
+        snprintf(cmd_git, 4999,"git clone -b testing %s %s", protocolurl, name); 
+    } else {
+        snprintf(cmd_git, 4999,"git clone %s %s", protocolurl, name); 
+    }
     
     valuecode = system(cmd_git);
 

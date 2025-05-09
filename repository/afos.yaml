@@ -66,13 +66,6 @@
   - Scanning
   repo_url: github.com/snakesec/nuclei
   original_repo_url: github.com/projectdiscovery/nuclei
-- name: mitmproxy
-  version: 11.0.0-1
-  description: Burp Suite Killer
-  categories:
-  - Web Site Hacking
-  repo_url: gitlab.com/snake-security/mitmproxy
-  original_repo_url: github.com/mitmproxy/mitmproxy
 - name: wfuzz
   version: 3.1.0-3
   description: Web application fuzzer
@@ -1888,12 +1881,12 @@
   repo_url: gitlab.com/snake-security/swaks
   original_repo_url: github.com/jetmore/swaks
 - name: termineter
-  version: 1.0.5-2
+  version: 1.0.6
   description: Smart Meter Security Testing Framework
   categories:
   - IoT/IIoT Hacking
   - ICS Hacking
-  repo_url: gitlab.com/snake-security/termineter
+  repo_url: github.com/snakesec/termineter
   original_repo_url: github.com/rsmusllp/termineter
 - name: espoofer
   version: 0.0.1-2
@@ -1989,14 +1982,6 @@
   - Network Hacking
   repo_url: gitlab.com/snake-security/voiphopper
   original_repo_url: sourceforge.net/projects/voiphopper/
-- name: spraykatz
-  version: 0.9.9-2
-  description: Procdump, parse dumps remotely and avoid detections
-  categories:
-  - Exploitation
-  - Network Hacking
-  repo_url: gitlab.com/snake-security/spraykatz
-  original_repo_url: github.com/aas-n/spraykatz
 - name: katana
   version: 1.1.2
   description: Next GEN Crawling and Spidering

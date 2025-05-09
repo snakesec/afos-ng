@@ -344,7 +344,7 @@ int main(int argc, char *argv[]) {
                 break;
             case 't':
                 TESTING = 1;
-                printf("%s[%s %sWARNING%s %s]%s Running int TESTING mode!\n\n", WHT, NRM, YEL, NRM, WHT, NRM);
+                printf("%s[%s %sWARNING%s %s]%s Running in TESTING mode!\n\n", WHT, NRM, YEL, NRM, WHT, NRM);
                 break;
             case 'i':
                 get_pkgs();

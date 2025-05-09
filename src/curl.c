@@ -58,6 +58,7 @@ int get_afos_packages(char *urltofetch, char *file_to_save) {
             printf("%s[%s %sINFO%s %s]%s Removing old %s\n", WHT, NRM, CYN, NRM, WHT, NRM, file_to_save);
         }
         remove(file_to_save);
+        sleep(2);
     }
 
     save_file_path = fopen(file_to_save, "ab");

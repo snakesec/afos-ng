@@ -348,6 +348,7 @@ int main(int argc, char *argv[]) {
                 break;
             case 'i':
                 get_pkgs();
+                sleep(2);
                 install(lower(optarg), 0);
                 printf("\n");
                 system("chown -R andrax:andrax /opt/ANDRAX");
@@ -356,6 +357,7 @@ int main(int argc, char *argv[]) {
                 break;
             case 'r':
                 get_pkgs();
+                sleep(2);
                 printf("Packages available on AFOS-NG repository:\n\n");
                 repolist();
                 printf("\n");
@@ -363,6 +365,7 @@ int main(int argc, char *argv[]) {
                 break;
             case 'u':
                 get_pkgs();
+                sleep(2);
                 printf("Checking for updates...\n\n");
                 update(0);
                 printf("\n");
@@ -372,6 +375,7 @@ int main(int argc, char *argv[]) {
                 break;
             case 'a':
                 get_pkgs();
+                sleep(2);
                 printf("Updating all packages...\n\n");
                 update(1);
                 printf("\n");

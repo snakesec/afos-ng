@@ -74,6 +74,7 @@ int git_download(char *name, char *url) {
     snprintf(protocolurl, 1999, "https://%s", url);
     if(TESTING) {
         snprintf(cmd_git, 4999,"git clone -b testing %s %s", protocolurl, name); 
+        printf("\nRunning CMD [ %s ]\n\n", cmd_git);
     } else {
         snprintf(cmd_git, 4999,"git clone %s %s", protocolurl, name); 
     }

@@ -1601,12 +1601,12 @@
   repo_url: gitlab.com/snake-security/smap
   original_repo_url: gitlab.com/snake-security/smap
 - name: smbmap
-  version: 1.10.4
+  version: 1.10.7
   description: SMB Mapper
   categories:
   - Network Hacking
   - Exploitation
-  repo_url: gitlab.com/snake-security/smbmap
+  repo_url: github.com/snakesec/smbmap
   original_repo_url: github.com/ShawnDEvans/smbmap
 - name: smod
   version: 1.0.4-2

@@ -1453,11 +1453,11 @@
   repo_url: gitlab.com/snake-security/qrljacker
   original_repo_url: github.com/OWASP/QRLJacking
 - name: reaver
-  version: 1.6.6-1
+  version: 1.6.6-2
   description: WPS Attack Testing Tool
   categories:
   - Wireless Hacking
-  repo_url: gitlab.com/snake-security/reaver
+  repo_url: github.com/snakesec/reaver
   original_repo_url: github.com/t6x/reaver-wps-fork-t6x
 - name: rs256-2-hs256
   version: 0.0.1-2

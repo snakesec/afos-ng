@@ -1586,12 +1586,12 @@
   repo_url: gitlab.com/snake-security/sixnet-tools
   original_repo_url: github.com/mssabr01/sixnet-tools
 - name: slowhttptest
-  version: 1.9.0-1
+  version: 1.9.0-2
   description: highly configurable stress testing simulator
   categories:
   - Stress Testing
   - DDoS/DoS
-  repo_url: gitlab.com/snake-security/slowhttptest
+  repo_url: github.com/snakesec/slowhttptest
   original_repo_url: github.com/shekyan/slowhttptest
 - name: smap
   version: 0.0.1

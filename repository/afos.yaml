@@ -1550,11 +1550,11 @@
   repo_url: gitlab.com/snake-security/shuffledns
   original_repo_url: github.com/projectdiscovery/shuffledns
 - name: singularity
-  version: 0.0.1-3
+  version: 0.0.1-4
   description: DNS Rebinding Framework
   categories:
   - Exploitation
-  repo_url: gitlab.com/snake-security/singularity
+  repo_url: github.com/snakesec/singularity
   original_repo_url: github.com/nccgroup/singularity
 - name: sippts
   version: 4.0.0-1

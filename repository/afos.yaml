@@ -1333,11 +1333,11 @@
   repo_url: gitlab.com/snake-security/nemesis
   original_repo_url: github.com/libnet/nemesis
 - name: netdiscover
-  version: 0.10
+  version: 0.11
   description: Active/Passive ARP Reconnaissance
   categories:
   - Network Hacking
-  repo_url: gitlab.com/snake-security/netdiscover
+  repo_url: github.com/snakesec/netdiscover
   original_repo_url: github.com/netdiscover-scanner/netdiscover
 - name: netebcdicat
   version: 0.0.2

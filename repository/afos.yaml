@@ -1571,11 +1571,11 @@
   repo_url: gitlab.com/snake-security/sipsak
   original_repo_url: github.com/nils-ohlmeier/sipsak
 - name: sipvicious
-  version: 0.3.4-2
+  version: 0.3.4-3
   description: Audit SIP based VoIP
   categories:
   - Phreaking
-  repo_url: gitlab.com/snake-security/sipvicious
+  repo_url: github.com/snakesec/sipvicious
   original_repo_url: github.com/EnableSecurity/sipvicious
 - name: sixnet-tools
   version: 0.0.1-1

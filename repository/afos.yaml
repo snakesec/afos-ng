@@ -759,11 +759,11 @@
   repo_url: gitlab.com/snake-security/dns2tcp
   original_repo_url: salsa.debian.org/debian/dns2tcp
 - name: dnschef
-  version: 0.0.4-2
+  version: 0.7.2
   description: DNS proxy for Penetration Testing
   categories:
   - Network Hacking
-  repo_url: gitlab.com/snake-security/dnschef
+  repo_url: github.com/snakesec/dnschef-ng
   original_repo_url: github.com/iphelix/dnschef
 - name: dnsdrdos
   version: 0.0.1-1

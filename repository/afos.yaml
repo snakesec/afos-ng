@@ -173,12 +173,12 @@
   repo_url: gitlab.com/snake-security/blueranger
   original_repo_url: gitlab.com/snake-security/blueranger
 - name: frida
-  version: 16.2.5
+  version: 17.0.1
   description: Dynamic instrumentation for reverse-engineers, and security researchers
   categories:
   - Exploitation
   - Reverse Engineering
-  repo_url: gitlab.com/snake-security/frida
+  repo_url: github.com/snakesec/frida
   original_repo_url: github.com/frida/frida
 - name: pcsc
   version: 2.3.3

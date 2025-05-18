@@ -1096,11 +1096,11 @@
   repo_url: gitlab.com/snake-security/isf
   original_repo_url: github.com/dark-lbp/isf
 - name: isip
-  version: 0.0.2-1
+  version: 0.0.2-2
   description: Interactive SIP toolkit
   categories:
   - Phreaking
-  repo_url: gitlab.com/snake-security/isip
+  repo_url: github.com/snakesec/isip
   original_repo_url: github.com/halit/isip
 - name: ismtp
   version: 1.6.0

@@ -1437,13 +1437,13 @@
   repo_url: gitlab.com/snake-security/pwndrop
   original_repo_url: github.com/kgretzky/pwndrop
 - name: qrgen
-  version: 0.0.1-1
-  description: Malformed QRCodes
+  version: 0.0.1-2
+  description: Penetration Testing QRCode generator
   categories:
   - Exploitation
   - Bug Bounty
-  repo_url: gitlab.com/snake-security/qrgen
-  original_repo_url: gitlab.com/snake-security/qrgen
+  repo_url: github.com/snakesec/qrgen
+  original_repo_url: github.com/snakesec/qrgen
 - name: qrljacker
   version: 2.1.2-1
   description: Quick Response Code Login Jacking

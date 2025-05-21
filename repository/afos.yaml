@@ -188,7 +188,7 @@
   repo_url: github.com/snakesec/pcsc
   original_repo_url: salsa.debian.org/rousseau/PCSC
 - name: nobex
-  version: 1.0.0-2
+  version: 1.0.0-1
   description: PBAP, MAP, and HFP profiles emulation
   categories:
   - Car Hacking

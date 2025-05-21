@@ -301,11 +301,11 @@
   repo_url: github.com/snakesec/sqlcipher
   original_repo_url: github.com/sqlcipher/sqlcipher
 - name: patator
-  version: 0.1.1
+  version: 1.1.0
   description: Multi-purpose brute-forcer
   categories:
   - Password Hacking
-  repo_url: gitlab.com/snake-security/patator
+  repo_url: github.com/snakesec/patator
   original_repo_url: github.com/lanjelot/patator
 - name: redsocks2
   version: 0.68-3

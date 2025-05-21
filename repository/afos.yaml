@@ -202,11 +202,11 @@
   repo_url: gitlab.com/snake-security/owl
   original_repo_url: gitlab.com/snake-security/owl
 - name: homepwn
-  version: 0.0.1-1
+  version: 0.0.1-2
   description: Swiss Army Knife for Pentesting of IoT Devices
   categories:
   - IoT/IIoT Hacking
-  repo_url: gitlab.com/snake-security/homepwn
+  repo_url: github.com/snakesec/homepwn
   original_repo_url: github.com/Telefonica/HomePWN
 - name: mirage
   version: 1.2.0-2

@@ -37,7 +37,7 @@
   repo_url: gitlab.com/snake-security/Responder
   original_repo_url: github.com/lgandx/Responder
 - name: wafw00f
-  version: 2.3.1
+  version: 2.3.1-1
   description: Identify and fingerprint Web Application Firewall
   categories:
   - Web Site Hacking

@@ -2207,3 +2207,11 @@
   - System
   repo_url: github.com/snakesec/python3
   original_repo_url: www.python.org/downloads/
+- name: mitmproxy
+  version: 13.0.0
+  description: Interactive SSL Penetration Testing proxy
+  categories:
+  - Web Site Hacking
+  - Bug Bounty
+  repo_url: github.com/snakesec/mitmproxy
+  original_repo_url: github.com/mitmproxy/mitmproxy

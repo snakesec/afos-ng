@@ -287,11 +287,11 @@
   repo_url: gitlab.com/snake-security/dnsx
   original_repo_url: github.com/projectdiscovery/dnsx
 - name: spiderfoot
-  version: 4.0.0-2
+  version: 4.0.0-3
   description: Automated OSINT for threat intelligence and attack mapping
   categories:
   - Information Gathering
-  repo_url: gitlab.com/snake-security/spiderfoot
+  repo_url: github.com/snakesec/spiderfoot
   original_repo_url: github.com/smicallef/spiderfoot
 - name: sqlcipher
   version: 3.49.1

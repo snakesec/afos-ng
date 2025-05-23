@@ -439,12 +439,12 @@
   repo_url: gitlab.com/snake-security/bgp_md5crack
   original_repo_url: c0decafe.de
 - name: binwalk
-  version: 2.3.3-2
+  version: 3.1.1
   description: Firmware Analysis Tool
   categories:
   - Exploitation
   - Reverse Engineering
-  repo_url: gitlab.com/snake-security/binwalk
+  repo_url: github.com/snakesec/binwalk
   original_repo_url: github.com/ReFirmLabs/binwalk
 - name: birp
   version: 1.1.0-2

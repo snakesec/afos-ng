@@ -157,13 +157,13 @@
   repo_url: gitlab.com/snake-security/ote
   original_repo_url: github.com/s0md3v/ote
 - name: on-the-fly
-  version: 0.0.1-3
+  version: 0.0.1-4
   description: Network Pentesting on IT, ICS & IoT Environments
   categories:
   - Network Hacking
   - IoT/IIoT Hacking
   - ICS Hacking
-  repo_url: gitlab.com/snake-security/on-the-fly
+  repo_url: github.com/snakesec/on-the-fly
   original_repo_url: github.com/Telefonica/on-the-fly
 - name: blueranger
   version: 1.0.0-1

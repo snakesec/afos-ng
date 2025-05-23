@@ -693,11 +693,11 @@
   repo_url: gitlab.com/snake-security/crunch
   original_repo_url: sourceforge.net/projects/crunch-wordlist
 - name: cryptomobile
-  version: 0.0.3-2
+  version: 0.0.3-3
   description: Cryptography for Mobile Networks
   categories:
   - Phreaking
-  repo_url: gitlab.com/snake-security/cryptomobile
+  repo_url: github.com/snakesec/CryptoMobile
   original_repo_url: github.com/P1Sec/CryptoMobile/
 - name: capstone
   version: 5.0.0-3

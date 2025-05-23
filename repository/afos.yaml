@@ -553,11 +553,11 @@
   repo_url: gitlab.com/snake-security/cameradar
   original_repo_url: github.com/Ullaakut/cameradar
 - name: cansina
-  version: 1.0.0-2
+  version: 1.0.0-3
   description: Web Content Discovery
   categories:
   - Web Site Hacking
-  repo_url: gitlab.com/snake-security/cansina
+  repo_url: github.com/snakesec/cansina
   original_repo_url: github.com/deibit/cansina
 - name: cantoolz
   version: 3.7.0-2

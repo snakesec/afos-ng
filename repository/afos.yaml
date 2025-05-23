@@ -223,11 +223,11 @@
   repo_url: github.com/snakesec/golang
   original_repo_url: go.dev/dl/
 - name: forbidden
-  version: 11.2.0
+  version: 13.2.0
   description: Bypass 4xx HTTP response status codes
   categories:
   - Web Site Hacking
-  repo_url: gitlab.com/snake-security/forbidden
+  repo_url: github.com/snakesec/forbidden
   original_repo_url: github.com/ivan-sincek/forbidden
 - name: smuggler
   version: 1.1.0-1

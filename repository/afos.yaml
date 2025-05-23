@@ -560,11 +560,11 @@
   repo_url: github.com/snakesec/cansina
   original_repo_url: github.com/deibit/cansina
 - name: cantoolz
-  version: 3.7.0-2
+  version: 3.7.0-3
   description: Black-Box CAN network analysis
   categories:
   - Exploitation
-  repo_url: gitlab.com/snake-security/cantoolz
+  repo_url: github.com/snakesec/cantoolz
   original_repo_url: github.com/CANToolz/CANToolz
 - name: cdpsnarf
   version: 0.1.6-1

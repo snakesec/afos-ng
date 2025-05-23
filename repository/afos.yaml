@@ -1423,11 +1423,11 @@
   repo_url: gitlab.com/snake-security/pocsuite
   original_repo_url: github.com/knownsec/pocsuite3
 - name: pret
-  version: 1.0.0-2
+  version: 1.0.0-3
   description: Printer Exploitation Toolkit
   categories:
   - Exploitation
-  repo_url: gitlab.com/snake-security/pret
+  repo_url: github.com/snakesec/pret
   original_repo_url: github.com/RUB-NDS/PRET
 - name: pwndrop
   version: 1.0.2-1

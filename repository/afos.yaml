@@ -374,12 +374,12 @@
   repo_url: gitlab.com/snake-security/arjun
   original_repo_url: github.com/s0md3v/Arjun
 - name: bbtz
-  version: 1.0.0-3
+  version: 1.0.0-4
   description: Some m4ll0k Bug Bounty Tools
   categories:
   - Web Site Hacking
   - Bug Bounty
-  repo_url: gitlab.com/snake-security/bbtz
+  repo_url: github.com/snakesec/bbtz
   original_repo_url: github.com/m4ll0k/BBTz
 - name: arping
   version: 2.25

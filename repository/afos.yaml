@@ -1609,12 +1609,12 @@
   repo_url: github.com/snakesec/smbmap
   original_repo_url: github.com/ShawnDEvans/smbmap
 - name: smod
-  version: 1.0.4-2
+  version: 1.0.4-3
   description: MODBUS Penetration Test Framework
   categories:
   - ICS Hacking
   - SCADA Hacking
-  repo_url: gitlab.com/snake-security/smod
+  repo_url: github.com/snakesec/smod
   original_repo_url: gitlab.com/snake-security/smod
 - name: smtp-user-enum
   version: 1.2.0

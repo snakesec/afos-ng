@@ -1142,12 +1142,12 @@
   repo_url: gitlab.com/snake-security/jwt-cracker
   original_repo_url: github.com/brendan-rius/c-jwt-cracker
 - name: jwt_tool
-  version: 2.2.7
+  version: 2.3.0
   description: The JSON Web Token Toolkit
   categories:
   - Web Site Hacking
   - Bug Bounty
-  repo_url: gitlab.com/snake-security/jwt_tool
+  repo_url: github.com/snakesec/jwt_tool
   original_repo_url: github.com/ticarpi/jwt_tool
 - name: kadimus
   version: 1.5.0

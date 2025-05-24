@@ -1557,11 +1557,11 @@
   repo_url: github.com/snakesec/singularity
   original_repo_url: github.com/nccgroup/singularity
 - name: sippts
-  version: 4.0.0-1
+  version: 4.1.2
   description: SIP based VoIP Audit Tools
   categories:
   - Phreaking
-  repo_url: gitlab.com/snake-security/sippts
+  repo_url: github.com/snakesec/sippts
   original_repo_url: github.com/Pepelux/sippts
 - name: sipsak
   version: 0.9.9-1

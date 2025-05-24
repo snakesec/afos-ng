@@ -119,12 +119,12 @@
   repo_url: gitlab.com/snake-security/Modlishka
   original_repo_url: github.com/drk1wi/Modlishka
 - name: expliot
-  version: 0.10.0-3
+  version: 0.11.0
   description: IoT/IIoT Security Testing and Exploitation framework
   categories:
   - IoT/IIoT Hacking
   - Exploitation
-  repo_url: gitlab.com/snake-security/expliot
+  repo_url: github.com/snakesec/expliot
   original_repo_url: gitlab.com/expliot_framework/expliot
 - name: thc-ipv6
   version: 3.8.1-2

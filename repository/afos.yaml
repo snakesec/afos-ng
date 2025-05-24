@@ -482,11 +482,11 @@
   repo_url: gitlab.com/snake-security/bluesnarfer
   original_repo_url: alighieri.org/project.html
 - name: bopscrk
-  version: 2.4.5-1
+  version: 2.4.7
   description: Generate smart and powerful wordlists
   categories:
   - Password Hacking
-  repo_url: gitlab.com/snake-security/bopscrk
+  repo_url: github.com/snakesec/bopscrk
   original_repo_url: github.com/r3nt0n/bopscrk
 - name: braa
   version: 0.0.83-1

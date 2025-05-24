@@ -1515,11 +1515,11 @@
   repo_url: gitlab.com/snake-security/s7scan
   original_repo_url: github.com/klsecservices/s7scan
 - name: sdnpwn
-  version: 1.8.0
+  version: 1.8.0-1
   description: SDN Penetration Testing Toolkit
   categories:
   - Network Hacking
-  repo_url: gitlab.com/snake-security/sdnpwn
+  repo_url: github.com/snakesec/sdnpwn
   original_repo_url: github.com/smythtech/sdnpwn
 - name: sfuzz
   version: 0.7.1

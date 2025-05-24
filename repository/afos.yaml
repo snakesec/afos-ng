@@ -802,11 +802,11 @@
   repo_url: gitlab.com/snake-security/dnstwist
   original_repo_url: github.com/elceef/dnstwist
 - name: docem
-  version: 1.5.0
+  version: 1.5.0-1
   description: Embed XXE and XSS in DOCX,ODT,PPTX...
   categories:
   - Exploitation
-  repo_url: gitlab.com/snake-security/docem
+  repo_url: github.com/snakesec/docem
   original_repo_url: github.com/whitel1st/docem
 - name: doona
   version: 1.0.0-1

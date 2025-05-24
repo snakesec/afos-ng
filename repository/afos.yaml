@@ -1910,11 +1910,11 @@
   repo_url: gitlab.com/snake-security/iblessing
   original_repo_url: github.com/Soulghost/iblessing
 - name: objection
-  version: 1.11.0-3
+  version: 1.11.0-4
   description: Runtime Mobile Exploration
   categories:
   - MacOS/iPhone
-  repo_url: gitlab.com/snake-security/objection
+  repo_url: github.com/snakesec/objection
   original_repo_url: github.com/sensepost/objection
 - name: ligolo-ng
   version: 0.7.2

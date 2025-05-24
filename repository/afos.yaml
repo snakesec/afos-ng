@@ -1445,12 +1445,12 @@
   repo_url: github.com/snakesec/qrgen
   original_repo_url: github.com/snakesec/qrgen
 - name: qrljacker
-  version: 2.1.2-1
+  version: 2.1.2-2
   description: Quick Response Code Login Jacking
   categories:
   - Exploitation
   - Phishing
-  repo_url: gitlab.com/snake-security/qrljacker
+  repo_url: github.com/snakesec/qrljacker
   original_repo_url: github.com/OWASP/QRLJacking
 - name: reaver
   version: 1.6.6-2

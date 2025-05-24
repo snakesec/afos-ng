@@ -447,11 +447,11 @@
   repo_url: github.com/snakesec/binwalk
   original_repo_url: github.com/ReFirmLabs/binwalk
 - name: birp
-  version: 1.1.0-2
+  version: 1.1.0-3
   description: Big Iron Recon & Pwnage
   categories:
   - Mainframe
-  repo_url: gitlab.com/snake-security/birp
+  repo_url: github.com/snakesec/birp
   original_repo_url: github.com/sensepost/birp
 - name: bit-twist
   version: 3.8.0

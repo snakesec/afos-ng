@@ -518,11 +518,11 @@
   repo_url: gitlab.com/snake-security/btcrack
   original_repo_url: github.com/mikeryan/btcrack
 - name: btlejack
-  version: 2.1.2-1
+  version: 2.1.2-2
   description: Bluetooth Low Energy Swiss-army knife
   categories:
   - Wireless Hacking
-  repo_url: gitlab.com/snake-security/btlejack
+  repo_url: github.com/snakesec/btlejack
   original_repo_url: github.com/virtualabs/btlejack
 - name: btproxy
   version: 0.0.1-2

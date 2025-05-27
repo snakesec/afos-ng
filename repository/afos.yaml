@@ -1661,11 +1661,11 @@
   repo_url: gitlab.com/snake-security/udpfloodvlan
   original_repo_url: hackingexposedvoip.com/sec_tools.html
 - name: simpletr64
-  version: 1.0.6-2
+  version: 1.0.6-3
   description: UPnP Utilities
   categories:
   - Network Hacking
-  repo_url: gitlab.com/snake-security/simpletr64
+  repo_url: github.com/snakesec/simpletr64
   original_repo_url: github.com/bpannier/simpletr64
 - name: urlcrazy
   version: 0.7.3-1

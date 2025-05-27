@@ -1273,12 +1273,12 @@
   repo_url: gitlab.com/snake-security/miranda
   original_repo_url: github.com/0x90/miranda-upnp
 - name: mitm6
-  version: 0.3.0-4
+  version: 0.3.0-5
   description: Pwning IPv4 via IPv6
   categories:
   - Network Hacking
   - Exploitation
-  repo_url: gitlab.com/snake-security/mitm6
+  repo_url: github.com/snakesec/mitm6
   original_repo_url: github.com/dirkjanm/mitm6
 - name: modscan
   version: 0.0.1

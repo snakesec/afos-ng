@@ -839,11 +839,11 @@
   repo_url: gitlab.com/snake-security/eapmd5pass
   original_repo_url: gitlab.com/snake-security/eapmd5pass
 - name: eigrp_cli
-  version: 0.1.3-2
+  version: 0.1.3-3
   description: EIGRP Command Line Interface
   categories:
   - Network Hacking
-  repo_url: gitlab.com/snake-security/eigrp_cli
+  repo_url: github.com/snakesec/eigrp_cli
   original_repo_url: c0decafe.de
 - name: powershell
   version: 7.4.5

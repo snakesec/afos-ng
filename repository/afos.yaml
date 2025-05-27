@@ -366,12 +366,12 @@
   repo_url: gitlab.com/snake-security/apktool
   original_repo_url: apktool.org
 - name: arjun
-  version: 2.2.6-1
+  version: 2.2.7
   description: HTTP parameter discovery suite
   categories:
   - Web Site Hacking
   - Bug Bounty
-  repo_url: gitlab.com/snake-security/arjun
+  repo_url: github.com/snakesec/arjun
   original_repo_url: github.com/s0md3v/Arjun
 - name: bbtz
   version: 1.0.0-4

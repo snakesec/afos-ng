@@ -1347,11 +1347,11 @@
   repo_url: gitlab.com/snake-security/netebcdicat
   original_repo_url: github.com/mainframed/netEBCDICat
 - name: ntlmrecon
-  version: 0.4.0-3
+  version: 0.4.0-4
   description: NTLM reconnaissance tool
   categories:
   - Exploitation
-  repo_url: gitlab.com/snake-security/ntlmrecon
+  repo_url: github.com/snakesec/ntlmrecon
   original_repo_url: github.com/pwnfoo/NTLMRecon
 - name: one-lin3r
   version: 2.1.0-1

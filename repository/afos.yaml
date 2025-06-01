@@ -149,13 +149,6 @@
   - Scanning
   repo_url: gitlab.com/snake-security/sctpscan
   original_repo_url: github.com/nobletrout/sctpscan
-- name: ote
-  version: 0.0.4
-  description: Generate Email, Register for anything, OTP/Link
-  categories:
-  - Anonymity
-  repo_url: gitlab.com/snake-security/ote
-  original_repo_url: github.com/s0md3v/ote
 - name: on-the-fly
   version: 0.0.1-4
   description: Network Pentesting on IT, ICS & IoT Environments
@@ -208,13 +201,6 @@
   - IoT/IIoT Hacking
   repo_url: github.com/snakesec/homepwn
   original_repo_url: github.com/Telefonica/HomePWN
-- name: mirage
-  version: 1.2.0-2
-  description: Framework to security analysis of wireless communications
-  categories:
-  - Wireless Hacking
-  repo_url: gitlab.com/snake-security/mirage
-  original_repo_url: github.com/RCayre/mirage
 - name: golang
   version: 1.24.2
   description: Go Programming Language
@@ -293,13 +279,6 @@
   - Information Gathering
   repo_url: github.com/snakesec/spiderfoot
   original_repo_url: github.com/smicallef/spiderfoot
-- name: sqlcipher
-  version: 3.49.1
-  description: SQLite with 256 bit AES encryption
-  categories:
-  - System
-  repo_url: github.com/snakesec/sqlcipher
-  original_repo_url: github.com/sqlcipher/sqlcipher
 - name: patator
   version: 1.1.0
   description: Multi-purpose brute-forcer
@@ -314,13 +293,6 @@
   - Network Hacking
   repo_url: gitlab.com/snake-security/redsocks
   original_repo_url: github.com/semigodking/redsocks
-- name: krbrelayx
-  version: 1.0.0-2
-  description: Kerberos abuse toolkit
-  categories:
-  - Network Hacking
-  repo_url: gitlab.com/snake-security/krbrelayx
-  original_repo_url: github.com/dirkjanm/krbrelayx
 - name: aespipe
   version: 2.4.0-2
   description: AES encrypting or decrypting pipe
@@ -410,13 +382,6 @@
   - Exploitation
   repo_url: gitlab.com/snake-security/backoori
   original_repo_url: github.com/giuliocomi/backoori
-- name: barq
-  version: 0.0.1-2
-  description: The AWS Cloud Post Exploitation framework
-  categories:
-  - Web Site Hacking
-  repo_url: gitlab.com/snake-security/barq
-  original_repo_url: github.com/Voulnet/barq
 - name: python27
   version: 2.7.18-1
   description: Python2 Programming Language
@@ -524,13 +489,6 @@
   - Wireless Hacking
   repo_url: github.com/snakesec/btlejack
   original_repo_url: github.com/virtualabs/btlejack
-- name: btproxy
-  version: 0.0.1-2
-  description: Bluetooth Man in the Middle
-  categories:
-  - Wireless Hacking
-  repo_url: gitlab.com/snake-security/btproxy
-  original_repo_url: github.com/conorpp/btproxy
 - name: btscanner
   version: 2.1.0-1
   description: Bluetooth Scanner
@@ -595,14 +553,6 @@
   - System
   repo_url: github.com/snakesec/chafa
   original_repo_url: github.com/hpjansson/chafa
-- name: chameleon
-  version: 1.0.0-2
-  description: Tool for evading Proxy categorisation
-  categories:
-  - Red Team
-  - OSINT
-  repo_url: gitlab.com/snake-security/chameleon
-  original_repo_url: github.com/mdsecactivebreach/Chameleon
 - name: chimera
   version: 0.0.1-1
   description: PowerShell obfuscation script designed to bypass AMSI and AV
@@ -639,13 +589,6 @@
   - Mainframe
   repo_url: gitlab.com/snake-security/cicsshot
   original_repo_url: github.com/ayoul3/cicsshot
-- name: cisco_pwdecrypt
-  version: 0.0.1-2
-  description: Break Cisco type 5/7 passwords
-  categories:
-  - Network Hacking
-  repo_url: gitlab.com/snake-security/cisco_pwdecrypt
-  original_repo_url: github.com/axcheron/cisco_pwdecrypt
 - name: cminer
   version: 0.0.1-1
   description: Code caves in PE miner
@@ -737,20 +680,6 @@
   - Phreaking
   repo_url: gitlab.com/snake-security/diameter_enum
   original_repo_url: c0decafe.de
-- name: dizzy
-  version: 2.0.0-2
-  description: Fuzzer framework
-  categories:
-  - Exploitation
-  repo_url: gitlab.com/snake-security/dizzy
-  original_repo_url: github.com/0xc0decafe/dizzy
-- name: dns2proxy
-  version: 1.0.0-2
-  description: Offensive DNS server
-  categories:
-  - Network Hacking
-  repo_url: gitlab.com/snake-security/dns2proxy
-  original_repo_url: github.com/LeonardoNve/dns2proxy
 - name: dns2tcp
   version: 0.5.2-1
   description: TCP through DNS
@@ -779,13 +708,6 @@
   - Information Gathering
   repo_url: gitlab.com/snake-security/dnsmap
   original_repo_url: github.com/resurrecting-open-source-projects/dnsmap
-- name: dnsrecon
-  version: 1.2.0
-  description: DNS Enumeration
-  categories:
-  - Information Gathering
-  repo_url: gitlab.com/snake-security/dnsrecon
-  original_repo_url: github.com/darkoperator/dnsrecon
 - name: dnsteal
   version: 2.0.0-1
   description: Stealthily steal files over DNS
@@ -794,13 +716,6 @@
   - Network Hacking
   repo_url: gitlab.com/snake-security/dnsteal
   original_repo_url: github.com/m57/dnsteal
-- name: dnstwist
-  version: 20240812
-  description: Detect homograph Phishing Attacks
-  categories:
-  - Phishing
-  repo_url: gitlab.com/snake-security/dnstwist
-  original_repo_url: github.com/elceef/dnstwist
 - name: docem
   version: 1.5.0-1
   description: Embed XXE and XSS in DOCX,ODT,PPTX...
@@ -967,13 +882,6 @@
   - Phreaking
   repo_url: github.com/snakesec/gtp_scan
   original_repo_url: c0decafe.de
-- name: h8mail
-  version: 2.5.6-2
-  description: Email OSINT & Password breach hunt
-  categories:
-  - Information Gathering
-  repo_url: gitlab.com/snake-security/h8mail
-  original_repo_url: github.com/khast3x/h8mail
 - name: hashboy
   version: 1.0.0-1
   description: Passive HASH Cracker
@@ -1010,13 +918,6 @@
   - Network Hacking
   repo_url: gitlab.com/snake-security/hexinject
   original_repo_url: hexinject.sourceforge.net
-- name: hikpwn
-  version: 1.0.0-2
-  description: Hikvision Scanner
-  categories:
-  - Scanning
-  repo_url: gitlab.com/snake-security/hikpwn
-  original_repo_url: github.com/4n4nk3/HikPwn
 - name: iaxflood
   version: 0.0.1
   description: Inter-Asterisk_eXchange Flooder
@@ -1079,22 +980,6 @@
   - Network Hacking
   repo_url: gitlab.com/snake-security/ipdecap
   original_repo_url: github.com/lpefferkorn/ipdecap
-- name: isaf
-  version: 0.0.2-2
-  description: Industrial Security Auditing Framework
-  categories:
-  - ICS Hacking
-  - SCADA Hacking
-  repo_url: gitlab.com/snake-security/industrial-security-auditing-framework
-  original_repo_url: gitlab.com/d0ubl3g/industrial-security-auditing-framework
-- name: isf
-  version: 0.1.0-2
-  description: Industrial Exploitation Framework
-  categories:
-  - ICS Hacking
-  - SCADA Hacking
-  repo_url: gitlab.com/snake-security/isf
-  original_repo_url: github.com/dark-lbp/isf
 - name: isip
   version: 0.0.2-2
   description: Interactive SIP toolkit
@@ -1124,15 +1009,6 @@
   - Password Hacking
   repo_url: github.com/snakesec/john
   original_repo_url: github.com/openwall/john
-- name: js2pdfinjector
-  version: 1.0.0
-  description: Inject a JS file into PDF
-  categories:
-  - Exploitation
-  - Web Site Hacking
-  - Bug Bounty
-  repo_url: gitlab.com/snake-security/js2pdfinjector
-  original_repo_url: github.com/cornerpirate/JS2PDFInjector
 - name: jwtcrack
   version: 0.0.1
   description: JWT Brute Force Cracker
@@ -1197,14 +1073,6 @@
   - Exploitation
   repo_url: gitlab.com/snake-security/maintp
   original_repo_url: github.com/mainframed/MainTP
-- name: make-pdf
-  version: 0.1.7
-  description: Make PDF Toolkit
-  categories:
-  - Exploitation
-  - Bug Bounty
-  repo_url: gitlab.com/snake-security/make-pdf
-  original_repo_url: blog.didierstevens.com/my-software
 - name: maskprocessor
   version: 0.73-1
   description: High-Performance Word Generator
@@ -1353,13 +1221,6 @@
   - Exploitation
   repo_url: github.com/snakesec/ntlmrecon
   original_repo_url: github.com/pwnfoo/NTLMRecon
-- name: one-lin3r
-  version: 2.1.0-1
-  description: Penetration Testing one-liners
-  categories:
-  - Exploitation
-  repo_url: gitlab.com/snake-security/one-lin3r
-  original_repo_url: github.com/D4Vinci/One-Lin3r
 - name: onesixtyone
   version: 0.3.4
   description: Fast SNMP Scanner
@@ -1383,22 +1244,6 @@
   - Mainframe
   repo_url: gitlab.com/snake-security/psikotik
   original_repo_url: github.com/mainframed/psikotik
-- name: photon
-  version: 1.3.2-2
-  description: Incredibly fast crawler designed for OSINT
-  categories:
-  - Web Site Hacking
-  - Bug Bounty
-  repo_url: gitlab.com/snake-security/photon
-  original_repo_url: github.com/s0md3v/Photon
-- name: dhcpig
-  version: 0.1.6-1
-  description: DHCP exhaustion tool
-  categories:
-  - DoS/DDoS
-  - Network Hacking
-  repo_url: gitlab.com/snake-security/dhcpig
-  original_repo_url: github.com/kamorin/DHCPig
 - name: pixiewps
   version: 1.4.2
   description: WPS pixie-dust attack tool
@@ -1415,13 +1260,6 @@
   - Scanning
   repo_url: gitlab.com/snake-security/plcscan
   original_repo_url: github.com/meeas/plcscan
-- name: pocsuite
-  version: 2.0.9
-  description: Remote vulnerability testing framework
-  categories:
-  - Exploitation
-  repo_url: gitlab.com/snake-security/pocsuite
-  original_repo_url: github.com/knownsec/pocsuite3
 - name: pret
   version: 1.0.0-3
   description: Printer Exploitation Toolkit
@@ -1459,14 +1297,6 @@
   - Wireless Hacking
   repo_url: github.com/snakesec/reaver
   original_repo_url: github.com/t6x/reaver-wps-fork-t6x
-- name: rs256-2-hs256
-  version: 0.0.1-2
-  description: JWT algo from RS256 to HS256
-  categories:
-  - Web Site Hacking
-  - Bug Bounty
-  repo_url: gitlab.com/snake-security/rs256-2-hs256
-  original_repo_url: github.com/3v4Si0N/RS256-2-HS256
 - name: rtpbreak
   version: 1.3.0
   description: Detects, reconstructs, and analyzes RTP sessions
@@ -1535,13 +1365,6 @@
   - Exploitation
   repo_url: gitlab.com/snake-security/sgn
   original_repo_url: github.com/EgeBalci/sgn
-- name: shellpop
-  version: 0.3.6-2
-  description: Sophisticated Reverse or Bind shell
-  categories:
-  - Exploitation
-  repo_url: gitlab.com/snake-security/shellpop
-  original_repo_url: github.com/0x00-0x00/ShellPop
 - name: shuffledns
   version: 1.1.0
   description: Mass Subdomain Enumeration
@@ -1698,14 +1521,6 @@
   - Web Site Hacking
   repo_url: gitlab.com/snake-security/xspear
   original_repo_url: github.com/hahwul/XSpear
-- name: xsser
-  version: 1.8.4-2
-  description: Framework to detect, exploit and report XSS
-  categories:
-  - Bug Bounty
-  - Web Site Hacking
-  repo_url: gitlab.com/snake-security/xsser
-  original_repo_url: github.com/epsylon/xsser
 - name: xsstrike
   version: 3.1.5-3
   description: Advanced XSS Detection Suite
@@ -1791,15 +1606,6 @@
   - MacOS/iPhone
   repo_url: github.com/snakesec/apple_bleee
   original_repo_url: github.com/hexway/apple_bleee
-- name: changeme
-  version: 1.2.3
-  description: default credential scanner
-  categories:
-  - Password Hacking
-  - Exploitation
-  - IIoT/IoT Hacking
-  repo_url: gitlab.com/snake-security/changeme
-  original_repo_url: github.com/ztgrace/changeme
 - name: rust-lang
   version: 1.85.1
   description: Rust Programming Language
@@ -1807,13 +1613,6 @@
   - System
   repo_url: github.com/snakesec/rust-lang
   original_repo_url: www.rust-lang.org/
-- name: dumpsterdiver
-  version: 0.0.1-2
-  description: Search secrets in various filetypes
-  categories:
-  - Information Gathering
-  repo_url: gitlab.com/snake-security/dumpsterdiver
-  original_repo_url: github.com/securing/DumpsterDiver
 - name: evil-winrm
   version: 3.5.0
   description: The ultimate WinRM shell
@@ -1866,13 +1665,6 @@
   - Password Hacking
   repo_url: gitlab.com/snake-security/pipal
   original_repo_url: github.com/digininja/pipal
-- name: ropper
-  version: 1.13.10
-  description: Rop gadget finder and binary information
-  categories:
-  - Exploitation
-  repo_url: gitlab.com/snake-security/ropper
-  original_repo_url: github.com/sashs/Ropper
 - name: swaks
   version: 20240103.0
   description: Swiss Army Knife for SMTP
@@ -1960,20 +1752,6 @@
   - Mainframe
   repo_url: gitlab.com/snake-security/zos-privesc
   original_repo_url: github.com/ayoul3/Privesc
-- name: rootos
-  version: 1.3.1
-  description: MacOS Privilege Escalation
-  categories:
-  - MacOS/iPhone
-  repo_url: gitlab.com/snake-security/rootos
-  original_repo_url: github.com/thehappydinoa/rootOS
-- name: macper
-  version: 0.0.1
-  description: MacOSX Privilege Escalation Research
-  categories:
-  - MacOS/iPhone
-  repo_url: gitlab.com/snake-security/macper
-  original_repo_url: github.com/amanszpapaya/MacPer
 - name: voiphopper
   version: 2.0.4-1
   description: VoIP Hopper Network Penetration Testing

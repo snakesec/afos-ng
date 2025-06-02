@@ -1,5 +1,5 @@
 - name: nmap
-  version: 7.95.0
+  version: 7.97.0
   description: Advanced Network Mapper
   categories:
   - Information Gathering

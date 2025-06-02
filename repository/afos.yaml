@@ -1578,7 +1578,7 @@
   repo_url: github.com/snakesec/impacket
   original_repo_url: github.com/fortra/impacket
 - name: subfinder
-  version: 2.7.0
+  version: 2.7.1
   description: Passive subdomain discovery
   categories:
   - Bug Bounty

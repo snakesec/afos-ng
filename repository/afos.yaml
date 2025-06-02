@@ -44,7 +44,7 @@
   repo_url: github.com/snakesec/wafw00f
   original_repo_url: github.com/EnableSecurity/wafw00f
 - name: httpx
-  version: 1.6.10
+  version: 1.7.0
   description: Fast and multi-purpose HTTP toolkit
   categories:
   - Web Site Hacking

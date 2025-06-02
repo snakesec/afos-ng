@@ -1562,7 +1562,7 @@
   repo_url: gitlab.com/snake-security/yersinia
   original_repo_url: github.com/tomac/yersinia
 - name: zap
-  version: 2.16.1
+  version: 2025.05.26
   description: Zed Attack Proxy (ZAP)
   categories:
   - Bug Bounty

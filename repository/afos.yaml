@@ -59,7 +59,7 @@
   repo_url: gitlab.com/snake-security/jaeles
   original_repo_url: github.com/jaeles-project/jaeles
 - name: nuclei
-  version: 3.4.2
+  version: 3.4.4
   description: Advanced vulnerability scanner based on templates
   categories:
   - Web Site Hacking

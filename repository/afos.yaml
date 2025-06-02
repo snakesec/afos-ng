@@ -21,7 +21,7 @@
   repo_url: gitlab.com/snake-security/amass
   original_repo_url: github.com/owasp-amass/amass
 - name: bettercap
-  version: 2.41.0
+  version: 2.41.0-1
   description: The Swiss Army knife for 802.11, BLE and Ethernet networks attacks
   categories:
   - Network Hacking

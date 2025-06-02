@@ -643,12 +643,12 @@
   repo_url: github.com/snakesec/CryptoMobile
   original_repo_url: github.com/P1Sec/CryptoMobile/
 - name: capstone
-  version: 5.0.0-3
+  version: 6.0.0
   description: Disassembler Framework
   categories:
   - Reverse Engineering
   - Exploitation
-  repo_url: gitlab.com/snake-security/capstone
+  repo_url: github.com/snakesec/capstone
   original_repo_url: github.com/capstone-engine/capstone
 - name: davtest
   version: 1.2.0-1

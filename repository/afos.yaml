@@ -1901,7 +1901,7 @@
   repo_url: gitlab.com/snake-security/frida-ios-hook
   original_repo_url: github.com/noobpk/frida-ios-hook
 - name: adalanche
-  version: 2025.2.6-16
+  version: 2025.06.02
   description: Active Directory ACL Visualizer and Explorer
   categories:
   - Exploitation

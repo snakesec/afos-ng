@@ -295,11 +295,12 @@ static char afos_banner[3171] = {
 };
 
 int DEBUG;
+int TESTING;
 
 int main(int argc, char *argv[]) {
 
     printf("\n%s%s%s%s\n\n", BLD, GRN, afos_banner, NRM);
-    printf("%s%s ANDRAX-NG Next Generation Package Manager %s%sv1.0.0%s\n", BLD, GRN, BLD, RED, NRM);
+    printf("%s%s ANDRAX-NG Next Generation Package Manager %s%sv1.0.1%s\n", BLD, GRN, BLD, RED, NRM);
     printf(" %sCopyright%s %s2025%s By %sSNAKE Security%s %s-%s %sWeidsom Nascimento%s\n\n", YEL, NRM, CYN, NRM, WHT, NRM, RED, NRM, WHT, NRM);
 
     if(geteuid() != 0) {
@@ -327,6 +328,7 @@ int main(int argc, char *argv[]) {
         {"repo", no_argument, NULL, 'r'},
         {"debug", no_argument, NULL, 'd'},
         {"help", no_argument, NULL, 'h'},
+        {"testing", no_argument, NULL, 't'},
         {NULL, 0, NULL, 0}
     };
 
@@ -335,13 +337,18 @@ int main(int argc, char *argv[]) {
         exit(1);
     }
 
-    while((opt = getopt_long(argc, argv, "i:ualrdhn", long_options, NULL)) != -1)  {
+    while((opt = getopt_long(argc, argv, "i:ualrdht", long_options, NULL)) != -1)  {
         switch(opt) {
             case 'd':
                 DEBUG = 1;
                 break;
+            case 't':
+                TESTING = 1;
+                printf("%s[%s %sWARNING%s %s]%s Running in TESTING mode!\n\n", WHT, NRM, YEL, NRM, WHT, NRM);
+                break;
             case 'i':
                 get_pkgs();
+                sleep(2);
                 install(lower(optarg), 0);
                 printf("\n");
                 system("chown -R andrax:andrax /opt/ANDRAX");
@@ -350,6 +357,7 @@ int main(int argc, char *argv[]) {
                 break;
             case 'r':
                 get_pkgs();
+                sleep(2);
                 printf("Packages available on AFOS-NG repository:\n\n");
                 repolist();
                 printf("\n");
@@ -357,6 +365,7 @@ int main(int argc, char *argv[]) {
                 break;
             case 'u':
                 get_pkgs();
+                sleep(2);
                 printf("Checking for updates...\n\n");
                 update(0);
                 printf("\n");
@@ -366,6 +375,7 @@ int main(int argc, char *argv[]) {
                 break;
             case 'a':
                 get_pkgs();
+                sleep(2);
                 printf("Updating all packages...\n\n");
                 update(1);
                 printf("\n");

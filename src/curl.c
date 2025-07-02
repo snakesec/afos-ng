@@ -47,7 +47,7 @@ int get_afos_packages(char *urltofetch, char *file_to_save) {
     curl_handle = curl_easy_init();
 
     curl_easy_setopt(curl_handle, CURLOPT_URL, urt_to_parse);
-    curl_easy_setopt(curl_handle, CURLOPT_USERAGENT, "ANDRAX-NG AFOS-NG AFOS/1.0.0");
+    curl_easy_setopt(curl_handle, CURLOPT_USERAGENT, "ANDRAX-NG AFOS-NG AFOS/1.0.1");
     curl_easy_setopt(curl_handle, CURLOPT_VERBOSE, 0L);
     curl_easy_setopt(curl_handle, CURLOPT_FOLLOWLOCATION, 1L);
     curl_easy_setopt(curl_handle, CURLOPT_NOPROGRESS, 1L);
@@ -58,6 +58,7 @@ int get_afos_packages(char *urltofetch, char *file_to_save) {
             printf("%s[%s %sINFO%s %s]%s Removing old %s\n", WHT, NRM, CYN, NRM, WHT, NRM, file_to_save);
         }
         remove(file_to_save);
+        sleep(2);
     }
 
     save_file_path = fopen(file_to_save, "ab");

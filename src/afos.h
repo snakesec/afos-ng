@@ -32,6 +32,7 @@
 #define WHT "\033[1;97m"
 
 extern int DEBUG;
+extern int TESTING;
 
 char *lower(char *str_to_lower);
 int createdb();

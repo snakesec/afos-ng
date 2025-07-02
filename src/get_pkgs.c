@@ -29,13 +29,19 @@ int get_pkgs() {
 
     char default_repo[500] = "https://raw.githubusercontent.com/snakesec/afos-ng/refs/heads/main/repository/afos.yaml";
 
+    char default_repo_testing[500] = "https://raw.githubusercontent.com/snakesec/afos-ng/refs/heads/testing/repository/afos.yaml";
+
     afossourcelist = fopen("/opt/AFOS/afos.list", "r");
 
     if(afossourcelist == NULL) {
         if(DEBUG) {
             printf("%s[%s %sERROR%s %s]%s Switching to default repo because no valid URL was provided\n", WHT, NRM, YEL, NRM, WHT, NRM);
         }
-        get_afos_packages(default_repo, "/opt/AFOS/afos_pkgs.yaml");
+        if(TESTING) {
+            get_afos_packages(default_repo_testing, "/opt/AFOS/afos_pkgs.yaml");
+        } else {
+            get_afos_packages(default_repo, "/opt/AFOS/afos_pkgs.yaml");
+        }
     } else {
         int linen = 0;
 

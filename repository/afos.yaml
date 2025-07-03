@@ -301,7 +301,7 @@
   repo_url: gitlab.com/snake-security/aespipe
   original_repo_url: loop-aes.sourceforge.net/aespipe/
 - name: afl
-  version: 4.32
+  version: 4.33
   description: American Fuzzy Lop Plus Plus
   categories:
   - Exploitation

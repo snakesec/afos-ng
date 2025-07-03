@@ -1126,7 +1126,7 @@
   repo_url: gitlab.com/snake-security/mfsniffer
   original_repo_url: github.com/mainframed/MFSniffer
 - name: micro
-  version: 2.0.15-191
+  version: 2.0.15-230
   description: A modern and intuitive terminal-based text editor
   categories:
   - System

@@ -904,11 +904,11 @@
   repo_url: gitlab.com/snake-security/hcxdumptool
   original_repo_url: github.com/ZerBea/hcxdumptool
 - name: hcxtools
-  version: 6.3.4-1
+  version: 6.3.5
   description: Convert packets from captures
   categories:
   - Password Hacking
-  repo_url: gitlab.com/snake-security/hcxtools
+  repo_url: github.com/snakesec/hcxtools
   original_repo_url: github.com/ZerBea/hcxtools
 - name: hexinject
   version: 1.6.0

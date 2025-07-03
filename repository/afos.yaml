@@ -1993,3 +1993,10 @@
   - Bug Bounty
   repo_url: github.com/snakesec/mitmproxy
   original_repo_url: github.com/mitmproxy/mitmproxy
+- name: pipepunisher
+  version: 0.0.1
+  description: PIPE to Shell abuse Proof of Concept
+  categories:
+  - Exploitation
+  repo_url: github.com/snakesec/PipePunisher
+  original_repo_url: github.com/snakesec/PipePunisher

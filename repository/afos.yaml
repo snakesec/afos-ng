@@ -90,7 +90,7 @@
   repo_url: gitlab.com/snake-security/commix
   original_repo_url: github.com/commixproject/commix
 - name: sqlmap
-  version: 1.9.5-17
+  version: 1.9.6-10
   description: Automatic SQL injection and database takeover
   categories:
   - Web Site Hacking

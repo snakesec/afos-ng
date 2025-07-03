@@ -853,12 +853,12 @@
   repo_url: gitlab.com/snake-security/scada-tools
   original_repo_url: github.com/atimorin/scada-tools
 - name: gobuster
-  version: 3.6.0-1
+  version: 3.7.0
   description: Directory/File, DNS and VHost buster
   categories:
   - Web Site Hacking
   - Bug Bounty
-  repo_url: gitlab.com/snake-security/gobuster
+  repo_url: github.com/snakesec/gobuster
   original_repo_url: github.com/OJ/gobuster
 - name: godoh
   version: 1.6.0-2

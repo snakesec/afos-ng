@@ -174,7 +174,7 @@
   repo_url: github.com/snakesec/frida
   original_repo_url: github.com/frida/frida
 - name: pcsc
-  version: 2.3.3
+  version: 2.3.3-1
   description: Middleware to access a smart card using SCard API (PC/SC)
   categories:
   - System

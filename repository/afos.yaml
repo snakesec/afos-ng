@@ -368,12 +368,12 @@
   repo_url: gitlab.com/snake-security/irpas
   original_repo_url: salsa.debian.org/pkg-security-team/irpas
 - name: pcsc-tools
-  version: 1.7.2
+  version: 1.7.3
   description: Tools to be used with smart cards and PC/SC
   categories:
   - SmartCard
   - Wireless Hacking
-  repo_url: gitlab.com/snake-security/pcsc-tools
+  repo_url: github.com/snakesec/pcsc-tools
   original_repo_url: salsa.debian.org/rousseau/pcsc-tools
 - name: backoori
   version: 0.92.0-1

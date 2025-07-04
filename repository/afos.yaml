@@ -1887,11 +1887,11 @@
   repo_url: gitlab.com/snake-security/scemu
   original_repo_url: github.com/sha0coder/scemu
 - name: wmiexec-pro
-  version: 0.2.7
+  version: 0.3.0
   description: New generation of wmiexec
   categories:
   - Exploitation
-  repo_url: gitlab.com/snake-security/wmiexec-pro
+  repo_url: github.com/snakesec/wmiexec-Pro
   original_repo_url: github.com/XiaoliChan/wmiexec-Pro
 - name: frida-ios-hook
   version: 3.9.0

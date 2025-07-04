@@ -202,10 +202,11 @@
   repo_url: github.com/snakesec/homepwn
   original_repo_url: github.com/Telefonica/HomePWN
 - name: golang
-  version: 1.24.2
+  version: 1.24.4
   description: Go Programming Language
   categories:
   - Programming
+  - System
   repo_url: github.com/snakesec/golang
   original_repo_url: go.dev/dl/
 - name: forbidden

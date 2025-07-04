@@ -461,12 +461,12 @@
   repo_url: gitlab.com/snake-security/braa
   original_repo_url: salsa.debian.org/pkg-security-team/braa
 - name: brakeman
-  version: 6.1.2-1
+  version: 7.0.2
   description: Vulnerability scanner for Ruby on Rails
   categories:
   - Web Site Hacking
   - Exploitation
-  repo_url: gitlab.com/snake-security/brakeman
+  repo_url: github.com/snakesec/brakeman
   original_repo_url: github.com/presidentbeef/brakeman
 - name: bss
   version: 0.0.8-1

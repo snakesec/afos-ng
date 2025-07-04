@@ -294,11 +294,11 @@
   repo_url: gitlab.com/snake-security/redsocks
   original_repo_url: github.com/semigodking/redsocks
 - name: aespipe
-  version: 2.4.0-2
+  version: 2.4.0-9
   description: AES encrypting or decrypting pipe
   categories:
   - Password Hacking
-  repo_url: gitlab.com/snake-security/aespipe
+  repo_url: github.com/snakesec/aespipe
   original_repo_url: loop-aes.sourceforge.net/aespipe/
 - name: afl
   version: 4.33

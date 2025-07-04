@@ -693,7 +693,7 @@
   categories:
   - Network Hacking
   repo_url: github.com/snakesec/dnschef-ng
-  original_repo_url: github.com/iphelix/dnschef
+  original_repo_url: github.com/byt3bl33d3r/dnschef-ng
 - name: dnsdrdos
   version: 0.0.1-1
   description: DNS distributed reflection DoS

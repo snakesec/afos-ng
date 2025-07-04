@@ -1801,7 +1801,7 @@
   repo_url: github.com/snakesec/graphw00f
   original_repo_url: github.com/dolevf/graphw00f
 - name: pycrate
-  version: 0.7.8
+  version: 0.7.11
   description: Telecom file formats and Protocols encoders/decoders library
   categories:
   - System

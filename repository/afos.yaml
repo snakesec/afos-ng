@@ -97,11 +97,11 @@
   repo_url: github.com/snakesec/sqlmap
   original_repo_url: github.com/sqlmapproject/sqlmap
 - name: wpscan
-  version: 3.8.25-1
+  version: 3.8.28
   description: WordPress security scanner
   categories:
   - Web Site Hacking
-  repo_url: gitlab.com/snake-security/wpscan
+  repo_url: github.com/snakesec/WPScan
   original_repo_url: github.com/wpscanteam/wpscan
 - name: thc-hydra
   version: 9.6.0-2

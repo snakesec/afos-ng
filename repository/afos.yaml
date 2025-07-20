@@ -1594,11 +1594,11 @@
   repo_url: github.com/snakesec/maigret
   original_repo_url: github.com/soxoj/maigret
 - name: medusa
-  version: 2.3.1
+  version: 2.3.1-1
   description: Parallel Network Login Auditor
   categories:
   - Password Hacking
-  repo_url: gitlab.com/snake-security/medusa
+  repo_url: github.com/snakesec/medusa
   original_repo_url: github.com/jmk-foofus/medusa
 - name: apple-bleee
   version: 0.1.5-4

@@ -1586,13 +1586,13 @@
   - Web Site Hacking
   repo_url: github.com/snakesec/subfinder
   original_repo_url: github.com/projectdiscovery/subfinder
-- name: sherlock
-  version: 0.15.0
-  description: Search social media username
+- name: maigret
+  version: 0.5.0
+  description: Social media username detective
   categories:
   - Information Gathering
-  repo_url: gitlab.com/snake-security/sherlock
-  original_repo_url: github.com/sherlock-project/sherlock
+  repo_url: github.com/snakesec/maigret
+  original_repo_url: github.com/soxoj/maigret
 - name: medusa
   version: 2.3.1
   description: Parallel Network Login Auditor

@@ -1571,7 +1571,7 @@
   repo_url: github.com/snakesec/zap
   original_repo_url: zaproxy.org/download
 - name: impacket
-  version: 0.13.0-1
+  version: 0.13.0-2
   description: Network protocols attack suite
   categories:
   - Network Hacking

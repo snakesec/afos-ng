@@ -1732,12 +1732,12 @@
   repo_url: gitlab.com/snake-security/uncover
   original_repo_url: github.com/projectdiscovery/uncover
 - name: interactsh
-  version: 1.2.0
+  version: 1.2.4
   description: OOB interaction Tester
   categories:
   - Exploitation
   - Network Hacking
-  repo_url: gitlab.com/snake-security/interactsh
+  repo_url: github.com/snakesec/interactsh
   original_repo_url: github.com/projectdiscovery/interactsh
 - name: bitb
   version: 0.0.1-1

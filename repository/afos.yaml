@@ -1725,11 +1725,11 @@
   repo_url: gitlab.com/snake-security/nimcrypt2
   original_repo_url: github.com/icyguider/Nimcrypt2
 - name: uncover
-  version: 1.0.9
+  version: 1.1.0
   description: Quickly discover exposed hosts
   categories:
   - Information Gathering
-  repo_url: gitlab.com/snake-security/uncover
+  repo_url: github.com/snakesec/uncover
   original_repo_url: github.com/projectdiscovery/uncover
 - name: interactsh
   version: 1.2.4

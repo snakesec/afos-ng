@@ -1601,7 +1601,7 @@
   repo_url: gitlab.com/snake-security/medusa
   original_repo_url: github.com/jmk-foofus/medusa
 - name: apple-bleee
-  version: 0.1.5-3
+  version: 0.1.5-4
   description: Apple BLE Sniffing
   categories:
   - MacOS/iPhone

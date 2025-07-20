@@ -1710,12 +1710,12 @@
   repo_url: github.com/snakesec/objection
   original_repo_url: github.com/sensepost/objection
 - name: ligolo-ng
-  version: 0.7.2
+  version: 0.8.2
   description: Tunneling like a VPN
   categories:
   - Network Hacking
   - Exploitation
-  repo_url: gitlab.com/snake-security/ligolo-ng
+  repo_url: github.com/snakesec/ligolo-ng
   original_repo_url: github.com/nicocha30/ligolo-ng
 - name: nimcrypt2
   version: 2.0.2-1

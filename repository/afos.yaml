@@ -29,12 +29,12 @@
   repo_url: github.com/snakesec/bettercap
   original_repo_url: github.com/bettercap/bettercap
 - name: responder
-  version: 3.1.4-1
+  version: 3.1.6
   description: LLMNR, NBT-NS and MDNS poisoner
   categories:
   - Network Hacking
   - Exploitation
-  repo_url: gitlab.com/snake-security/Responder
+  repo_url: github.com/snakesec/Responder
   original_repo_url: github.com/lgandx/Responder
 - name: wafw00f
   version: 2.3.1-1

@@ -119,7 +119,7 @@
   repo_url: github.com/snakesec/modlishka
   original_repo_url: github.com/drk1wi/Modlishka
 - name: expliot
-  version: 0.11.0
+  version: 0.11.1
   description: IoT/IIoT Security Testing and Exploitation framework
   categories:
   - IoT/IIoT Hacking

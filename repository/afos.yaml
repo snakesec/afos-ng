@@ -82,12 +82,12 @@
   repo_url: github.com/snakesec/phpsploit
   original_repo_url: github.com/nil0x42/phpsploit
 - name: commix
-  version: 4.0.93
+  version: 4.1.65
   description: All-in-One OS Command Injection Exploitation
   categories:
   - Web Site Hacking
   - Exploitation
-  repo_url: gitlab.com/snake-security/commix
+  repo_url: github.com/snakesec/commix
   original_repo_url: github.com/commixproject/commix
 - name: sqlmap
   version: 1.9.6-10

@@ -1158,12 +1158,12 @@
   repo_url: gitlab.com/snake-security/modscan
   original_repo_url: github.com/adarshdinesh/modscan
 - name: monsoon
-  version: 0.9.2
+  version: 0.10.1
   description: Fast HTTP enumerator
   categories:
   - Web Site Hacking
   - Bug Bounty
-  repo_url: gitlab.com/snake-security/monsoon
+  repo_url: github.com/snakesec/monsoon
   original_repo_url: github.com/RedTeamPentesting/monsoon
 - name: mpls_redirect
   version: 0.1.2

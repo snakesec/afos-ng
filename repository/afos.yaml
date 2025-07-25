@@ -1004,7 +1004,7 @@
   repo_url: gitlab.com/snake-security/javascript-obfuscator
   original_repo_url: github.com/javascript-obfuscator/javascript-obfuscator
 - name: john
-  version: 1.9.0-5
+  version: 1.9.0-6
   description: John The Ripper
   categories:
   - Password Hacking

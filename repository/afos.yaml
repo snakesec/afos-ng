@@ -331,12 +331,12 @@
   repo_url: gitlab.com/snake-security/amber
   original_repo_url: github.com/EgeBalci/amber
 - name: apktool
-  version: 2.9.3
+  version: 2.12.0
   description: Reverse engineering Android apk files
   categories:
   - Reverse Engineering
   - Exploitation
-  repo_url: gitlab.com/snake-security/apktool
+  repo_url: github.com/snakesec/apktool
   original_repo_url: apktool.org
 - name: arjun
   version: 2.2.7

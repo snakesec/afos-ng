@@ -891,11 +891,11 @@
   repo_url: gitlab.com/snake-security/hashboy
   original_repo_url: github.com/sf197/hashboy-tool
 - name: hashcat
-  version: 6.2.6-2
+  version: 6.2.6-3
   description: Worlds fastest Password Cracker
   categories:
   - Password Hacking
-  repo_url: gitlab.com/snake-security/hashcat
+  repo_url: github.com/snakesec/hashcat
   original_repo_url: github.com/hashcat/hashcat
 - name: hcxdumptool
   version: 6.3.4-1

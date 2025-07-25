@@ -355,11 +355,11 @@
   repo_url: github.com/snakesec/bbtz
   original_repo_url: github.com/m4ll0k/BBTz
 - name: arping
-  version: 2.25
+  version: 2.26
   description: Broadcasts a who-has ARP packet on the network and prints answers
   categories:
   - Network Hacking
-  repo_url: gitlab.com/snake-security/arping
+  repo_url: github.com/snakesec/arping
   original_repo_url: github.com/ThomasHabets/arping
 - name: irpas
   version: 0.10.10

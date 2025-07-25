@@ -317,11 +317,11 @@
   repo_url: gitlab.com/snake-security/net-snmp
   original_repo_url: net-snmp.org
 - name: aircrack-ng
-  version: 1.7.0-3
+  version: 1.7.0-4
   description: WiFi security auditing tools suite
   categories:
   - Wireless Hacking
-  repo_url: gitlab.com/snake-security/aircrack-ng
+  repo_url: github.com/snakesec/aircrack-ng
   original_repo_url: github.com/aircrack-ng/aircrack-ng
 - name: amber
   version: 3.2.0-1

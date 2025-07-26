@@ -1956,12 +1956,12 @@
   repo_url: gitlab.com/snake-security/dex2jar
   original_repo_url: github.com/pxb1988/dex2jar
 - name: apkhunt
-  version: 0.0.1
+  version: 0.0.1-1
   description: Static code analysis for Android apps
   categories:
   - Reverse Engineering
   - Exploitation
-  repo_url: gitlab.com/snake-security/apkhunt
+  repo_url: github.com/snakesec/APKHunt
   original_repo_url: github.com/Cyber-Buddy/APKHunt
 - name: rizin
   version: 0.8.0

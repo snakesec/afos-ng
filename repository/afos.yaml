@@ -1879,12 +1879,12 @@
   - Exploitation
   repo_url: gitlab.com/snake-security/offensivenim
   original_repo_url: github.com/byt3bl33d3r/OffensiveNim
-- name: scemu
-  version: 0.7.10
-  description: x86 32/64bits emulator, for securely emulation
+- name: mwemu
+  version: 0.7.11
+  description: x86 malware emulator
   categories:
   - Exploitation
-  repo_url: gitlab.com/snake-security/scemu
+  repo_url: github.com/snakesec/mwemu
   original_repo_url: github.com/sha0coder/scemu
 - name: wmiexec-pro
   version: 0.3.0

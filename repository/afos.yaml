@@ -1964,7 +1964,7 @@
   repo_url: github.com/snakesec/APKHunt
   original_repo_url: github.com/Cyber-Buddy/APKHunt
 - name: rizin
-  version: 0.8.0
+  version: 0.9.0
   description: UNIX-like reverse engineering framework
   categories:
   - Reverse Engineering

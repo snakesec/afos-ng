@@ -1840,13 +1840,13 @@
   repo_url: gitlab.com/snake-security/crlfsuite
   original_repo_url: github.com/Raghavd3v/CRLFsuite
 - name: naabu
-  version: 2.3.1
+  version: 2.3.5
   description: Fast and modern port scanner
   categories:
   - Scanning
   - Bug Bounty
   - Web Site Hacking
-  repo_url: gitlab.com/snake-security/naabu
+  repo_url: github.com/snakesec/naabu
   original_repo_url: github.com/projectdiscovery/naabu
 - name: proxify
   version: 0.0.15

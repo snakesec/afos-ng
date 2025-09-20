@@ -26,6 +26,28 @@
 
 #include "afos.h"
 
+int andrax_version() {
+    FILE *file = fopen("/version", "r");  
+    if (file == NULL) {
+        printf(RED);
+        perror("=== FAILED to READ /version ====");
+        printf("%s\n", NRM);
+        return 1001;  
+    }
+
+    int version = 1001;
+    if (fscanf(file, "%d", &version) != 1) {
+        printf(YEL);
+        perror("=== FAILED to PARSE /version ===");
+        printf("%s\n", NRM);
+        fclose(file);
+        return 1001;  
+    }
+
+    fclose(file);  
+    return version;
+}
+
 static int callback_insert(void *NotUsed, int argc, char **argv, char **azColName) {
    int i;
    for(i = 0; i<argc; i++) {
@@ -141,17 +163,17 @@ int git_download(char *name, char *url) {
 int install_pkg(char *pkg_name, char *pkg_version, char *pkg_desc, char *pkg_categories, char *pkg_url, int update_all) {
 
     if(strlen(pkg_name) < 2 && strlen(pkg_version) < 2 && strlen(pkg_desc) < 2 && strlen(pkg_categories) < 2 && strlen(pkg_url) < 2) {
-        printf("%s[%s %sFATAL%s %s]%s Parameters size error %s %s %s %s %s\n", WHT, NRM, RED, NRM, WHT, NRM, pkg_name, pkg_version, pkg_desc, pkg_categories, pkg_url);
+        printf("%s[%s %sFATAL%s %s]%s INSTALL Parameters size error %s %s %s %s %s\n", WHT, NRM, RED, NRM, WHT, NRM, pkg_name, pkg_version, pkg_desc, pkg_categories, pkg_url);
         exit(1);
     }
 
     char answer[6];
     int git_download_result;
 
-    printf("Do you wanna install: %s? [ Y/n ]: ", pkg_name);
-    scanf("%5[^\n]", answer);
-
     if(update_all == 0) {
+        printf("Do you wanna install: %s? [ Y/n ]: ", pkg_name);
+        scanf("%5[^\n]", answer);
+
         if((strncmp(lower(answer), "y", 5) == 0 || strncmp(lower(answer), "yes", 5) == 0)) {
 
             git_download_result = git_download(pkg_name, pkg_url);
@@ -228,6 +250,7 @@ int install(char *query_name, int update_all) {
     char desc[500];
     char repo_url[500];
     char pkg_install_categories[1000];
+    char pkg_min[100];
 
     while (!done) {
         if (!yaml_parser_parse(&parser, &event)) {
@@ -276,6 +299,8 @@ int install(char *query_name, int update_all) {
                                 strncpy(desc, (const char *)event.data.scalar.value, 499);
                             } else if(strcmp(key, "repo_url") == 0) {
                                 strncpy(repo_url, (const char *)event.data.scalar.value, 499);
+                            } else if(strcmp(key, "min_andrax") == 0) {
+                                strncpy(pkg_min, (const char *)event.data.scalar.value, 499);
                             }
                             free(key);
                             key = NULL;
@@ -326,7 +351,7 @@ int install(char *query_name, int update_all) {
                 if (in_mapping) {
                     in_mapping = 0;
 
-                    if(strcmp(query_name, name) == 0) {
+                    if(strcmp(query_name, name) == 0 && atoi(andrax_version) >= atoi(pkg_min) ) {
 
                         pkg_found = 1;
                         
@@ -336,12 +361,15 @@ int install(char *query_name, int update_all) {
 
                         install_pkg(name, version, desc, pkg_install_categories, repo_url, update_all);
 
-                        memset(name, 0, sizeof(name));
-                        memset(version, 0, sizeof(version));
-                        memset(desc, 0, sizeof(desc));
-                        memset(repo_url, 0, sizeof(repo_url));
-                        memset(pkg_install_categories, 0, sizeof(pkg_install_categories));
                     }
+
+                    memset(name, 0, sizeof(name));
+                    memset(version, 0, sizeof(version));
+                    memset(desc, 0, sizeof(desc));
+                    memset(repo_url, 0, sizeof(repo_url));
+                    memset(pkg_install_categories, 0, sizeof(pkg_install_categories));
+                    memset(pkg_min, 0, sizeof(pkg_min));
+
                 }
                 break;
 

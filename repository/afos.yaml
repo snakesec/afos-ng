@@ -1223,12 +1223,12 @@
   repo_url: github.com/snakesec/ntlmrecon
   original_repo_url: github.com/pwnfoo/NTLMRecon
 - name: onesixtyone
-  version: 0.3.4
+  version: 0.3.4-1
   description: Fast SNMP Scanner
   categories:
   - Information Gathering
   - Scanning
-  repo_url: gitlab.com/snake-security/onesixtyone
+  repo_url: github.com/snakesec/onesixtyone
   original_repo_url: github.com/trailofbits/onesixtyone
 - name: payloadmask
   version: 0.0.2

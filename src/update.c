@@ -33,23 +33,25 @@ char pkg_install_repo_url[2000][500];
 int pkg_install_count = 0;
 
 int compare_versions(char *pkg_name, char *local_pkg_version) {
-
     FILE *fh = fopen("/opt/AFOS/afos_pkgs.yaml", "r");
-    if (!fh) {
+    
+    if(!fh) {
         if(DEBUG) {
             printf("%s[%s %sFATAL%s %s]%s Can't locate: %s/opt/AFOS/afos_pkgs.yaml%s\n", WHT, NRM, RED, NRM, WHT, NRM, YEL, NRM);
         }
+
         exit(1);
     }
 
     yaml_parser_t parser;
     yaml_event_t event;
 
-    if (!yaml_parser_initialize(&parser)) {
+    if(!yaml_parser_initialize(&parser)) {
         if(DEBUG) {
             printf("%s[%s %sFATAL%s %s]%s %sError initializing the parser%s\n", WHT, NRM, RED, NRM, WHT, NRM, YEL, NRM);
         }
         fclose(fh);
+
         exit(1);
     }
 
@@ -68,19 +70,18 @@ int compare_versions(char *pkg_name, char *local_pkg_version) {
     char desc[500];
     char repo_url[500];
 
-    while (!done) {
-        if (!yaml_parser_parse(&parser, &event)) {
+    while(!done) {
+        if(!yaml_parser_parse(&parser, &event)) {
             if(DEBUG) {
                 printf("%s[%s %sFATAL%s %s]%s Parsing error... %s\n", WHT, NRM, RED, NRM, WHT, NRM, parser.problem);
             }
             break;
         }
 
-        switch (event.type) {
+        switch(event.type) {
             case YAML_STREAM_START_EVENT:
             case YAML_DOCUMENT_START_EVENT:
                 break;
-
             case YAML_SEQUENCE_START_EVENT:
                 if (!in_mapping) {
                     in_sequence = 1;
@@ -89,13 +90,11 @@ int compare_versions(char *pkg_name, char *local_pkg_version) {
                     category_count = 0;
                 }
                 break;
-
             case YAML_MAPPING_START_EVENT:
                 if (in_sequence && !in_mapping) {
                     in_mapping = 1;
                 }
                 break;
-
             case YAML_SCALAR_EVENT:
                 if (in_mapping) {
                     if (!key) {
@@ -120,48 +119,45 @@ int compare_versions(char *pkg_name, char *local_pkg_version) {
                     }
                 }
                 break;
-            
             case YAML_SEQUENCE_END_EVENT:
-                if (in_categories) {
+                if(in_categories) {
                     for(int i = 0; i < category_count; i++) {
                         free(categories[i]);
                     }
                     in_categories = 0;
                     free(key);
                     key = NULL;
-                } else if (in_sequence) {
+                } else if(in_sequence) {
                     in_sequence = 0;
                 }
                 break;
-
             case YAML_MAPPING_END_EVENT:
                 if (in_mapping) {
                     in_mapping = 0;
 
                     if(strcmp(pkg_name, name) == 0) {
-
                         int resolution = afos_compare_versions(version, local_pkg_version);
 
-                        if (resolution == -2) {
+                        if(resolution == -2) {
                             if(DEBUG) {
                                 printf("%s[%s %sERROR%s %s]%s Invalid version string LOCAL: %s REPO: %s\n", WHT, NRM, YEL, NRM, WHT, NRM, local_pkg_version, version);
                                 //printf(" %s %s\n", local_pkg_version, version);
                             }
                         } else {
 
-                            if (resolution == 0) {
+                            if(resolution == 0) {
                                 // equal
                                 if(DEBUG) {
                                     printf("%s[%s %sINFO%s %s]%s %s is already the newest version\n", WHT, NRM, CYN, NRM, WHT, NRM, name);
                                 }
                             }
-                            else if (resolution == -1) {
+                            else if(resolution == -1) {
                                 // REPO version is lower... that should not be possible...
                                 if(DEBUG) {
                                     printf("%s[%s %sERROR%s %s]%s REPO Version is lower than LOCAL version\n", WHT, NRM, YEL, NRM, WHT, NRM);
                                 }
                             }
-                            else if(resolution == 1){
+                            else if(resolution == 1) {
                                 // We have update
                                 printf("%s[%s UPDATE AVAILABLE %s]%s : %s%s%s%s from %s%s%s%s to %s%s%s%s\n", WHT, NRM, WHT, NRM, BLD, GRN, name, NRM, BLD, RED, local_pkg_version, NRM, BLD, BLU, version, NRM);
                                 
@@ -185,12 +181,10 @@ int compare_versions(char *pkg_name, char *local_pkg_version) {
                     }
                 }
                 break;
-
             case YAML_DOCUMENT_END_EVENT:
             case YAML_STREAM_END_EVENT:
                 done = 1;
                 break;
-
             default:
                 break;
         }
@@ -199,11 +193,12 @@ int compare_versions(char *pkg_name, char *local_pkg_version) {
     }
 
     yaml_parser_delete(&parser);
+    
     fclose(fh);
+
     if (key) free(key);
 
     return 0;
-
 }
 
 static int callback_check_version_on_db(void *data, int argc, char **argv, char **azColName){
@@ -235,20 +230,20 @@ int read_db_to_compare() {
 
    rc = sqlite3_open("/opt/AFOS/pkg.db", &db);
    
-   if( rc ) {
-      printf("Can't open database: %s\n", sqlite3_errmsg(db));
-      return(0);
+   if(rc) {
+    printf("Can't open database: %s\n", sqlite3_errmsg(db));
+    return(0);
    } else {
-       if(DEBUG) {
-           printf("Opened database successfully\n");
-       }
+    if(DEBUG) {
+        printf("Opened database successfully\n");
+    }
    }
 
    sql = "SELECT * from PACKAGES";
 
    rc = sqlite3_exec(db, sql, callback_check_version_on_db, NULL, &zErrMsg);
    
-   if( rc != SQLITE_OK ) {
+   if(rc != SQLITE_OK) {
       fprintf(stderr, "SQL error: %s\n", zErrMsg);
       sqlite3_free(zErrMsg);
    } else {
@@ -256,12 +251,13 @@ int read_db_to_compare() {
            printf("Operation done successfully\n");
        }
    }
+
    sqlite3_close(db);
+
    return 0;
 }
 
 int update(int all) {
-
     if(all) {
         update_all = 1;
     }
@@ -269,7 +265,6 @@ int update(int all) {
     read_db_to_compare();
 
     if(update_all != 0) {
-
         char answer[6];
         printf("\nDo you wanna update all? [ Y/n ]: ");
         scanf("%5[^\n]", answer);
@@ -285,6 +280,7 @@ int update(int all) {
 
         } else {
             printf("\n");
+            
             exit(1);
         }
 

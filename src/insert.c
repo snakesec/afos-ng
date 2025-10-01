@@ -47,7 +47,7 @@ int main(int argc, char* argv[]) {
 
    rc = sqlite3_open("/opt/AFOS/pkg.db", &db);
    
-   if( rc ) {
+   if(rc) {
       fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(db));
       return(0);
    } else {
@@ -59,12 +59,14 @@ int main(int argc, char* argv[]) {
 
    rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
    
-   if( rc != SQLITE_OK ){
+   if(rc != SQLITE_OK){
       fprintf(stderr, "SQL error: %s\n", zErrMsg);
       sqlite3_free(zErrMsg);
    } else {
       fprintf(stdout, "Records created successfully\n");
    }
+
    sqlite3_close(db);
+   
    return 0;
 }

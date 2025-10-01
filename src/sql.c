@@ -38,13 +38,14 @@ static int callback(void *NotUsed, int argc, char **argv, char **azColName) {
    for(i = 0; i<argc; i++) {
       printf("%s = %s\n", azColName[i], argv[i] ? argv[i] : "NULL");
    }
+
    printf("\n");
+
    return 0;
 }
 
 static int callbackread(void *data, int argc, char **argv, char **azColName){
    int i;
-   
    
    for(i = 0; i<argc; i++){
       if(i==1) {
@@ -58,9 +59,7 @@ static int callbackread(void *data, int argc, char **argv, char **azColName){
       }
    }
 
-   
    printf("[ %s%s%s ] [ %s%s%s ] [ %s%s%s ] [ %s%s%s ]\n", WHT, pkgs1.name, NRM, RED, pkgs1.version, NRM, YEL, pkgs1.desc, NRM, BLU, pkgs1.type, NRM);
-   
    
    return 0;
 }
@@ -74,12 +73,12 @@ int readdb() {
 
    rc = sqlite3_open("/opt/AFOS/pkg.db", &db);
    
-   if( rc ) {
+   if(rc) {
       fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(db));
       exit(1);
    } else {
        if(DEBUG) {
-           fprintf(stderr, "Opened database successfully\n");
+         fprintf(stderr, "Opened database successfully\n");
        }
    }
 
@@ -87,15 +86,17 @@ int readdb() {
 
    rc = sqlite3_exec(db, sql, callbackread, NULL, &zErrMsg);
    
-   if( rc != SQLITE_OK ) {
+   if(rc != SQLITE_OK) {
       fprintf(stderr, "SQL error: %s\n", zErrMsg);
       sqlite3_free(zErrMsg);
    } else {
        if(DEBUG) {
-           fprintf(stdout, "Operation done successfully\n");
+         fprintf(stdout, "Operation done successfully\n");
        }
    }
+
    sqlite3_close(db);
+
    return 0;
 }
 
@@ -107,12 +108,12 @@ int createdb() {
 
    rc = sqlite3_open("/opt/AFOS/pkg.db", &db);
    
-   if( rc ) {
+   if(rc) {
       fprintf(stderr, "Can't open database: %s\n\n", sqlite3_errmsg(db));
       return(0);
    } else {
        if(DEBUG) {
-           fprintf(stdout, "Opened database successfully\n");
+         fprintf(stdout, "Opened database successfully\n");
        }
    }
 
@@ -125,15 +126,16 @@ int createdb() {
 
    rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
    
-   if( rc != SQLITE_OK ){
+   if(rc != SQLITE_OK){
       fprintf(stderr, "SQL error: %s\n", zErrMsg);
       sqlite3_free(zErrMsg);
    } else {
        if(DEBUG) {
-           fprintf(stdout, "Table created successfully\n");
+         fprintf(stdout, "Table created successfully\n");
        }
    }
    
    sqlite3_close(db);
+   
    return 0;
 }

@@ -28,32 +28,40 @@
 
 int andrax_version() {
     FILE *file = fopen("/version", "r");  
-    if (file == NULL) {
+
+    if(file == NULL) {
         printf(RED);
         perror("=== FAILED to READ /version ====");
         printf("%s\n", NRM);
+
         return 1001;  
     }
 
     int version = 1001;
-    if (fscanf(file, "%d", &version) != 1) {
+
+    if(fscanf(file, "%d", &version) != 1) {
         printf(YEL);
         perror("=== FAILED to PARSE /version ===");
         printf("%s\n", NRM);
         fclose(file);
+
         return 1001;  
     }
 
-    fclose(file);  
+    fclose(file);
+
     return version;
 }
 
 static int callback_insert(void *NotUsed, int argc, char **argv, char **azColName) {
    int i;
+
    for(i = 0; i<argc; i++) {
       printf("%s = %s\n", azColName[i], argv[i] ? argv[i] : "NULL");
    }
+
    printf("\n");
+
    return 0;
 }
 
@@ -64,23 +72,24 @@ int insert_in_db(char *sql) {
 
    rc = sqlite3_open("/opt/AFOS/pkg.db", &db);
    
-   if( rc ) {
-      fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(db));
-      exit(1);
+   if(rc) {
+    fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(db));
+    exit(1);
    }
 
    rc = sqlite3_exec(db, sql, callback_insert, 0, &zErrMsg);
    
-   if( rc != SQLITE_OK ){
-      fprintf(stderr, "SQL error: %s\n", zErrMsg);
-      sqlite3_free(zErrMsg);
+   if(rc != SQLITE_OK) {
+    fprintf(stderr, "SQL error: %s\n", zErrMsg);
+    sqlite3_free(zErrMsg);
    }
+
    sqlite3_close(db);
+
    return 0;
 }
 
 int git_download(char *name, char *url) {
-
     char protocolurl[2000];
     char cmd_git[5000];
     long int valuecode;
@@ -94,6 +103,7 @@ int git_download(char *name, char *url) {
     printf("\nStarting at [ %s ]\n\n", url);
 
     snprintf(protocolurl, 1999, "https://%s", url);
+
     if(TESTING) {
         snprintf(cmd_git, 4999,"git clone -b testing %s %s", protocolurl, name); 
         printf("\nRunning CMD [ %s ]\n\n", cmd_git);
@@ -108,38 +118,46 @@ int git_download(char *name, char *url) {
     }
 
     if(valuecode == 0) {
-
         printf("BUILD AND INSTALLING\n\n");
         snprintf(cmd_tmp, 4999, "/opt/AFOS/%s", name);
         chdir(cmd_tmp);
         memset(cmd_tmp, 0, sizeof(cmd_tmp));
 
-        if (access("AFOSBUILD.sh", F_OK) == 0) {
-            // Go ahead
-        } else {
+        if(access("AFOSBUILD.sh", F_OK) != 0) {
             if(DEBUG) {
                 printf("%sFATAL ERROR%s: Repository is not AFOS compliant!!!\n\n", RED, NRM);
             }
             exit(1);
         }
 
-        if (access("PREAFOS.sh", F_OK) == 0) {
-            system("bash PREAFOS.sh");
-        } else {
-            // No problem just continue
+        if(access("PREAFOS.sh", F_OK) == 0) {
+            long int preafos_valuecode;
+
+            preafos_valuecode = system("bash PREAFOS.sh");
+
+            if(preafos_valuecode != 0) {
+                printf("%s[%s %s%sFATAL ERROR%s %s]%s PRE-Install failed...\n", WHT, NRM, BLD, RED, NRM, WHT, NRM);
+                return 1;
+            }
         }
 
         valuecode = system("bash AFOSBUILD.sh");
+
         if(DEBUG) {
-            printf("Value code AFOSBUILD %s%li%s\n\n", YEL, valuecode, NRM);
+            printf("Value code AFOSBUILD: %s%li%s\n\n", YEL, valuecode, NRM);
         }
 
         if(valuecode == 0) {
+            if(access("POSAFOS.sh", F_OK) == 0) {
+                long int posafos_valuecode;
+                
+                posafos_valuecode = system("bash POSAFOS.sh");
 
-            if (access("POSAFOS.sh", F_OK) == 0) {
-                system("bash POSAFOS.sh");
-            } else {
-                // No problem just continue
+                if(posafos_valuecode != 0) {
+                    printf("%s[%s %s%sWARNING%s %s]%s POS-Install failed...\n\n", WHT, NRM, BLD, YEL, NRM, WHT, NRM);
+
+                    printf("%sUsually this is not a serious problem... but it should be verified carefully%s%s%s!%s\n", BLU, NRM, BLD, RED, NRM);
+                }
             }
 
             chdir("/opt/AFOS");
@@ -147,7 +165,6 @@ int git_download(char *name, char *url) {
             snprintf(cmd_tmp, 4999, "rm -rf /opt/AFOS/%s", name);
             system(cmd_tmp);
             memset(cmd_tmp, 0, sizeof(cmd_tmp));
-
         } else {
             printf("%s[%s %s%sFATAL ERROR%s %s]%s Installation failed\n", WHT, NRM, BLD, RED, NRM, WHT, NRM);
             return 1;
@@ -161,7 +178,6 @@ int git_download(char *name, char *url) {
 }
 
 int install_pkg(char *pkg_name, char *pkg_version, char *pkg_desc, char *pkg_categories, char *pkg_url, int update_all) {
-
     if(strlen(pkg_name) < 2 && strlen(pkg_version) < 2 && strlen(pkg_desc) < 2 && strlen(pkg_categories) < 2 && strlen(pkg_url) < 2) {
         printf("%s[%s %sFATAL%s %s]%s INSTALL Parameters size error %s %s %s %s %s\n", WHT, NRM, RED, NRM, WHT, NRM, pkg_name, pkg_version, pkg_desc, pkg_categories, pkg_url);
         exit(1);
@@ -175,7 +191,6 @@ int install_pkg(char *pkg_name, char *pkg_version, char *pkg_desc, char *pkg_cat
         scanf("%5[^\n]", answer);
 
         if((strncmp(lower(answer), "y", 5) == 0 || strncmp(lower(answer), "yes", 5) == 0)) {
-
             git_download_result = git_download(pkg_name, pkg_url);
 
             if(git_download_result == 0) {
@@ -185,11 +200,9 @@ int install_pkg(char *pkg_name, char *pkg_version, char *pkg_desc, char *pkg_cat
 
                 snprintf(sqlstate, 4999, "INSERT OR REPLACE INTO PACKAGES (NAME,VERSION,DESC,TYPE) VALUES ('%s', '%s', '%s', '%s' );", pkg_name, pkg_version, pkg_desc, pkg_categories);
                 insert_in_db(sqlstate);
-
             } else {
                 printf("The installation failed, contact the maintainer <weidsom at snakesecurity.org>\n");
             }
-
         } else {
             printf("\n");
             exit(1);
@@ -204,7 +217,6 @@ int install_pkg(char *pkg_name, char *pkg_version, char *pkg_desc, char *pkg_cat
 
             snprintf(sqlstate, 4999, "INSERT OR REPLACE INTO PACKAGES (NAME,VERSION,DESC,TYPE) VALUES ('%s', '%s', '%s', '%s' );", pkg_name, pkg_version, pkg_desc, pkg_categories);
             insert_in_db(sqlstate);
-
         } else {
             printf("The installation failed, contact the maintainer <weidsom at snakesecurity.org>\n");
         }
@@ -214,25 +226,27 @@ int install_pkg(char *pkg_name, char *pkg_version, char *pkg_desc, char *pkg_cat
 }
 
 int install(char *query_name, int update_all) {
-
     int pkg_found = 0;
 
     FILE *fh = fopen("/opt/AFOS/afos_pkgs.yaml", "r");
-    if (!fh) {
+    if(!fh) {
         if(DEBUG) {
             printf("%s[%s %sFATAL%s %s]%s Can't locate: %s/opt/AFOS/afos_pkgs.yaml%s\n", WHT, NRM, RED, NRM, WHT, NRM, YEL, NRM);
         }
+
         exit(1);
     }
 
     yaml_parser_t parser;
     yaml_event_t event;
 
-    if (!yaml_parser_initialize(&parser)) {
+    if(!yaml_parser_initialize(&parser)) {
         if(DEBUG) {
             printf("%s[%s %sFATAL%s %s]%s %sError initializing the parser%s\n", WHT, NRM, RED, NRM, WHT, NRM, YEL, NRM);
         }
+
         fclose(fh);
+
         exit(1);
     }
 
@@ -252,41 +266,39 @@ int install(char *query_name, int update_all) {
     char pkg_install_categories[1000];
     char pkg_min[100];
 
-    while (!done) {
-        if (!yaml_parser_parse(&parser, &event)) {
+    while(!done) {
+        if(!yaml_parser_parse(&parser, &event)) {
             if(DEBUG) {
                 printf("%s[%s %sFATAL%s %s]%s Parsing error... %s\n", WHT, NRM, RED, NRM, WHT, NRM, parser.problem);
             }
+
             break;
         }
 
-        switch (event.type) {
+        switch(event.type) {
             case YAML_STREAM_START_EVENT:
             case YAML_DOCUMENT_START_EVENT:
                 break;
-
             case YAML_SEQUENCE_START_EVENT:
-                if (!in_mapping) {
+                if(!in_mapping) {
                     in_sequence = 1;
-                } else if (key && strcmp(key, "categories") == 0) {
+                } else if(key && strcmp(key, "categories") == 0) {
                     in_categories = 1;
                     category_count = 0;
                 }
                 break;
-
             case YAML_MAPPING_START_EVENT:
                 if (in_sequence && !in_mapping) {
                     in_mapping = 1;
                 }
                 break;
-
             case YAML_SCALAR_EVENT:
-                if (in_mapping) {
-                    if (!key) {
+                if(in_mapping) {
+                    if(!key) {
                         key = strdup((char *)event.data.scalar.value);
                     } else {
-                        if (strcmp(key, "categories") == 0 && !in_categories) {
-                        } else if (in_categories) {
+                        if(strcmp(key, "categories") == 0 && !in_categories) {
+                        } else if(in_categories) {
                             if(strcmp(query_name, name) == 0) {
                                 categories[category_count++] = strdup((char *)event.data.scalar.value);
                             }
@@ -302,19 +314,20 @@ int install(char *query_name, int update_all) {
                             } else if(strcmp(key, "min_andrax") == 0) {
                                 strncpy(pkg_min, (const char *)event.data.scalar.value, 499);
                             }
+
                             free(key);
+
                             key = NULL;
                         }
                     }
                 }
                 break;
-            
             case YAML_SEQUENCE_END_EVENT:
-                if (in_categories) {
+                if(in_categories) {
                     if(strcmp(query_name, name) == 0) {
                         int total_length = 0;
 
-                        for (int i = 0; i < category_count; i++) {
+                        for(int i = 0; i < category_count; i++) {
                             total_length += strlen(categories[i]) + 2; 
                         }
 
@@ -323,11 +336,10 @@ int install(char *query_name, int update_all) {
                         char *result_str_categories = (char *)malloc(total_length + 1); 
                         result_str_categories[0] = '\0'; 
 
-                        for (int i = 0; i < category_count; i++) {
-
+                        for(int i = 0; i < category_count; i++) {
                             strcat(result_str_categories, categories[i]);
 
-                            if (i < category_count - 1) {
+                            if(i < category_count - 1) {
                                 strcat(result_str_categories, ", ");
                             }
 
@@ -342,17 +354,15 @@ int install(char *query_name, int update_all) {
                     in_categories = 0;
                     free(key);
                     key = NULL;
-                } else if (in_sequence) {
+                } else if(in_sequence) {
                     in_sequence = 0;
                 }
                 break;
-
             case YAML_MAPPING_END_EVENT:
-                if (in_mapping) {
+                if(in_mapping) {
                     in_mapping = 0;
 
                     if(strcmp(query_name, name) == 0 && atoi(andrax_version) >= atoi(pkg_min) ) {
-
                         pkg_found = 1;
                         
                         if(DEBUG) {
@@ -360,7 +370,6 @@ int install(char *query_name, int update_all) {
                         }
 
                         install_pkg(name, version, desc, pkg_install_categories, repo_url, update_all);
-
                     }
 
                     memset(name, 0, sizeof(name));
@@ -369,15 +378,12 @@ int install(char *query_name, int update_all) {
                     memset(repo_url, 0, sizeof(repo_url));
                     memset(pkg_install_categories, 0, sizeof(pkg_install_categories));
                     memset(pkg_min, 0, sizeof(pkg_min));
-
                 }
                 break;
-
             case YAML_DOCUMENT_END_EVENT:
             case YAML_STREAM_END_EVENT:
                 done = 1;
                 break;
-
             default:
                 break;
         }
@@ -386,8 +392,10 @@ int install(char *query_name, int update_all) {
     }
 
     yaml_parser_delete(&parser);
+    
     fclose(fh);
-    if (key) free(key);
+
+    if(key) free(key);
 
     if(!pkg_found) {
         printf("\n%s[%s %sFATAL%s %s]%s Package: %s(%s %s %s)%s NOT FOUND!\n\n", WHT, NRM, RED, NRM, WHT, NRM, WHT, NRM, query_name, WHT, NRM);

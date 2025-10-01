@@ -24,7 +24,7 @@
 
 int get_pkgs() {
     FILE* afossourcelist;
-    int bufferLengthlist = 500;
+    int bufferLengthlist = 499;
     char buffer[bufferLengthlist];
 
     char default_repo[500] = "https://raw.githubusercontent.com/snakesec/afos-ng/refs/heads/main/repository/afos.yaml";
@@ -51,7 +51,6 @@ int get_pkgs() {
 
         fclose(afossourcelist);
     }
-
 
     return 0;
 }

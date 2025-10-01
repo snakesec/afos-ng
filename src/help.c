@@ -21,15 +21,15 @@
 #include <stdio.h>
 
 int help() {
-
     printf("AFOS-NG HELP:\n\n");
-    printf("        --install, -i: [ Install or update packages ]\n");
-    printf("        --update, -u: [ Check for updates ]\n");
-    printf("        --update-all, -a: [ Update all packages ]\n");
-    printf("        --list, -l: [ List installed packages by AFOS ]\n");
-    printf("        --repo, -r: [ List packages on AFOS REPO ]\n");
-    printf("        --debug, -d: [ Debug errors ]\n");
-    printf("        --help, -h [ Show this help ]\n\n");
+    printf("        --install, -i:      [ Install or update packages ]\n");
+    printf("        --update, -u:       [ Check for updates ]\n");
+    printf("        --update-all, -a:   [ Update all packages ]\n");
+    printf("        --list, -l:         [ List installed packages by AFOS ]\n");
+    printf("        --repo, -r:         [ List packages on AFOS REPO ]\n");
+    printf("        --debug, -d:        [ Debug errors ]\n");
+    printf("        --testing, -t:      [ Test mode for maintainers ]\n");
+    printf("        --help, -h          [ Show this help ]\n\n");
 
     return 0;
 }

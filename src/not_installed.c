@@ -41,7 +41,7 @@ static int callback_list_on_db(void *data, int argc, char **argv, char **azColNa
    int i;
    
    for(i = 0; i<argc; i++) {
-    if(pkg_count_db < 2000){
+    if(pkg_count_db < 2000) {
         if(i==1) {
             strncpy(pkgs_on_db.name[pkg_count_db], argv[i], 499);
         } else if(i==2) {
@@ -67,7 +67,7 @@ int list_on_db() {
 
     rc = sqlite3_open("/opt/AFOS/pkg.db", &db);
 
-    if( rc ) {
+    if(rc) {
         fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(db));
         exit(1);
     } else {
@@ -80,7 +80,7 @@ int list_on_db() {
 
     rc = sqlite3_exec(db, sql, callback_list_on_db, NULL, &zErrMsg);
 
-    if( rc != SQLITE_OK ) {
+    if(rc != SQLITE_OK) {
         fprintf(stderr, "SQL error: %s\n", zErrMsg);
         sqlite3_free(zErrMsg);
     } else {
@@ -88,7 +88,9 @@ int list_on_db() {
             fprintf(stdout, "Operation done successfully\n");
         }
     }
+
     sqlite3_close(db);
+
     return 0;
 }
 
@@ -98,7 +100,7 @@ int is_installed_or_not(char *query_name) {
 
     list_on_db();
 
-    for (int i = 0; i < 2000; i++) {
+    for(int i = 0; i < 2000; i++) {
         if(strcmp(query_name, pkgs_on_db.name[i]) == 0) {
             installed = 1;
         }

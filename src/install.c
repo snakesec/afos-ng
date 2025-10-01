@@ -312,7 +312,7 @@ int install(char *query_name, int update_all) {
                             } else if(strcmp(key, "repo_url") == 0) {
                                 strncpy(repo_url, (const char *)event.data.scalar.value, 499);
                             } else if(strcmp(key, "min_andrax") == 0) {
-                                strncpy(pkg_min, (const char *)event.data.scalar.value, 499);
+                                strncpy(pkg_min, (const char *)event.data.scalar.value, 99);
                             }
 
                             free(key);
@@ -362,7 +362,7 @@ int install(char *query_name, int update_all) {
                 if(in_mapping) {
                     in_mapping = 0;
 
-                    if(strcmp(query_name, name) == 0 && atoi(andrax_version) >= atoi(pkg_min) ) {
+                    if(strcmp(query_name, name) == 0 && atoi(andrax_version()) >= atoi(pkg_min)) {
                         pkg_found = 1;
                         
                         if(DEBUG) {

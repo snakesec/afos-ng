@@ -1330,7 +1330,7 @@
   repo_url: gitlab.com/snake-security/s1ap_enum
   original_repo_url: gitlab.com/snake-security/s1ap_enum
 - name: s3scanner
-  version: 3.1.1
+  version: 3.1.1-1
   description: Scan for open S3 buckets and dump the contents
   categories:
   - Web Site Hacking

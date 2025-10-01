@@ -1497,7 +1497,7 @@
   categories:
   - Phishing
   - Web Site Hacking
-  repo_url: gitlab.com/snake-security/urlcrazy
+  repo_url: github.com/snakesec/urlcrazy
   original_repo_url: github.com/urbanadventurer/urlcrazy
 - name: vsaudit
   version: 2015.4-1

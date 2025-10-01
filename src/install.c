@@ -362,7 +362,7 @@ int install(char *query_name, int update_all) {
                 if(in_mapping) {
                     in_mapping = 0;
 
-                    if(strcmp(query_name, name) == 0 && atoi(andrax_version()) >= atoi(pkg_min)) {
+                    if(strcmp(query_name, name) == 0 && andrax_version() >= atoi(pkg_min)) {
                         pkg_found = 1;
                         
                         if(DEBUG) {

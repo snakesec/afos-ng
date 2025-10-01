@@ -1492,7 +1492,7 @@
   repo_url: github.com/snakesec/simpletr64
   original_repo_url: github.com/bpannier/simpletr64
 - name: urlcrazy
-  version: 0.7.3-1
+  version: 0.8.2
   description: URL hijacking, Phishing, and Corporate Espionage
   categories:
   - Phishing

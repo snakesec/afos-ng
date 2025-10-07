@@ -898,11 +898,11 @@
   repo_url: github.com/snakesec/hashcat
   original_repo_url: github.com/hashcat/hashcat
 - name: hcxdumptool
-  version: 6.3.4-1
+  version: 7.0.1
   description: Capture packets from wlan devices
   categories:
   - Wireless Hacking
-  repo_url: gitlab.com/snake-security/hcxdumptool
+  repo_url: github.com/snakesec/hcxdumptool
   original_repo_url: github.com/ZerBea/hcxdumptool
 - name: hcxtools
   version: 7.0.1

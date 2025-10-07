@@ -967,7 +967,7 @@
   repo_url: gitlab.com/snake-security/inviteflood
   original_repo_url: hackingvoip.com/sec_tools.html
 - name: ipcalc
-  version: 1.0.4-2
+  version: 1.0.4-3
   description: IPv4/IPv6 Calculator
   categories:
   - Network Hacking

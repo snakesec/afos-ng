@@ -210,7 +210,7 @@
   repo_url: github.com/snakesec/golang
   original_repo_url: go.dev/dl/
 - name: forbidden
-  version: 13.2.0
+  version: 13.4.0
   description: Bypass 4xx HTTP response status codes
   categories:
   - Web Site Hacking

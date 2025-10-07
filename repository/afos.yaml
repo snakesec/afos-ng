@@ -1052,12 +1052,12 @@
   repo_url: gitlab.com/snake-security/ldp_cli
   original_repo_url: c0decafe.de
 - name: lulzbuster
-  version: 1.3.2
+  version: 1.3.3
   description: Search Web for Fun
   categories:
   - Web Site Hacking
   - Bug Bounty
-  repo_url: gitlab.com/snake-security/lulzbuster
+  repo_url: github.com/snakesec/lulzbuster
   original_repo_url: github.com/noptrix/lulzbuster
 - name: mainframe_bruter
   version: 0.0.1

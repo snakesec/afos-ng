@@ -790,11 +790,11 @@
   repo_url: gitlab.com/snake-security/dotnet-sdk
   original_repo_url: dotnet.microsoft.com/en-us/download/dotnet
 - name: go-gtp
-  version: 0.8.10-1
+  version: 0.8.12
   description: GTP (GPRS Tunneling Protocol)
   categories:
   - Phreaking
-  repo_url: gitlab.com/snake-security/go-gtp
+  repo_url: github.com/snakesec/go-gtp
   original_repo_url: github.com/wmnsk/go-gtp
 - name: enumiax
   version: 1.0.0-1

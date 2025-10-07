@@ -267,11 +267,11 @@
   repo_url: gitlab.com/snake-security/dnstake
   original_repo_url: github.com/pwnesia/dnstake
 - name: dnsx
-  version: 1.2.1-1
+  version: 1.2.2
   description: Fast multi-purpose DNS toolkit
   categories:
   - Information Gathering
-  repo_url: gitlab.com/snake-security/dnsx
+  repo_url: github.com/snakesec/dnsx
   original_repo_url: github.com/projectdiscovery/dnsx
 - name: spiderfoot
   version: 4.0.0-3

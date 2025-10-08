@@ -548,7 +548,7 @@
   repo_url: gitlab.com/snake-security/cfr
   original_repo_url: github.com/leibnitz27/cfr
 - name: chafa
-  version: 1.15.0
+  version: 1.17.0
   description: Terminal graphics for the 21st century
   categories:
   - System

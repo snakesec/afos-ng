@@ -562,12 +562,12 @@
   repo_url: gitlab.com/snake-security/chimera
   original_repo_url: github.com/tokyoneon/Chimera
 - name: chisel
-  version: 1.9.1-1
+  version: 1.11.3
   description: A fast TCP/UDP tunnel over HTTP
   categories:
   - Network Hacking
   - Exploitation
-  repo_url: gitlab.com/snake-security/chisel
+  repo_url: github.com/snakesec/chisel
   original_repo_url: github.com/jpillora/chisel
 - name: cht.sh
   version: 0.0.4-1

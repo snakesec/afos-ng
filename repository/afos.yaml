@@ -1894,12 +1894,12 @@
   repo_url: github.com/snakesec/wmiexec-Pro
   original_repo_url: github.com/XiaoliChan/wmiexec-Pro
 - name: frida-ios-hook
-  version: 3.9.0
+  version: 3.10.0
   description: Easy test, trace classes, functions, and modify the return values
   categories:
   - MacOS/iPhone
   - Exploitation
-  repo_url: gitlab.com/snake-security/frida-ios-hook
+  repo_url: github.com/snakesec/frida-ios-hook
   original_repo_url: github.com/noobpk/frida-ios-hook
 - name: adalanche
   version: 2025.06.02

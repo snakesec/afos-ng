@@ -134,7 +134,7 @@
   repo_url: gitlab.com/snake-security/thc-ipv6
   original_repo_url: github.com/vanhauser-thc/thc-ipv6
 - name: jadx
-  version: 1.5.2
+  version: 1.5.3
   description: Dex to Java decompiler
   categories:
   - Exploitation

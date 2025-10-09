@@ -1089,7 +1089,7 @@
   repo_url: github.com/snakesec/masscan
   original_repo_url: github.com/robertdavidgraham/masscan
 - name: massdns
-  version: 1.1.0-1
+  version: 1.1.0-15
   description: High-performance DNS stub resolver
   categories:
   - Information Gathering

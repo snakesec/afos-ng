@@ -420,11 +420,11 @@
   repo_url: github.com/snakesec/birp
   original_repo_url: github.com/sensepost/birp
 - name: bit-twist
-  version: 3.8.0
+  version: 4.7
   description: Ethernet packet generator
   categories:
   - Network Hacking
-  repo_url: gitlab.com/snake-security/bit-twist
+  repo_url: github.com/snakesec/bit-twist
   original_repo_url: bittwist.sourceforge.io
 - name: blescan
   version: 1.4.0-1

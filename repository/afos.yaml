@@ -1587,7 +1587,7 @@
   repo_url: github.com/snakesec/subfinder
   original_repo_url: github.com/projectdiscovery/subfinder
 - name: maigret
-  version: 0.5.0
+  version: 0.5.0-1
   description: Social media username detective
   categories:
   - Information Gathering

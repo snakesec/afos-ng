@@ -1507,12 +1507,12 @@
   repo_url: gitlab.com/snake-security/vsaudit
   original_repo_url: github.com/ociredefz/vsaudit
 - name: whatweb
-  version: 0.5.5-1
+  version: 0.6.2
   description: Next generation Web Scanner
   categories:
   - Web Site Hacking
   - Bug Bounty
-  repo_url: gitlab.com/snake-security/whatweb
+  repo_url: github.com/snakesec/whatweb
   original_repo_url: github.com/urbanadventurer/WhatWeb
 - name: xspear
   version: 1.4.1

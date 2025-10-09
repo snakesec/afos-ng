@@ -104,7 +104,7 @@
   repo_url: github.com/snakesec/WPScan
   original_repo_url: github.com/wpscanteam/wpscan
 - name: thc-hydra
-  version: 9.6.0-3
+  version: 9.7.0
   description: Advanced Password Brute-Forcer
   categories:
   - Password Hacking

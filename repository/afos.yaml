@@ -405,7 +405,7 @@
   repo_url: gitlab.com/snake-security/bgp_md5crack
   original_repo_url: c0decafe.de
 - name: binwalk
-  version: 3.1.1-1
+  version: 3.1.1-2
   description: Firmware Analysis Tool
   categories:
   - Exploitation

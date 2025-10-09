@@ -82,7 +82,7 @@
   repo_url: github.com/snakesec/phpsploit
   original_repo_url: github.com/nil0x42/phpsploit
 - name: commix
-  version: 4.1.65
+  version: 4.1.111
   description: All-in-One OS Command Injection Exploitation
   categories:
   - Web Site Hacking

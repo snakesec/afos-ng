@@ -1762,7 +1762,7 @@
   repo_url: gitlab.com/snake-security/voiphopper
   original_repo_url: sourceforge.net/projects/voiphopper/
 - name: katana
-  version: 1.1.3
+  version: 1.2.2
   description: Next GEN Crawling and Spidering
   categories:
   - Bug Bounty

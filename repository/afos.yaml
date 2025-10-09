@@ -762,7 +762,7 @@
   repo_url: github.com/snakesec/eigrp_cli
   original_repo_url: c0decafe.de
 - name: powershell
-  version: 7.5.2
+  version: 7.5.3
   description: Task automation and configuration management
   categories:
   - Expoitation

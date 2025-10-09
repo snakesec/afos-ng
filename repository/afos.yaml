@@ -891,7 +891,7 @@
   repo_url: gitlab.com/snake-security/hashboy
   original_repo_url: github.com/sf197/hashboy-tool
 - name: hashcat
-  version: 6.2.6-3
+  version: 7.1.2
   description: Worlds fastest Password Cracker
   categories:
   - Password Hacking

@@ -1732,7 +1732,7 @@
   repo_url: github.com/snakesec/uncover
   original_repo_url: github.com/projectdiscovery/uncover
 - name: interactsh
-  version: 1.2.4
+  version: 1.2.4-1
   description: OOB interaction Tester
   categories:
   - Exploitation

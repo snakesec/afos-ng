@@ -505,11 +505,11 @@
   repo_url: gitlab.com/snake-security/bully
   original_repo_url: github.com/kimocoder/bully
 - name: cameradar
-  version: 5.0.2-2
+  version: 5.0.4
   description: RTSP stream access tool
   categories:
   - Exploitation
-  repo_url: gitlab.com/snake-security/cameradar
+  repo_url: github.com/snakesec/cameradar
   original_repo_url: github.com/Ullaakut/cameradar
 - name: cansina
   version: 1.0.0-3

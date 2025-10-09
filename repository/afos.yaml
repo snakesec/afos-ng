@@ -97,7 +97,7 @@
   repo_url: github.com/snakesec/sqlmap
   original_repo_url: github.com/sqlmapproject/sqlmap
 - name: wpscan
-  version: 3.8.28
+  version: 3.8.28-1
   description: WordPress security scanner
   categories:
   - Web Site Hacking

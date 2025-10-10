@@ -127,7 +127,7 @@
   repo_url: github.com/snakesec/expliot
   original_repo_url: gitlab.com/expliot_framework/expliot
 - name: thc-ipv6
-  version: 3.8.1-2
+  version: 3.8.0-1
   description: IPv6 attack toolkit
   categories:
   - Network Hacking

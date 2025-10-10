@@ -131,7 +131,7 @@
   description: IPv6 attack toolkit
   categories:
   - Network Hacking
-  repo_url: gitlab.com/snake-security/thc-ipv6
+  repo_url: github.com/snakesec/thc-ipv6
   original_repo_url: github.com/vanhauser-thc/thc-ipv6
 - name: jadx
   version: 1.5.3

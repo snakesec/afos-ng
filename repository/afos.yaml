@@ -1849,13 +1849,13 @@
   repo_url: github.com/snakesec/naabu
   original_repo_url: github.com/projectdiscovery/naabu
 - name: proxify
-  version: 0.0.15
+  version: 0.0.16
   description: Versatile, modern and portable proxy for capture, manipulate, and replay
     HTTP/HTTPS traffic
   categories:
   - Bug Bounty
   - Web Site Hacking
-  repo_url: gitlab.com/snake-security/proxify
+  repo_url: github.com/snakesec/proxify
   original_repo_url: github.com/projectdiscovery/proxify
 - name: network-fingerprint
   version: 0.0.1

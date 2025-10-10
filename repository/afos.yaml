@@ -1880,12 +1880,12 @@
   repo_url: gitlab.com/snake-security/offensivenim
   original_repo_url: github.com/byt3bl33d3r/OffensiveNim
 - name: mwemu
-  version: 0.7.11
+  version: 0.7.12
   description: x86 malware emulator
   categories:
   - Exploitation
   repo_url: github.com/snakesec/mwemu
-  original_repo_url: github.com/sha0coder/scemu
+  original_repo_url: github.com/sha0coder/mwemu
 - name: wmiexec-pro
   version: 0.3.0
   description: New generation of wmiexec

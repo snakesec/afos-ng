@@ -1785,7 +1785,7 @@
   repo_url: github.com/snakesec/NetExec
   original_repo_url: github.com/Pennyw0rth/NetExec
 - name: dirsearch
-  version: 0.4.3-1
+  version: 0.4.3-2
   description: Web path scanner
   categories:
   - Web Site Hacking

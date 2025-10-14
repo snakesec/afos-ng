@@ -18,7 +18,7 @@ void start_update_via_script() {
     if (pid == 0) {        
         printf("AFOS-NG Frok STARTED: Running: %s\n", UPDATE_SCRIPT);
         execlp("bash", "bash", UPDATE_SCRIPT, (char *)NULL);
-        exit(0)
+        exit(0);
     } else {
         exit(0); 
     }

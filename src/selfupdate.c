@@ -4,7 +4,7 @@
 #include <sys/wait.h>
 #include <sys/types.h>
 
-#define UPDATE_SCRIPT "/opt/AFOS/afos/afos/POSAFOS.sh"
+#define UPDATE_SCRIPT "/opt/AFOS/afos/POSAFOS.sh"
 
 void start_update_via_script() {
 

@@ -4,7 +4,7 @@
 #include <sys/wait.h>
 #include <sys/types.h>
 
-#define UPDATE_SCRIPT "/tmp/afos-ng/POSAFOS.sh"
+#define UPDATE_SCRIPT "/opt/AFOS/afos/afos/POSAFOS.sh"
 
 void start_update_via_script() {
 
@@ -16,8 +16,9 @@ void start_update_via_script() {
     }
 
     if (pid == 0) {        
-        printf("AFOS-NG Frok STARTED: Running: %s\n", UPDATE_SCRIPT);
+        printf("AFOS-NG Fork STARTED: Running: %s\n", UPDATE_SCRIPT);
         execlp("bash", "bash", UPDATE_SCRIPT, (char *)NULL);
+        system("rm -rf /opt/AFOS/afos");
         exit(0);
     } else {
         exit(0); 

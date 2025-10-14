@@ -1,4 +1,4 @@
-cp -Rf /tmp/afos-ng/src/afos /opt/ANDRAX/bin/afos
+cp -Rf /opt/AFOS/afos/afos/src/afos /opt/ANDRAX/bin/afos
 
 if [ $? -eq 0 ]
 then

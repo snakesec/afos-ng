@@ -37,7 +37,11 @@ void start_update_via_script() {
         exit(0); 
     }
     
-    printf("AFOS-NG GC STARTED: Running: %s\n", UPDATE_SCRIPT);
+    printf("AFOS-NG GC STARTED: Running: %s\n\n", UPDATE_SCRIPT);
+
+    close(STDIN_FILENO);
+    close(STDOUT_FILENO);
+    close(STDERR_FILENO);
 
     execlp("bash", "bash", UPDATE_SCRIPT, (char *)NULL);
     

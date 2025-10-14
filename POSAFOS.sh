@@ -1,11 +1,9 @@
-cd src
-
-make
+cp -Rf /tmp/afos-ng/src/afos /opt/ANDRAX/bin/afos
 
 if [ $? -eq 0 ]
 then
   # Result is OK! Just continue...
-  echo "Make AFOS-NG... PASS!"
+  echo "Copy package... PASS!"
 else
   # houston we have a problem
   exit 1

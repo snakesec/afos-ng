@@ -26,6 +26,8 @@
 
 #include "afos.h"
 
+int SELF_UPDATE = 0;
+
 int andrax_version() {
     FILE *file = fopen("/version", "r");  
 
@@ -148,7 +150,7 @@ int git_download(char *name, char *url) {
         }
 
         if(valuecode == 0) {
-            if(access("POSAFOS.sh", F_OK) == 0) {
+            if(access("POSAFOS.sh", F_OK) == 0 && SELF_UPDATE == 0) {
                 long int posafos_valuecode;
                 
                 posafos_valuecode = system("bash POSAFOS.sh");
@@ -162,8 +164,12 @@ int git_download(char *name, char *url) {
 
             chdir("/opt/AFOS");
             printf("\nCleaning UP\n");
-            snprintf(cmd_tmp, 4999, "rm -rf /opt/AFOS/%s", name);
-            system(cmd_tmp);
+            
+            if(SELF_UPDATE == 0) {
+                snprintf(cmd_tmp, 4999, "rm -rf /opt/AFOS/%s", name);
+                system(cmd_tmp);
+            }
+            
             memset(cmd_tmp, 0, sizeof(cmd_tmp));
         } else {
             printf("%s[%s %s%sFATAL ERROR%s %s]%s Installation failed\n", WHT, NRM, BLD, RED, NRM, WHT, NRM);
@@ -187,6 +193,11 @@ int install_pkg(char *pkg_name, char *pkg_version, char *pkg_desc, char *pkg_cat
     int git_download_result;
 
     if(update_all == 0) {
+
+        if(strncmp(pkg_name, "afos", strlen(pkg_name) -1 ) == 0) {
+            SELF_UPDATE = 1;
+        }
+
         printf("Do you wanna install: %s? [ Y/n ]: ", pkg_name);
         scanf("%5[^\n]", answer);
 
@@ -203,12 +214,21 @@ int install_pkg(char *pkg_name, char *pkg_version, char *pkg_desc, char *pkg_cat
             } else {
                 printf("The installation failed, contact the maintainer <weidsom at snakesecurity.org>\n");
             }
+            
+            if(SELF_UPDATE) {
+                start_update_via_script();
+            }
+
         } else {
             printf("\n");
             exit(1);
         }
     } else {
         git_download_result = git_download(pkg_name, pkg_url);
+
+        if(strncmp(pkg_name, "afos", strlen(pkg_name) -1 ) == 0) {
+            SELF_UPDATE = 1;
+        }
 
         if(git_download_result == 0) {
             char sqlstate[5000];
@@ -220,6 +240,11 @@ int install_pkg(char *pkg_name, char *pkg_version, char *pkg_desc, char *pkg_cat
         } else {
             printf("The installation failed, contact the maintainer <weidsom at snakesecurity.org>\n");
         }
+
+        if(SELF_UPDATE) {
+            start_update_via_script();
+        }
+
     }
 
     return 0;

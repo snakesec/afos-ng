@@ -45,3 +45,4 @@ int repolist();
 int install(char *query_name, int update_all);
 int is_installed_or_not(char *query_name);
 int afos_compare_versions(const char *v1, const char *v2);
+void start_update_via_script();

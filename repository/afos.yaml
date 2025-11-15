@@ -2009,3 +2009,11 @@
   - System
   repo_url: github.com/snakesec/afos-ng
   original_repo: github.com/snakesec/afos-ng
+- name: pipx
+  version: 1.8.0
+  description: PIPX for ANDRAX-NG
+  categories:
+  - System
+  repo_url: github.com/snakesec/pipx
+  original_repo: github.com/pypa/pipx
+  min_andrax: 1004

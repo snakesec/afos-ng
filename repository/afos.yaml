@@ -2016,4 +2016,4 @@
   - System
   repo_url: github.com/snakesec/pipx
   original_repo: github.com/pypa/pipx
-  min_andrax: 1004
+  min_andrax: 1003

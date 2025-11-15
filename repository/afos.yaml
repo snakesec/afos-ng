@@ -1770,12 +1770,13 @@
   repo_url: github.com/snakesec/katana
   original_repo_url: github.com/projectdiscovery/katana
 - name: andrax-base-files
-  version: 0.0.7
+  version: 0.0.8
   description: ANDRAX-NG base files
   categories:
   - System
   repo_url: github.com/snakesec/andrax-base-files
   original_repo_url: github.com/snakesec/andrax-base-files
+  min_andrax: 1003
 - name: netexec
   version: 1.4.0
   description: The Network Execution Tool

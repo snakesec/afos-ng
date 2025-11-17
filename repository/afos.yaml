@@ -1980,13 +1980,6 @@
   - Bug Bounty
   repo_url: github.com/snakesec/shadow-spotter
   original_repo_url: github.com/snakesec/shadow-spotter
-- name: python3
-  version: 3.13.3
-  description: Python3 Programming Language for ANDRAX-NG
-  categories:
-  - System
-  repo_url: github.com/snakesec/python3
-  original_repo_url: www.python.org/downloads/
 - name: mitmproxy
   version: 13.0.0
   description: Interactive SSL Penetration Testing proxy

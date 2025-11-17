@@ -1608,7 +1608,7 @@
   repo_url: github.com/snakesec/apple_bleee
   original_repo_url: github.com/hexway/apple_bleee
 - name: rust-lang
-  version: 1.90.0
+  version: 1.91.1
   description: Rust Programming Language
   categories:
   - System

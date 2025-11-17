@@ -996,12 +996,12 @@
   repo_url: gitlab.com/snake-security/ismtp
   original_repo_url: github.com/altjx/ipwn/tree/master/iSMTP
 - name: javascript-obfuscator
-  version: 4.1.1
+  version: 4.1.1-1
   description: A powerful obfuscator for JavaScript and Node.js
   categories:
   - Exploitation
   - Web Site Hacking
-  repo_url: gitlab.com/snake-security/javascript-obfuscator
+  repo_url: github.com/snakesec/javascript-obfuscator
   original_repo_url: github.com/javascript-obfuscator/javascript-obfuscator
 - name: john
   version: 1.9.0-7

@@ -2003,7 +2003,7 @@
   repo_url: github.com/snakesec/PipePunisher
   original_repo_url: github.com/snakesec/PipePunisher
 - name: afos
-  version: 1.0.4
+  version: 1.0.6
   description: ANDRAX-NG Package Manager
   categories:
   - System

@@ -194,7 +194,7 @@ int install_pkg(char *pkg_name, char *pkg_version, char *pkg_desc, char *pkg_cat
 
     if(update_all == 0) {
 
-        if(strncmp(pkg_name, "afos", strlen(pkg_name) -1 ) == 0) {
+        if(strncmp(pkg_name, "afos", 4) == 0 && strlen(pkg_name) == 4) {
             SELF_UPDATE = 1;
         }
 
@@ -226,7 +226,7 @@ int install_pkg(char *pkg_name, char *pkg_version, char *pkg_desc, char *pkg_cat
     } else {
         git_download_result = git_download(pkg_name, pkg_url);
 
-        if(strncmp(pkg_name, "afos", strlen(pkg_name) -1 ) == 0) {
+        if(strncmp(pkg_name, "afos", 4) == 0 && strlen(pkg_name) == 4) {
             SELF_UPDATE = 1;
         }
 

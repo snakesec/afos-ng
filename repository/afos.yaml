@@ -905,7 +905,7 @@
   repo_url: github.com/snakesec/hcxdumptool
   original_repo_url: github.com/ZerBea/hcxdumptool
 - name: hcxtools
-  version: 7.0.1
+  version: 7.0.1-1
   description: Convert packets from captures
   categories:
   - Password Hacking

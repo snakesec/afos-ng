@@ -854,7 +854,7 @@
   repo_url: gitlab.com/snake-security/scada-tools
   original_repo_url: github.com/atimorin/scada-tools
 - name: gobuster
-  version: 3.8.2
+  version: 3.8.2-1
   description: Directory/File, DNS and VHost buster
   categories:
   - Web Site Hacking

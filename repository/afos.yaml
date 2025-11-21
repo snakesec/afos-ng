@@ -769,7 +769,7 @@
   repo_url: github.com/snakesec/PowerShell
   original_repo_url: github.com/PowerShell/PowerShell
 - name: nim
-  version: 2.2.4
+  version: 2.2.6
   description: Nim programming language
   categories:
   - Programming

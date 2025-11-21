@@ -898,7 +898,7 @@
   repo_url: github.com/snakesec/hashcat
   original_repo_url: github.com/hashcat/hashcat
 - name: hcxdumptool
-  version: 7.0.1
+  version: 7.0.1-1
   description: Capture packets from wlan devices
   categories:
   - Wireless Hacking

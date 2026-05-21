@@ -28,7 +28,7 @@ int help() {
     printf("        --list, -l:         [ List installed packages by AFOS ]\n");
     printf("        --repo, -r:         [ List packages on AFOS REPO ]\n");
     printf("        --debug, -d:        [ Debug errors ]\n");
-    printf("        --testing, -t:      [ Test mode for maintainers ]\n");
+    printf("        --testing, -t:      [ Test mode ] Only for maintainers!\n");
     printf("        --help, -h          [ Show this help ]\n\n");
 
     return 0;

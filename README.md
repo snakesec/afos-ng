@@ -13,4 +13,4 @@ The ***repository*** directory contains the YAML file that is used by AFOS-NG fo
 
 For instructions on how to use AFOS-NG or create a repository for it, see the [documentation](https://snakesecurity.org/andrax-documentation/andrax-afos-ng/)
 
-Updates made as fast as possible
+Updates made as fast as possible...

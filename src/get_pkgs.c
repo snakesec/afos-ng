@@ -1,7 +1,7 @@
 /*
 *******************************************************************************
 *                                                                             *
-* Copyright 2025 Weidsom Nascimento - SNAKE Security                          *
+* Copyright 2026 Weidsom Nascimento - SNAKE Security                          *
 *                                                                             *
 * Licensed under the Apache License, Version 2.0 (the "License");             *
 * you may not use this file except in compliance with the License.            *
@@ -27,17 +27,19 @@ int get_pkgs() {
     int bufferLengthlist = 499;
     char buffer[bufferLengthlist];
 
+    // We like this one...
     char default_repo[500] = "https://raw.githubusercontent.com/snakesec/afos-ng/refs/heads/main/repository/afos.yaml";
-
+    // But this one is what bad boys use!
     char default_repo_testing[500] = "https://raw.githubusercontent.com/snakesec/afos-ng/refs/heads/testing/repository/afos.yaml";
 
     afossourcelist = fopen("/opt/AFOS/afos.list", "r");
 
-    if(afossourcelist == NULL) {
-        if(DEBUG) {
+    if (afossourcelist == NULL) {
+        if (DEBUG) {
             printf("%s[%s %sERROR%s %s]%s Switching to default repo because no valid URL was provided\n", WHT, NRM, YEL, NRM, WHT, NRM);
         }
-        if(TESTING) {
+
+        if (TESTING) {
             get_afos_packages(default_repo_testing, "/opt/AFOS/afos_pkgs.yaml");
         } else {
             get_afos_packages(default_repo, "/opt/AFOS/afos_pkgs.yaml");
@@ -45,7 +47,7 @@ int get_pkgs() {
     } else {
         int linen = 0;
 
-        while(fgets(buffer, bufferLengthlist, afossourcelist)) {
+        while (fgets(buffer, bufferLengthlist, afossourcelist)) {
             get_afos_packages(buffer, "/opt/AFOS/afos_pkgs.yaml");
         }
 

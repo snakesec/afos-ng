@@ -1,7 +1,7 @@
 /*
 *******************************************************************************
 *                                                                             *
-* Copyright 2025 Weidsom Nascimento - SNAKE Security                          *
+* Copyright 2026 Weidsom Nascimento - SNAKE Security                          *
 *                                                                             *
 * Licensed under the Apache License, Version 2.0 (the "License");             *
 * you may not use this file except in compliance with the License.            *
@@ -35,7 +35,8 @@ struct PKG pkgs1;
 
 static int callback(void *NotUsed, int argc, char **argv, char **azColName) {
    int i;
-   for(i = 0; i<argc; i++) {
+
+   for (i = 0; i<argc; i++) {
       printf("%s = %s\n", azColName[i], argv[i] ? argv[i] : "NULL");
    }
 
@@ -47,14 +48,14 @@ static int callback(void *NotUsed, int argc, char **argv, char **azColName) {
 static int callbackread(void *data, int argc, char **argv, char **azColName){
    int i;
    
-   for(i = 0; i<argc; i++){
-      if(i==1) {
+   for (i = 0; i<argc; i++){
+      if (i==1) {
          strncpy(pkgs1.name, argv[i], 999);
-      } else if(i==2) {
+      } else if (i==2) {
          strncpy(pkgs1.version, argv[i], 999);
-      } else if(i==3) {
+      } else if (i==3) {
          strncpy(pkgs1.desc, argv[i], 999);
-      } else if(i==4) {
+      } else if (i==4) {
          strncpy(pkgs1.type, argv[i], 999);
       }
    }
@@ -73,11 +74,11 @@ int readdb() {
 
    rc = sqlite3_open("/opt/AFOS/pkg.db", &db);
    
-   if(rc) {
+   if (rc) {
       fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(db));
       exit(1);
    } else {
-       if(DEBUG) {
+       if (DEBUG) {
          fprintf(stderr, "Opened database successfully\n");
        }
    }
@@ -86,13 +87,13 @@ int readdb() {
 
    rc = sqlite3_exec(db, sql, callbackread, NULL, &zErrMsg);
    
-   if(rc != SQLITE_OK) {
+   if (rc != SQLITE_OK) {
       fprintf(stderr, "SQL error: %s\n", zErrMsg);
       sqlite3_free(zErrMsg);
    } else {
-       if(DEBUG) {
+      if (DEBUG) {
          fprintf(stdout, "Operation done successfully\n");
-       }
+      }
    }
 
    sqlite3_close(db);
@@ -108,13 +109,13 @@ int createdb() {
 
    rc = sqlite3_open("/opt/AFOS/pkg.db", &db);
    
-   if(rc) {
+   if (rc) {
       fprintf(stderr, "Can't open database: %s\n\n", sqlite3_errmsg(db));
       return(0);
    } else {
-       if(DEBUG) {
+      if (DEBUG) {
          fprintf(stdout, "Opened database successfully\n");
-       }
+      }
    }
 
    sql = "CREATE TABLE PACKAGES("  \
@@ -126,13 +127,13 @@ int createdb() {
 
    rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
    
-   if(rc != SQLITE_OK){
+   if (rc != SQLITE_OK){
       fprintf(stderr, "SQL error: %s\n", zErrMsg);
       sqlite3_free(zErrMsg);
    } else {
-       if(DEBUG) {
+      if (DEBUG) {
          fprintf(stdout, "Table created successfully\n");
-       }
+      }
    }
    
    sqlite3_close(db);

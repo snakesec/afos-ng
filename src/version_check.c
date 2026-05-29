@@ -1,7 +1,7 @@
 /*
 *******************************************************************************
 *                                                                             *
-* Copyright 2025 Weidsom Nascimento - SNAKE Security                          *
+* Copyright 2026 Weidsom Nascimento - SNAKE Security                          *
 *                                                                             *
 * Licensed under the Apache License, Version 2.0 (the "License");             *
 * you may not use this file except in compliance with the License.            *
@@ -28,21 +28,23 @@ int is_valid_version(const char *version) {
     int has_digits = 0;
     int len = strlen(version);
 
-    if(len == 0) return 0;
+    if (len == 0) return 0;
 
-    for(int i = 0; i < len; i++) {
-        if(isdigit(version[i])) {
+    for (int i = 0; i < len; i++) {
+        if (isdigit(version[i])) {
             has_digits = 1;
-        } else if(version[i] == '.') {
+        } else if (version[i] == '.') {
             dots++;
-            if(dots > 2) return 0; 
-            if(i == 0 || i == len - 1 || !isdigit(version[i - 1]) || !isdigit(version[i + 1])) {
-                return 0; 
+            if (dots > 2) return 0; 
+            if (i == 0 || i == len - 1 || !isdigit(version[i - 1]) || !isdigit(version[i + 1])) {
+                return 0;
             }
-        } else if(version[i] == '-') {
+        } else if (version[i] == '-') {
             dashes++;
-            if(dashes > 1) return 0; 
-            if(i == 0 || i == len - 1 || !isdigit(version[i + 1])) {
+
+            if (dashes > 1) return 0;
+
+            if (i == 0 || i == len - 1 || !isdigit(version[i + 1])) {
                 return 0; 
             }
         } else {
@@ -54,7 +56,7 @@ int is_valid_version(const char *version) {
 }
 
 int afos_compare_versions(const char *v1, const char *v2) {
-    if(!is_valid_version(v1) || !is_valid_version(v2)) {
+    if (!is_valid_version(v1) || !is_valid_version(v2)) {
         return -2;
     }
 
@@ -64,17 +66,17 @@ int afos_compare_versions(const char *v1, const char *v2) {
     sscanf(v1, "%d.%d.%d-%d", &v1_major, &v1_minor, &v1_patch, &v1_extra);
     sscanf(v2, "%d.%d.%d-%d", &v2_major, &v2_minor, &v2_patch, &v2_extra);
 
-    if(v1_major < v2_major) return -1;
-    if(v1_major > v2_major) return 1;
+    if (v1_major < v2_major) return -1;
+    if (v1_major > v2_major) return 1;
 
-    if(v1_minor < v2_minor) return -1;
-    if(v1_minor > v2_minor) return 1;
+    if (v1_minor < v2_minor) return -1;
+    if (v1_minor > v2_minor) return 1;
 
-    if(v1_patch < v2_patch) return -1;
-    if(v1_patch > v2_patch) return 1;
+    if (v1_patch < v2_patch) return -1;
+    if (v1_patch > v2_patch) return 1;
 
-    if(v1_extra < v2_extra) return -1;
-    if(v1_extra > v2_extra) return 1;
+    if (v1_extra < v2_extra) return -1;
+    if (v1_extra > v2_extra) return 1;
 
     return 0;
 }

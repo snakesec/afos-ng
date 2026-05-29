@@ -1,7 +1,7 @@
 /*
 *******************************************************************************
 *                                                                             *
-* Copyright 2025 Weidsom Nascimento - SNAKE Security                          *
+* Copyright 2026 Weidsom Nascimento - SNAKE Security                          *
 *                                                                             *
 * Licensed under the Apache License, Version 2.0 (the "License");             *
 * you may not use this file except in compliance with the License.            *
@@ -32,10 +32,13 @@
 
 static int callback(void *NotUsed, int argc, char **argv, char **azColName) {
    int i;
-   for(i = 0; i<argc; i++) {
+
+   for (i = 0; i<argc; i++) {
       printf("%s = %s\n", azColName[i], argv[i] ? argv[i] : "NULL");
    }
+
    printf("\n");
+   
    return 0;
 }
 
@@ -47,7 +50,7 @@ int main(int argc, char* argv[]) {
 
    rc = sqlite3_open("/opt/AFOS/pkg.db", &db);
    
-   if(rc) {
+   if (rc) {
       fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(db));
       return(0);
    } else {
@@ -59,7 +62,7 @@ int main(int argc, char* argv[]) {
 
    rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
    
-   if(rc != SQLITE_OK){
+   if (rc != SQLITE_OK){
       fprintf(stderr, "SQL error: %s\n", zErrMsg);
       sqlite3_free(zErrMsg);
    } else {

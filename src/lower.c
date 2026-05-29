@@ -1,7 +1,7 @@
 /*
 *******************************************************************************
 *                                                                             *
-* Copyright 2025 Weidsom Nascimento - SNAKE Security                          *
+* Copyright 2026 Weidsom Nascimento - SNAKE Security                          *
 *                                                                             *
 * Licensed under the Apache License, Version 2.0 (the "License");             *
 * you may not use this file except in compliance with the License.            *
@@ -21,7 +21,7 @@
 #include <ctype.h>
 
 char *lower(char *str_to_lower) {
-    for(int i = 0; str_to_lower[i]; i++){
+    for (int i = 0; str_to_lower[i]; i++) {
         str_to_lower[i] = tolower(str_to_lower[i]);
     }
     

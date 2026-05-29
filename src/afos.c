@@ -1,7 +1,7 @@
 /*
 *******************************************************************************
 *                                                                             *
-* Copyright 2025 Weidsom Nascimento - SNAKE Security                          *
+* Copyright 2026 Weidsom Nascimento - SNAKE Security                          *
 *                                                                             *
 * Licensed under the Apache License, Version 2.0 (the "License");             *
 * you may not use this file except in compliance with the License.            *
@@ -26,6 +26,7 @@
 #include <string.h>
 #include "afos.h"
 
+// Badass banner
 static char afos_banner[20937] = {
   0x1b, 0x5b, 0x30, 0x6d, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20,
   0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20,
@@ -1783,21 +1784,24 @@ int main(int argc, char *argv[]) {
     printf("%s%s ANDRAX-NG Next Generation Package Manager %s%sv1.0.7%s\n", BLD, GRN, BLD, RED, NRM);
     printf(" %sCopyright%s %s2026%s By %sSNAKE Security%s %s-%s %sWeidsom Nascimento%s\n\n", YEL, NRM, CYN, NRM, WHT, NRM, RED, NRM, WHT, NRM);
 
-    if(geteuid() != 0) {
-        printf("\n%s[%s %s%sFATAL ERROR%s %s]%s : No root no fun!\n\n", WHT, NRM, BLD, RED, NRM, WHT, NRM);
+    // AFOS need root level
+    if (geteuid() != 0) {
+        printf("\n%s[%s %s%sFATAL ERROR%s %s]%s : No root, no fun!\n\n", WHT, NRM, BLD, RED, NRM, WHT, NRM);
         exit(77);
     }
 
     int opt;
     opterr = 0;
 
-    if(access("/opt/AFOS/pkg.db", F_OK ) == 0 ) {
+    // This is a fallback in case the AFOS database does not exist
+    if (access("/opt/AFOS/pkg.db", F_OK ) == 0 ) {
         // Ok
     } else {
         mkdir("/opt/AFOS", 0755);
         createdb();
     }
 
+    // Safety lock to prevent any actions from being executed outside the AFOS directory by mistake
     chdir("/opt/AFOS");
 
     static struct option long_options[] = {
@@ -1812,75 +1816,106 @@ int main(int argc, char *argv[]) {
         {NULL, 0, NULL, 0}
     };
 
-    if(argc <= 1) {
+    if (argc <= 1) {
         help();
         exit(1);
     }
 
-    while((opt = getopt_long(argc, argv, "i:ualrdht", long_options, NULL)) != -1)  {
+    while ((opt = getopt_long(argc, argv, "i:ualrdht", long_options, NULL)) != -1)  {
         switch(opt) {
             case 'd':
                 DEBUG = 1;
                 break;
             case 't':
                 TESTING = 1;
+                
                 printf("%s[%s %sWARNING%s %s]%s Running in TESTING mode!\n\n", WHT, NRM, YEL, NRM, WHT, NRM);
+                
                 break;
             case 'i':
                 get_pkgs();
-                sleep(2);
+                sleep(2); // Sleep to avoid being blocked due to making requests too fast
+                
                 install(lower(optarg), 0);
                 printf("\n");
+
+                // The permissions for the default tools directory are required to be updated!
                 system("chown -R andrax:andrax /opt/ANDRAX");
                 system("chmod -R 755 /opt/ANDRAX");
+
                 exit(0);
+                
                 break;
             case 'r':
                 get_pkgs();
-                sleep(2);
+                sleep(2); // Sleep to avoid being blocked due to making requests too fast
+                
                 printf("Packages available on AFOS-NG repository:\n\n");
+                
                 repolist();
                 printf("\n");
+                
                 exit(0);
+                
                 break;
             case 'u':
                 get_pkgs();
-                sleep(2);
+                sleep(2); // Sleep to avoid being blocked due to making requests too fast
+                
                 printf("Checking for updates...\n\n");
+                
                 update(0);
                 printf("\n");
+                
+                // The permissions for the default tools directory are required to be updated!
                 system("chown -R andrax:andrax /opt/ANDRAX");
                 system("chmod -R 755 /opt/ANDRAX");
+                
                 exit(0);
+                
                 break;
             case 'a':
                 get_pkgs();
                 sleep(2);
+                
                 printf("Updating all packages...\n\n");
+                
                 update(1);
                 printf("\n");
+                
+                // The permissions for the default tools directory are required to be updated!
                 system("chown -R andrax:andrax /opt/ANDRAX");
                 system("chmod -R 755 /opt/ANDRAX");
+                
                 exit(0);
+                
                 break;
             case 'l':
                 printf("Installed Packages (only by AFOS-NG):\n\n");
+                
                 readdb();
                 printf("\n");
+                
                 exit(0);
+                
                 break;
             case 'h':
                 help();
+                
                 exit(0);
+                
                 break;
             case '?':
-                if(optopt == 'i') {
+                if (optopt == 'i') {
                     printf("%s[%s %s%sPackage name?%s %s]%s\n\n", WHT, NRM, BLD, RED, NRM, WHT, NRM);
                 }
+                
                 exit(1);
+                
                 break;
             default:
                 help();
+                
                 break;
         }
     }

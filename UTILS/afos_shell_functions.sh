@@ -17,13 +17,37 @@
 ###############################################################################
 
 
-.PHONY: afos-ng
+########################################
+#                                      #
+# Some functions to help AFOS packages #
+#     in the ANDRAX-NG environment     #
+#                                      #
+########################################
 
-afos-ng:
-	clang -fsanitize=address -O1 -fno-omit-frame-pointer -g -o afos afos.c version_check.c lower.c sql.c help.c update.c curl.c get_pkgs.c repo_list.c install.c not_installed.c selfupdate.c -I. -lcurl -lsqlite3 -lyaml
-	clang -fsanitize=address -O1 -fno-omit-frame-pointer -g -o insert insert.c -lsqlite3
+AFOS_DB="/opt/ANDRAX/opt/AFOS/pkg.db"
 
-clean:
-	echo "Cleaning AFOS-ng"
-	rm afos-ng
-	rm insert
+#########################################################
+#                                                       #
+# A very simple function to check whether a package has #
+# already been installed.                               #
+#                                                       #
+# Should be used by the AFOS package to check if a      #
+# dependency has been satisfied.                        #
+#                                                       #
+#########################################################
+check_package_installed() {
+
+    # In theory, this command should be "safe"
+    RESULT=$(sqlite3 "$AFOS_DB" <<EOF
+.parameter set :pkg_name "$1"
+SELECT 1 FROM PACKAGES WHERE NAME = :pkg_name LIMIT 1;
+EOF
+)
+
+    if [ -n "$RESULT" ]; then
+        return 1
+    fi
+
+    return 0
+
+}

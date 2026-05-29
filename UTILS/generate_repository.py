@@ -16,14 +16,31 @@
 #                                                                             #
 ###############################################################################
 
+import yaml
 
-.PHONY: afos-ng
+class Tool:
+    def __init__(self, name, version, description, categories, repo, min_andrax=1003, orig_repo=None):
+        self.name = name
+        self.version = version
+        self.description = description
+        self.categories = [categories] if isinstance(categories, str) else categories
+        self.repo_url = f"github.com/{repo}"
+        self.original_repo_url = f"github.com/{orig_repo}" if orig_repo else f"github.com/{repo}"
+        self.min_andrax = min_andrax
 
-afos-ng:
-	clang -fsanitize=address -O1 -fno-omit-frame-pointer -g -o afos afos.c version_check.c lower.c sql.c help.c update.c curl.c get_pkgs.c repo_list.c install.c not_installed.c selfupdate.c -I. -lcurl -lsqlite3 -lyaml
-	clang -fsanitize=address -O1 -fno-omit-frame-pointer -g -o insert insert.c -lsqlite3
+    def to_dict(self):
+        return self.__dict__
 
-clean:
-	echo "Cleaning AFOS-ng"
-	rm afos-ng
-	rm insert
+# "pkg_name", "pkg_version", "pkg_description", ["categories"], "afos_git_repo", orig_repo="official_tool_repo", min_andrax=2001)
+tools_list = [
+    
+    Tool("andrax-base-files", "0.0.9", "ANDRAX-NG base files", "System", "snakesec/andrax-base-files"),
+    
+]
+
+final_data = [tool.to_dict() for tool in tools_list]
+
+with open("afos.yaml", "w", encoding="utf-8") as f:
+    yaml.dump(final_data, f, default_flow_style=False, sort_keys=False)
+
+print("New afos.yaml generated!")

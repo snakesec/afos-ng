@@ -1,7 +1,7 @@
 /*
 *******************************************************************************
 *                                                                             *
-* Copyright 2025 Weidsom Nascimento - SNAKE Security                          *
+* Copyright 2026 Weidsom Nascimento - SNAKE Security                          *
 *                                                                             *
 * Licensed under the Apache License, Version 2.0 (the "License");             *
 * you may not use this file except in compliance with the License.            *
@@ -35,8 +35,8 @@ int pkg_install_count = 0;
 int compare_versions(char *pkg_name, char *local_pkg_version) {
     FILE *fh = fopen("/opt/AFOS/afos_pkgs.yaml", "r");
     
-    if(!fh) {
-        if(DEBUG) {
+    if (!fh) {
+        if (DEBUG) {
             printf("%s[%s %sFATAL%s %s]%s Can't locate: %s/opt/AFOS/afos_pkgs.yaml%s\n", WHT, NRM, RED, NRM, WHT, NRM, YEL, NRM);
         }
 
@@ -46,10 +46,11 @@ int compare_versions(char *pkg_name, char *local_pkg_version) {
     yaml_parser_t parser;
     yaml_event_t event;
 
-    if(!yaml_parser_initialize(&parser)) {
-        if(DEBUG) {
+    if (!yaml_parser_initialize(&parser)) {
+        if (DEBUG) {
             printf("%s[%s %sFATAL%s %s]%s %sError initializing the parser%s\n", WHT, NRM, RED, NRM, WHT, NRM, YEL, NRM);
         }
+
         fclose(fh);
 
         exit(1);
@@ -70,15 +71,16 @@ int compare_versions(char *pkg_name, char *local_pkg_version) {
     char desc[500];
     char repo_url[500];
 
-    while(!done) {
-        if(!yaml_parser_parse(&parser, &event)) {
-            if(DEBUG) {
+    while (!done) {
+        if (!yaml_parser_parse(&parser, &event)) {
+            if (DEBUG) {
                 printf("%s[%s %sFATAL%s %s]%s Parsing error... %s\n", WHT, NRM, RED, NRM, WHT, NRM, parser.problem);
             }
+
             break;
         }
 
-        switch(event.type) {
+        switch (event.type) {
             case YAML_STREAM_START_EVENT:
             case YAML_DOCUMENT_START_EVENT:
                 break;
@@ -104,13 +106,13 @@ int compare_versions(char *pkg_name, char *local_pkg_version) {
                         } else if (in_categories) {
                             categories[category_count++] = strdup((char *)event.data.scalar.value);
                         } else {
-                            if(strcmp(key, "name") == 0) {
+                            if (strcmp(key, "name") == 0) {
                                 strncpy(name, (const char *)event.data.scalar.value, 499);
-                            } else if(strcmp(key, "version") == 0) {
+                            } else if (strcmp(key, "version") == 0) {
                                 strncpy(version, (const char *)event.data.scalar.value, 499);
-                            } else if(strcmp(key, "description") == 0) {
+                            } else if (strcmp(key, "description") == 0) {
                                 strncpy(desc, (const char *)event.data.scalar.value, 499);
-                            } else if(strcmp(key, "repo_url") == 0) {
+                            } else if (strcmp(key, "repo_url") == 0) {
                                 strncpy(repo_url, (const char *)event.data.scalar.value, 499);
                             }
                             free(key);
@@ -120,14 +122,16 @@ int compare_versions(char *pkg_name, char *local_pkg_version) {
                 }
                 break;
             case YAML_SEQUENCE_END_EVENT:
-                if(in_categories) {
-                    for(int i = 0; i < category_count; i++) {
+                if (in_categories) {
+                    for (int i = 0; i < category_count; i++) {
                         free(categories[i]);
                     }
                     in_categories = 0;
+
                     free(key);
+
                     key = NULL;
-                } else if(in_sequence) {
+                } else if (in_sequence) {
                     in_sequence = 0;
                 }
                 break;
@@ -135,40 +139,42 @@ int compare_versions(char *pkg_name, char *local_pkg_version) {
                 if (in_mapping) {
                     in_mapping = 0;
 
-                    if(strcmp(pkg_name, name) == 0) {
+                    if (strcmp(pkg_name, name) == 0) {
                         int resolution = afos_compare_versions(version, local_pkg_version);
 
-                        if(resolution == -2) {
-                            if(DEBUG) {
+                        if (resolution == -2) {
+                            if (DEBUG) {
                                 printf("%s[%s %sERROR%s %s]%s Invalid version string LOCAL: %s REPO: %s\n", WHT, NRM, YEL, NRM, WHT, NRM, local_pkg_version, version);
-                                //printf(" %s %s\n", local_pkg_version, version);
                             }
                         } else {
 
-                            if(resolution == 0) {
-                                // equal
-                                if(DEBUG) {
+                            if (resolution == 0) {
+                                if (DEBUG) {
                                     printf("%s[%s %sINFO%s %s]%s %s is already the newest version\n", WHT, NRM, CYN, NRM, WHT, NRM, name);
                                 }
                             }
                             else if(resolution == -1) {
                                 // REPO version is lower... that should not be possible...
-                                if(DEBUG) {
+                                if (DEBUG) {
                                     printf("%s[%s %sERROR%s %s]%s REPO Version is lower than LOCAL version\n", WHT, NRM, YEL, NRM, WHT, NRM);
                                 }
                             }
-                            else if(resolution == 1) {
+                            else if (resolution == 1) {
                                 // We have update
                                 printf("%s[%s UPDATE AVAILABLE %s]%s : %s%s%s%s from %s%s%s%s to %s%s%s%s\n", WHT, NRM, WHT, NRM, BLD, GRN, name, NRM, BLD, RED, local_pkg_version, NRM, BLD, BLU, version, NRM);
                                 
-                                if(update_all != 0 && pkg_install_count <= 1999) {
+                                if (update_all != 0 && pkg_install_count <= 1999) {
                                     strncpy(pkg_install_names[pkg_install_count], name, 499);
+                                    
                                     strncpy(pkg_install_versions[pkg_install_count], version, 499); 
+                                    
                                     strncpy(pkg_install_repo_url[pkg_install_count], repo_url, 499); 
-                                } else if(update_all != 0 && pkg_install_count >= 2000) {
+                                } else if (update_all != 0 && pkg_install_count >= 2000) {
                                     printf("\n%s[%s %sFATAL%s %s]%s We have more packages than allowed to update at the same time...\n", WHT, NRM, RED, NRM, WHT, NRM);
+                                    
                                     exit(1);
                                 }
+
                                 pkg_install_count++;
                             }
 
@@ -206,16 +212,14 @@ static int callback_check_version_on_db(void *data, int argc, char **argv, char 
    char tmp_name[500];
    char tmp_version[500];
    
-   for(i = 0; i <= 2; i++){
-      if(i==1) {
+   for (i = 0; i <= 2; i++){
+      if (i==1) {
          strncpy(tmp_name, argv[i], 499);
-      } else if(i==2) {
+      } else if (i==2) {
          strncpy(tmp_version, argv[i], 499);
       }
-      //printf("Loop: %d\n", i);
    }
 
-   //printf("[ %s%s%s ] [ %s%s%s ]\n", WHT, tmp_name, NRM, RED, tmp_version, NRM);
    compare_versions(tmp_name, tmp_version);
    
    return 0;
@@ -230,11 +234,12 @@ int read_db_to_compare() {
 
    rc = sqlite3_open("/opt/AFOS/pkg.db", &db);
    
-   if(rc) {
+   if (rc) {
     printf("Can't open database: %s\n", sqlite3_errmsg(db));
+    
     return(0);
    } else {
-    if(DEBUG) {
+    if (DEBUG) {
         printf("Opened database successfully\n");
     }
    }
@@ -243,13 +248,13 @@ int read_db_to_compare() {
 
    rc = sqlite3_exec(db, sql, callback_check_version_on_db, NULL, &zErrMsg);
    
-   if(rc != SQLITE_OK) {
-      fprintf(stderr, "SQL error: %s\n", zErrMsg);
-      sqlite3_free(zErrMsg);
+   if (rc != SQLITE_OK) {
+    fprintf(stderr, "SQL error: %s\n", zErrMsg);
+    sqlite3_free(zErrMsg);
    } else {
-       if(DEBUG) {
-           printf("Operation done successfully\n");
-       }
+    if (DEBUG) {
+        printf("Operation done successfully\n");
+    }
    }
 
    sqlite3_close(db);
@@ -258,22 +263,22 @@ int read_db_to_compare() {
 }
 
 int update(int all) {
-    if(all) {
+    if (all) {
         update_all = 1;
     }
 
     read_db_to_compare();
 
-    if(update_all != 0) {
+    if (update_all != 0) {
         char answer[6];
         printf("\nDo you wanna update all? [ Y/n ]: ");
         scanf("%5[^\n]", answer);
         strtok(answer, "\n");
         
-        if((strncmp(lower(answer), "y", 5) == 0 || strncmp(lower(answer), "yes", 5) == 0)) {
+        if ((strncmp(lower(answer), "y", 5) == 0 || strncmp(lower(answer), "yes", 5) == 0)) {
             printf("\n");
             
-            for(int i = 0; i < pkg_install_count; i++) {
+            for (int i = 0; i < pkg_install_count; i++) {
                 printf("Updating: %s Version: %s from: %s\n", pkg_install_names[i], pkg_install_versions[i], pkg_install_repo_url[i]);
                 install(pkg_install_names[i], 1);
             }

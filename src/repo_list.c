@@ -1,7 +1,7 @@
 /*
 *******************************************************************************
 *                                                                             *
-* Copyright 2025 Weidsom Nascimento - SNAKE Security                          *
+* Copyright 2026 Weidsom Nascimento - SNAKE Security                          *
 *                                                                             *
 * Licensed under the Apache License, Version 2.0 (the "License");             *
 * you may not use this file except in compliance with the License.            *
@@ -27,8 +27,8 @@
 int repolist() {
     FILE *fh = fopen("/opt/AFOS/afos_pkgs.yaml", "r");
 
-    if(!fh) {
-        if(DEBUG) {
+    if (!fh) {
+        if (DEBUG) {
             printf("%s[%s %sFATAL%s %s]%s Can't locate: %s/opt/AFOS/afos_pkgs.yaml%s\n", WHT, NRM, RED, NRM, WHT, NRM, YEL, NRM);
         }
 
@@ -38,8 +38,8 @@ int repolist() {
     yaml_parser_t parser;
     yaml_event_t event;
 
-    if(!yaml_parser_initialize(&parser)) {
-        if(DEBUG) {
+    if (!yaml_parser_initialize(&parser)) {
+        if (DEBUG) {
             printf("%s[%s %sFATAL%s %s]%s %sError initializing the parser%s\n", WHT, NRM, RED, NRM, WHT, NRM, YEL, NRM);
         }
 
@@ -62,46 +62,46 @@ int repolist() {
     char desc[500];
 
     while(!done) {
-        if(!yaml_parser_parse(&parser, &event)) {
-            if(DEBUG) {
+        if (!yaml_parser_parse(&parser, &event)) {
+            if (DEBUG) {
                 printf("%s[%s %sFATAL%s %s]%s Parsing error... %s\n", WHT, NRM, RED, NRM, WHT, NRM, parser.problem);
             }
             break;
         }
 
-        switch(event.type) {
+        switch (event.type) {
             case YAML_STREAM_START_EVENT:
             case YAML_DOCUMENT_START_EVENT:
                 break;
             case YAML_SEQUENCE_START_EVENT:
-                if(!in_mapping) {
+                if (!in_mapping) {
                     in_sequence = 1;
-                } else if(key && strcmp(key, "categories") == 0) {
+                } else if (key && strcmp(key, "categories") == 0) {
                     in_categories = 1;
                     category_count = 0;
                 }
                 break;
 
             case YAML_MAPPING_START_EVENT:
-                if(in_sequence && !in_mapping) {
+                if (in_sequence && !in_mapping) {
                     in_mapping = 1;
                 }
                 break;
             case YAML_SCALAR_EVENT:
-                if(in_mapping) {
-                    if(!key) {
+                if (in_mapping) {
+                    if (!key) {
                         key = strdup((char *)event.data.scalar.value);
                     } else {
-                        if(strcmp(key, "categories") == 0 && !in_categories) {
-                        } else if(in_categories) {
+                        if (strcmp(key, "categories") == 0 && !in_categories) {
+                        } else if (in_categories) {
                             categories[category_count++] = strdup((char *)event.data.scalar.value);
                         } else {
-                            if(strcmp(key, "name") == 0) {
+                            if (strcmp(key, "name") == 0) {
                                 printf("[ %s%s%s ] ", WHT, (const char *)event.data.scalar.value, NRM);
                                 strncpy(name, (const char *)event.data.scalar.value, 499);
-                            } else if(strcmp(key, "version") == 0) {
+                            } else if (strcmp(key, "version") == 0) {
                                 printf("[ %s%s%s ] ", RED, (const char *)event.data.scalar.value, NRM);
-                            } else if(strcmp(key, "description") == 0) {
+                            } else if (strcmp(key, "description") == 0) {
                                 printf("[ %s%s%s ] ", YEL, (const char *)event.data.scalar.value, NRM);
                                 strncpy(desc, (const char *)event.data.scalar.value, 499);
                             }
@@ -112,30 +112,32 @@ int repolist() {
                 }
                 break;
             case YAML_SEQUENCE_END_EVENT:
-                if(in_categories) {
+                if (in_categories) {
                     printf("[ ");
-                    for(int i = 0; i < category_count; i++) {
+                    for (int i = 0; i < category_count; i++) {
                         printf("%s%s%s", BLU, categories[i], NRM);
-                        if(i < category_count - 1) {
+                        if (i < category_count - 1) {
                             printf(", ");
                         }
                         free(categories[i]);
                     }
                     printf(" ]");
 
-                    if(is_installed_or_not(name)) {
+                    if (is_installed_or_not(name)) {
                         printf(" %s(%s %s==%s %sNOT INSTALLED%s %s==%s %s)%s", WHT, NRM, RED, NRM, PUR, NRM, RED, NRM, WHT, NRM);
                     }
 
                     in_categories = 0;
+
                     free(key);
+
                     key = NULL;
-                } else if(in_sequence) {
+                } else if (in_sequence) {
                     in_sequence = 0;
                 }
                 break;
             case YAML_MAPPING_END_EVENT:
-                if(in_mapping) {
+                if (in_mapping) {
                     in_mapping = 0;
                     printf("\n");
                 }

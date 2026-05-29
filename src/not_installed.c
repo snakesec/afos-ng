@@ -1,7 +1,7 @@
 /*
 *******************************************************************************
 *                                                                             *
-* Copyright 2025 Weidsom Nascimento - SNAKE Security                          *
+* Copyright 2026 Weidsom Nascimento - SNAKE Security                          *
 *                                                                             *
 * Licensed under the Apache License, Version 2.0 (the "License");             *
 * you may not use this file except in compliance with the License.            *
@@ -40,15 +40,15 @@ struct PKG pkgs_on_db;
 static int callback_list_on_db(void *data, int argc, char **argv, char **azColName){
    int i;
    
-   for(i = 0; i<argc; i++) {
-    if(pkg_count_db < 2000) {
-        if(i==1) {
+   for (i = 0; i<argc; i++) {
+    if (pkg_count_db < 2000) {
+        if (i==1) {
             strncpy(pkgs_on_db.name[pkg_count_db], argv[i], 499);
-        } else if(i==2) {
+        } else if (i==2) {
             strncpy(pkgs_on_db.version[pkg_count_db], argv[i], 499);
-        } else if(i==3) {
+        } else if (i==3) {
             strncpy(pkgs_on_db.desc[pkg_count_db], argv[i], 499);
-        } else if(i==4) {
+        } else if (i==4) {
             strncpy(pkgs_on_db.type[pkg_count_db], argv[i], 499);
         }
         pkg_count_db++;
@@ -67,11 +67,11 @@ int list_on_db() {
 
     rc = sqlite3_open("/opt/AFOS/pkg.db", &db);
 
-    if(rc) {
+    if (rc) {
         fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(db));
         exit(1);
     } else {
-        if(DEBUG) {
+        if (DEBUG) {
             fprintf(stderr, "Opened database successfully\n");
         }
     }
@@ -80,11 +80,11 @@ int list_on_db() {
 
     rc = sqlite3_exec(db, sql, callback_list_on_db, NULL, &zErrMsg);
 
-    if(rc != SQLITE_OK) {
+    if (rc != SQLITE_OK) {
         fprintf(stderr, "SQL error: %s\n", zErrMsg);
         sqlite3_free(zErrMsg);
     } else {
-        if(DEBUG) {
+        if (DEBUG) {
             fprintf(stdout, "Operation done successfully\n");
         }
     }
@@ -100,13 +100,13 @@ int is_installed_or_not(char *query_name) {
 
     list_on_db();
 
-    for(int i = 0; i < 2000; i++) {
-        if(strcmp(query_name, pkgs_on_db.name[i]) == 0) {
+    for (int i = 0; i < 2000; i++) {
+        if (strcmp(query_name, pkgs_on_db.name[i]) == 0) {
             installed = 1;
         }
     }
 
-    if(installed == 0) {
+    if (installed == 0) {
         return 1;
     }
 

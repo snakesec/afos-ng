@@ -18,44 +18,44 @@
 *******************************************************************************
 */
 
-#include <string.h>
+#include "afos.h"
+#include <sqlite3.h>
 #include <stdio.h>
+#include <string.h>
 #include <unistd.h>
 #include <yaml.h>
-#include <sqlite3.h>
-
-#include "afos.h"
 
 int pkg_count_db = 0;
 
 struct PKG {
-   char name[2000][500];
-   char version[2000][500];
-   char desc[2000][500];
-   char type[2000][500];
+    char name[2000][500];
+    char version[2000][500];
+    char desc[2000][500];
+    char type[2000][500];
 };
 
 struct PKG pkgs_on_db;
 
-static int callback_list_on_db(void *data, int argc, char **argv, char **azColName){
-   int i;
-   
-   for (i = 0; i<argc; i++) {
-    if (pkg_count_db < 2000) {
-        if (i==1) {
-            strncpy(pkgs_on_db.name[pkg_count_db], argv[i], 499);
-        } else if (i==2) {
-            strncpy(pkgs_on_db.version[pkg_count_db], argv[i], 499);
-        } else if (i==3) {
-            strncpy(pkgs_on_db.desc[pkg_count_db], argv[i], 499);
-        } else if (i==4) {
-            strncpy(pkgs_on_db.type[pkg_count_db], argv[i], 499);
+static int callback_list_on_db(void *data, int argc, char **argv,
+                               char **azColName) {
+    int i;
+
+    for (i = 0; i < argc; i++) {
+        if (pkg_count_db < 2000) {
+            if (i == 1) {
+                strncpy(pkgs_on_db.name[pkg_count_db], argv[i], 499);
+            } else if (i == 2) {
+                strncpy(pkgs_on_db.version[pkg_count_db], argv[i], 499);
+            } else if (i == 3) {
+                strncpy(pkgs_on_db.desc[pkg_count_db], argv[i], 499);
+            } else if (i == 4) {
+                strncpy(pkgs_on_db.type[pkg_count_db], argv[i], 499);
+            }
+            pkg_count_db++;
         }
-        pkg_count_db++;
     }
-   }   
-   
-   return 0;
+
+    return 0;
 }
 
 int list_on_db() {
@@ -63,7 +63,7 @@ int list_on_db() {
     char *zErrMsg = 0;
     int rc;
     char *sql;
-    const char* data = "Callback function called";
+    const char *data = "Callback function called";
 
     rc = sqlite3_open("/opt/AFOS/pkg.db", &db);
 
@@ -93,7 +93,6 @@ int list_on_db() {
 
     return 0;
 }
-
 
 int is_installed_or_not(char *query_name) {
     int installed = 0;

@@ -23,20 +23,26 @@
 #include <string.h>
 
 int get_pkgs() {
-    FILE* afossourcelist;
+    FILE *afossourcelist;
     int bufferLengthlist = 499;
     char buffer[bufferLengthlist];
 
     // We like this one...
-    char default_repo[500] = "https://raw.githubusercontent.com/snakesec/afos-ng/refs/heads/main/repository/afos.yaml";
+    char default_repo[500] = 
+        "https://raw.githubusercontent.com/snakesec/afos-ng/refs/heads/main/"
+        "repository/afos.yaml";
     // But this one is what bad boys use!
-    char default_repo_testing[500] = "https://raw.githubusercontent.com/snakesec/afos-ng/refs/heads/testing/repository/afos.yaml";
+    char default_repo_testing[500] =
+        "https://raw.githubusercontent.com/snakesec/afos-ng/refs/heads/testing/"
+        "repository/afos.yaml";
 
     afossourcelist = fopen("/opt/AFOS/afos.list", "r");
 
     if (afossourcelist == NULL) {
         if (DEBUG) {
-            printf("%s[%s %sERROR%s %s]%s Switching to default repo because no valid URL was provided\n", WHT, NRM, YEL, NRM, WHT, NRM);
+            printf("%s[%s %sERROR%s %s]%s Switching to default repo because no "
+                   "valid URL was provided\n",
+                   WHT, NRM, YEL, NRM, WHT, NRM);
         }
 
         if (TESTING) {

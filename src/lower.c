@@ -24,6 +24,6 @@ char *lower(char *str_to_lower) {
     for (int i = 0; str_to_lower[i]; i++) {
         str_to_lower[i] = tolower(str_to_lower[i]);
     }
-    
+
     return str_to_lower;
 }

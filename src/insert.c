@@ -18,7 +18,6 @@
 *******************************************************************************
 */
 
-
 ///////////////////////////////////////////////////////////////////////
 //                                                                   //
 // This file is just a test...                                       //
@@ -26,50 +25,52 @@
 //                                                                   //
 ///////////////////////////////////////////////////////////////////////
 
+#include <sqlite3.h>
 #include <stdio.h>
-#include <stdlib.h>
-#include <sqlite3.h> 
 
 static int callback(void *NotUsed, int argc, char **argv, char **azColName) {
-   int i;
+    int i;
 
-   for (i = 0; i<argc; i++) {
-      printf("%s = %s\n", azColName[i], argv[i] ? argv[i] : "NULL");
-   }
+    for (i = 0; i < argc; i++) {
+        printf("%s = %s\n", azColName[i], argv[i] ? argv[i] : "NULL");
+    }
 
-   printf("\n");
-   
-   return 0;
+    printf("\n");
+
+    return 0;
 }
 
-int main(int argc, char* argv[]) {
-   sqlite3 *db;
-   char *zErrMsg = 0;
-   int rc;
-   char *sql;
+int main(int argc, char *argv[]) {
+    sqlite3 *db;
+    char *zErrMsg = 0;
+    int rc;
+    char *sql;
 
-   rc = sqlite3_open("/opt/AFOS/pkg.db", &db);
-   
-   if (rc) {
-      fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(db));
-      return(0);
-   } else {
-      fprintf(stderr, "Opened database successfully\n");
-   }
+    rc = sqlite3_open("/opt/AFOS/pkg.db", &db);
 
-   sql = "INSERT INTO PACKAGES (NAME,VERSION,DESC,TYPE) VALUES ('nmap', '7.90', 'Advanced NetWork Mapper', 'Information Gathering, Scanning' );" \
-         "INSERT INTO PACKAGES (NAME,VERSION,DESC,TYPE) VALUES ('hping', '2.1', 'Packet forger', 'Packet Crafting');";
+    if (rc) {
+        fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(db));
+        return (0);
+    } else {
+        fprintf(stderr, "Opened database successfully\n");
+    }
 
-   rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
-   
-   if (rc != SQLITE_OK){
-      fprintf(stderr, "SQL error: %s\n", zErrMsg);
-      sqlite3_free(zErrMsg);
-   } else {
-      fprintf(stdout, "Records created successfully\n");
-   }
+    sql =
+        "INSERT INTO PACKAGES (NAME,VERSION,DESC,TYPE) VALUES ('nmap', '7.90', "
+        "'Advanced NetWork Mapper', 'Information Gathering, Scanning' );"
+        "INSERT INTO PACKAGES (NAME,VERSION,DESC,TYPE) VALUES ('hping', '2.1', "
+        "'Packet forger', 'Packet Crafting');";
 
-   sqlite3_close(db);
-   
-   return 0;
+    rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+
+    if (rc != SQLITE_OK) {
+        fprintf(stderr, "SQL error: %s\n", zErrMsg);
+        sqlite3_free(zErrMsg);
+    } else {
+        fprintf(stdout, "Records created successfully\n");
+    }
+
+    sqlite3_close(db);
+
+    return 0;
 }

@@ -43,3 +43,36 @@ else
   # houston we have a problem
   exit 1
 fi
+
+cp -Rf ../UTILS/generate_dco_entry.py /opt/AFOS/
+
+if [ $? -eq 0 ]
+then
+  # Result is OK! Just continue...
+  echo "Copy generate_dco_entry... PASS!"
+else
+  # houston we have a problem
+  exit 1
+fi
+
+chown -R root:root /opt/AFOS/generate_dco_entry.py
+
+if [ $? -eq 0 ]
+then
+  # Result is OK! Just continue...
+  echo "Set generate_dco_entry owner... PASS!"
+else
+  # houston we have a problem
+  exit 1
+fi
+
+chmod 755 /opt/AFOS/generate_dco_entry.py
+
+if [ $? -eq 0 ]
+then
+  # Result is OK! Just continue...
+  echo "Set generate_dco_entry permissions... PASS!"
+else
+  # houston we have a problem
+  exit 1
+fi

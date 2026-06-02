@@ -20,8 +20,8 @@
 .PHONY: afos-ng
 
 afos-ng:
-	clang -fsanitize=address -O1 -fno-omit-frame-pointer -g -o afos afos.c version_check.c lower.c sql.c help.c update.c curl.c get_pkgs.c repo_list.c install.c not_installed.c selfupdate.c -I. -lcurl -lsqlite3 -lyaml
-	clang -fsanitize=address -O1 -fno-omit-frame-pointer -g -o insert insert.c -lsqlite3
+	clang -o afos afos.c version_check.c lower.c sql.c help.c update.c curl.c get_pkgs.c repo_list.c install.c not_installed.c selfupdate.c -I. -lcurl -lsqlite3 -lyaml
+	clang -o insert insert.c -lsqlite3
 
 clean:
 	echo "Cleaning AFOS-ng"

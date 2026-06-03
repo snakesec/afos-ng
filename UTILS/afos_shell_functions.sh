@@ -35,7 +35,7 @@ AFOS_DB="/opt/ANDRAX/opt/AFOS/pkg.db"
 # dependency has been satisfied.                        #
 #                                                       #
 #########################################################
-check_package_installed() {
+check_package_installed_afos() {
 
     # In theory, this command should be "safe"
     RESULT=$(sqlite3 "$AFOS_DB" <<EOF
@@ -50,4 +50,9 @@ EOF
 
     return 0
 
+}
+
+# The same as check_package_installed_afos() but for APT
+check_package_installed_apt() {
+    dpkg-query -W -f='${Status}' "$1" 2>/dev/null | grep -q "ok installed" && return 1 || return 0
 }

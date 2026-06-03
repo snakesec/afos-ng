@@ -19,7 +19,7 @@
 import yaml
 
 class Tool:
-    def __init__(self, name, version, description, categories, repo, min_andrax=1003, orig_repo=None):
+    def __init__(self, name, version, description, categories, repo, min_andrax=2001, orig_repo=None):
         self.name = name
         self.version = version
         self.description = description
@@ -34,7 +34,7 @@ class Tool:
 # "pkg_name", "pkg_version", "pkg_description", ["categories"], "afos_git_repo", orig_repo="official_tool_repo", min_andrax=2001)
 tools_list = [
     
-    Tool("andrax-base-files", "0.0.9", "ANDRAX-NG base files", "System", "snakesec/andrax-base-files"),
+    Tool("andrax-base-files", "0.0.9", "ANDRAX-NG base files", ["System"], "snakesec/andrax-base-files", orig_repo="snakesec/andrax-base-files", min_andrax=2001),
     
 ]
 

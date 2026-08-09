@@ -109,7 +109,7 @@ def main():
     menu_path = sys.argv[1]
     category = sys.argv[2]
     tool_name = sys.argv[3]
-    command = sys.argv[4]
+    command = f"x-terminal-emulator -g ./config -e /bin/zsh -c \"{sys.argv[4]}; zsh\""
 
     add_tool_to_menu(menu_path, category, tool_name, command)
 

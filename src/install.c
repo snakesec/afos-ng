@@ -390,7 +390,10 @@ int install(char *query_name, int update_all) {
                     int total_length = 0;
 
                     for (int i = 0; i < category_count; i++) {
-                        total_length += strlen(categories[i]) + 2;
+                        total_length += strlen(categories[i]);
+                        if (i < category_count - 1) {
+                            total_length += 2;
+                        }
                     }
 
                     total_length--;

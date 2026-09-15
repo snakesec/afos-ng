@@ -23,7 +23,7 @@
   original_repo_url: www.rust-lang.org
   min_andrax: 2001
 - name: geckodriver
-  version: 0.36.0
+  version: 0.37.1
   description: WebDriver for Firefox
   categories:
   - System

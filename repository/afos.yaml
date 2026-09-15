@@ -39,7 +39,7 @@
   original_repo_url: go.dev/dl/
   min_andrax: 2001
 - name: pipx
-  version: 1.8.0
+  version: 1.17.2
   description: PIPX for ANDRAX-NG
   categories:
   - System

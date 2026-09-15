@@ -25,7 +25,7 @@ class Tool:
         self.description = description
         self.categories = [categories] if isinstance(categories, str) else categories
         self.repo_url = f"github.com/{repo}"
-        self.original_repo_url = f"github.com/{orig_repo}" if orig_repo else f"github.com/{repo}"
+        self.original_repo_url = f"{orig_repo}" if orig_repo else f"github.com/{repo}"
         self.min_andrax = min_andrax
 
     def to_dict(self):
@@ -34,13 +34,19 @@ class Tool:
 # "pkg_name", "pkg_version", "pkg_description", ["categories"], "afos_git_repo", orig_repo="official_tool_repo", min_andrax=2001)
 tools_list = [
     
-    Tool("andrax-base-files", "0.0.9", "ANDRAX-NG base files", ["System"], "snakesec/andrax-base-files", orig_repo="snakesec/andrax-base-files", min_andrax=2001),
+    Tool("andrax-base-files", "0.0.9", "ANDRAX-NG base files", ["System"], "snakesec/andrax-base-files", orig_repo="github.com/snakesec/andrax-base-files", min_andrax=2001),
+    Tool("afos", "1.0.7", "ANDRAX-NG Package Manager", ["System"], "snakesec/afos-ng", orig_repo="github.com/snakesec/afos-ng", min_andrax=2001),
+    Tool("rust-lang", "1.91.1", "Rust Programming Language", ["System"], "snakesec/rust-lang", orig_repo="www.rust-lang.org", min_andrax=2001),
+    Tool("geckodriver", "0.36.0", "WebDriver for Firefox", ["System"], "snakesec/geckodriver", orig_repo="github.com/mozilla/geckodriver", min_andrax=2001),
+    Tool("golang", "1.25.2", "Go Programming Language", ["System"], "snakesec/golang", orig_repo="go.dev/dl/", min_andrax=2001),
+    Tool("pipx", "1.8.0", "PIPX for ANDRAX-NG", ["System"], "snakesec/pipx", orig_repo="github.com/pypa/pipx", min_andrax=2001),
+    Tool("micro", "2.0.15-301", "Modern and intuitive terminal-based text editor", ["System"], "snakesec/micro", orig_repo="github.com/zyedidia/micro", min_andrax=2001),
     
 ]
 
 final_data = [tool.to_dict() for tool in tools_list]
 
-with open("afos.yaml", "w", encoding="utf-8") as f:
+with open("../repository/afos.yaml", "w", encoding="utf-8") as f:
     yaml.dump(final_data, f, default_flow_style=False, sort_keys=False)
 
 print("New afos.yaml generated!")

@@ -1,16 +1,19 @@
 # AFOS-NG
-ANDRAX-NG Next Generation Package Manager, Simple but effective!
+ANDRAX-NG Next Generation Package Manager. Simple, fast, and effective.
 
-> AFOS-NG is still under development and should be functional (though not 100% complete) by the time ANDRAX-NG is launched.
+> **Status:** AFOS-NG is currently under development. It will be fully functional by the official launch of the first ANDRAX-NG STABLE version...
 
-AFOS-NG is a package manager specifically designed for installing and managing Ethical Hacking and Penetration Testing tools.
+## About
 
-Written in C, AFOS-NG has relatively simple code following [KISS](https://en.wikipedia.org/wiki/KISS_principle).
+AFOS-NG is a specialized package manager built specifically for installing and managing Ethical Hacking and Penetration Testing tools.
 
-It is perfectly aligned with the HARD-BASED and SFB (Simple, Fast, Bullshitless) ANDRAX-NG guidelines.
+Written in C, AFOS-NG features a lightweight and straightforward codebase following the [KISS](https://en.wikipedia.org/wiki/KISS_principle) Principle. It strictly adheres to the HARD-BASED and SFB (Simple, Fast, Bullshitless) ANDRAX-NG guidelines.
 
-The ***repository*** directory contains the YAML file that is used by AFOS-NG for package management.
+## Repository Structure
 
-For instructions on how to use AFOS-NG or create a repository for it, see the [documentation](https://snakesecurity.org/andrax-documentation/andrax-afos-ng/)
+The ***repository*** directory contains the core YAML configuration file utilized by AFOS-NG for package management.
 
-Updates made as fast as possible...
+For comprehensive instructions on how to use AFOS-NG or how to create and manage custom repositories, please check out the official [documentation](https://snakesecurity.org/andrax-documentation/andrax-afos-ng/)
+
+
+> ***Updates are pushed as rapidly as possible.***

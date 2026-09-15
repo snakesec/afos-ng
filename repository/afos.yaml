@@ -31,7 +31,7 @@
   original_repo_url: github.com/mozilla/geckodriver
   min_andrax: 2001
 - name: golang
-  version: 1.25.2
+  version: 1.27.1
   description: Go Programming Language
   categories:
   - System

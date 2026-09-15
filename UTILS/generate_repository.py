@@ -36,7 +36,7 @@ tools_list = [
     
     Tool("andrax-base-files", "0.0.9", "ANDRAX-NG base files", ["System"], "snakesec/andrax-base-files", orig_repo="github.com/snakesec/andrax-base-files", min_andrax=2001),
     Tool("afos", "1.0.7", "ANDRAX-NG Package Manager", ["System"], "snakesec/afos-ng", orig_repo="github.com/snakesec/afos-ng", min_andrax=2001),
-    Tool("rust-lang", "1.91.1", "Rust Programming Language", ["System"], "snakesec/rust-lang", orig_repo="www.rust-lang.org", min_andrax=2001),
+    Tool("rust-lang", "1.98.1", "Rust Programming Language", ["System"], "snakesec/rust-lang", orig_repo="www.rust-lang.org", min_andrax=2001),
     Tool("geckodriver", "0.36.0", "WebDriver for Firefox", ["System"], "snakesec/geckodriver", orig_repo="github.com/mozilla/geckodriver", min_andrax=2001),
     Tool("golang", "1.25.2", "Go Programming Language", ["System"], "snakesec/golang", orig_repo="go.dev/dl/", min_andrax=2001),
     Tool("pipx", "1.8.0", "PIPX for ANDRAX-NG", ["System"], "snakesec/pipx", orig_repo="github.com/pypa/pipx", min_andrax=2001),

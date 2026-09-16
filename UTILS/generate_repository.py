@@ -40,7 +40,7 @@ tools_list = [
     Tool("geckodriver", "0.37.1", "WebDriver for Firefox", ["System"], "snakesec/geckodriver", orig_repo="github.com/mozilla/geckodriver", min_andrax=2001),
     Tool("golang", "1.27.1", "Go Programming Language", ["System"], "snakesec/golang", orig_repo="go.dev/dl/", min_andrax=2001),
     Tool("pipx", "1.17.2", "PIPX for ANDRAX-NG", ["System"], "snakesec/pipx", orig_repo="github.com/pypa/pipx", min_andrax=2001),
-    Tool("micro", "2.0.15-301", "Modern and intuitive terminal-based text editor", ["System"], "snakesec/micro", orig_repo="github.com/zyedidia/micro", min_andrax=2001),
+    Tool("micro", "2.0.15-302", "Modern and intuitive terminal-based text editor", ["System"], "snakesec/micro", orig_repo="github.com/zyedidia/micro", min_andrax=2001),
     
 ]
 

@@ -47,7 +47,7 @@
   original_repo_url: github.com/pypa/pipx
   min_andrax: 2001
 - name: micro
-  version: 2.0.15-301
+  version: 2.0.15-302
   description: Modern and intuitive terminal-based text editor
   categories:
   - System

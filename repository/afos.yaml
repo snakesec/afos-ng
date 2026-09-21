@@ -7,7 +7,7 @@
   original_repo_url: github.com/snakesec/andrax-base-files
   min_andrax: 2001
 - name: afos
-  version: 1.0.7
+  version: 1.0.8
   description: ANDRAX-NG Package Manager
   categories:
   - System

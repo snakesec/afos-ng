@@ -17,11 +17,21 @@
 ###############################################################################
 
 
+ARCH := $(shell uname -m)
+
+SANITIZER_FLAG =
+
+ifeq (,$(findstring arm,$(ARCH)))
+ifeq (,$(findstring aarch64,$(ARCH)))
+    SANITIZER_FLAG = -fsanitize=address
+endif
+endif
+
 .PHONY: afos-ng
 
 afos-ng:
-	clang -o afos afos.c version_check.c lower.c sql.c help.c update.c curl.c get_pkgs.c repo_list.c install.c not_installed.c selfupdate.c -I. -lcurl -lsqlite3 -lyaml
-	clang -o insert insert.c -lsqlite3
+	clang $(SANITIZER_FLAG) -o afos afos.c version_check.c lower.c sql.c help.c update.c curl.c get_pkgs.c repo_list.c install.c not_installed.c selfupdate.c -I. -lcurl -lsqlite3 -lyaml
+	clang $(SANITIZER_FLAG) -o insert insert.c -lsqlite3
 
 clean:
 	echo "Cleaning AFOS-ng"

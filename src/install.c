@@ -396,8 +396,6 @@ int install(char *query_name, int update_all) {
                         }
                     }
 
-                    total_length--;
-
                     char *result_str_categories =
                         (char *)malloc(total_length + 1);
                     result_str_categories[0] = '\0';

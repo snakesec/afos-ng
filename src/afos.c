@@ -27,7 +27,7 @@
 #include <unistd.h>
 
 // Badass banner
-static char afos_banner[20817] = {
+static char afos_banner[20820] = {
   0x1b, 0x5b, 0x3f, 0x32, 0x35, 0x6c, 0x1b, 0x5b, 0x30, 0x6d, 0x20, 0x1b,
   0x5b, 0x33, 0x38, 0x3b, 0x32, 0x3b, 0x30, 0x3b, 0x30, 0x3b, 0x30, 0x6d,
   0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20,
@@ -1771,7 +1771,7 @@ int TESTING;
 int main(int argc, char *argv[]) {
 
     printf("\n%s%s%s%s\n", BLD, GRN, afos_banner, NRM);
-    printf("%s%s ANDRAX-NG Next Generation Package Manager %s%sv1.0.8%s\n", BLD,
+    printf("%s%s ANDRAX-NG Next Generation Package Manager %s%sv1.0.9%s\n", BLD,
            GRN, BLD, RED, NRM);
     printf(" %sCopyright%s %s2026%s By %sSNAKE Security%s %s-%s %sWeidsom "
            "Nascimento%s\n\n",

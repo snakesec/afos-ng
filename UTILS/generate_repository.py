@@ -34,7 +34,7 @@ class Tool:
 # "pkg_name", "pkg_version", "pkg_description", ["categories"], "afos_git_repo", orig_repo="official_tool_repo", min_andrax=2001)
 tools_list = [
     
-    Tool("andrax-base-files", "0.0.9", "ANDRAX-NG base files", ["System"], "snakesec/andrax-base-files", orig_repo="github.com/snakesec/andrax-base-files", min_andrax=2001),
+    Tool("andrax-base-files", "0.0.10", "ANDRAX-NG base files", ["System"], "snakesec/andrax-base-files", orig_repo="github.com/snakesec/andrax-base-files", min_andrax=2001),
     Tool("afos", "1.0.9", "ANDRAX-NG Package Manager", ["System"], "snakesec/afos-ng", orig_repo="github.com/snakesec/afos-ng", min_andrax=2001),
     Tool("rust-lang", "1.98.1", "Rust Programming Language", ["System"], "snakesec/rust-lang", orig_repo="www.rust-lang.org", min_andrax=2001),
     Tool("geckodriver", "0.37.1", "WebDriver for Firefox", ["System"], "snakesec/geckodriver", orig_repo="github.com/mozilla/geckodriver", min_andrax=2001),
